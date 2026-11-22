@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>Tom & Jerry: Hide & Seek 3D</title>
+<title>Mallow & Pip: Home Dash 3D</title>
 <meta name="theme-color" content="#2b1a12">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -13,7 +13,7 @@
     isIOS:${this.isIOS}
     isWebRTCSupported:${this.isWebRTCSupported()}
     isBrowserSupported:${this.isBrowserSupported()}
-    isUnifiedPlanSupported:${this.isUnifiedPlanSupported()}`}constructor(){this.isIOS="undefined"!=typeof navigator&&["iPad","iPhone","iPod"].includes(navigator.platform),this.supportedBrowsers=["firefox","chrome","safari"],this.minFirefoxVersion=59,this.minChromeVersion=72,this.minSafariVersion=605}},ew=e=>!e||/^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$/.test(e),eE=()=>Math.random().toString(36).slice(2),eD={iceServers:[{urls:"stun:stun.l.google.com:19302"},{urls:["turn:eu-0.turn.peerjs.com:3478","turn:us-0.turn.peerjs.com:3478"],username:"peerjs",credential:"peerjsp"}],sdpSemantics:"unified-plan"},ex=new class extends n{noop(){}blobToArrayBuffer(e,t){let n=new FileReader;return n.onload=function(e){e.target&&t(e.target.result)},n.readAsArrayBuffer(e),n}binaryStringToArrayBuffer(e){let t=new Uint8Array(e.length);for(let n=0;n<e.length;n++)t[n]=255&e.charCodeAt(n);return t.buffer}isSecure(){return"https:"===location.protocol}constructor(...e){super(...e),this.CLOUD_HOST="0.peerjs.com",this.CLOUD_PORT=443,this.chunkedBrowsers={Chrome:1,chrome:1},this.defaultConfig=eD,this.browser=eP.getBrowser(),this.browserVersion=eP.getVersion(),this.pack=o,this.unpack=i,this.supports=function(){let e;let t={browser:eP.isBrowserSupported(),webRTC:eP.isWebRTCSupported(),audioVideo:!1,data:!1,binaryBlob:!1,reliable:!1};if(!t.webRTC)return t;try{let n;e=new RTCPeerConnection(eD),t.audioVideo=!0;try{n=e.createDataChannel("_PEERJSTEST",{ordered:!0}),t.data=!0,t.reliable=!!n.ordered;try{n.binaryType="blob",t.binaryBlob=!eP.isIOS}catch(e){}}catch(e){}finally{n&&n.close()}}catch(e){}finally{e&&e.close()}return t}(),this.validateId=ew,this.randomToken=eE}};(_=P||(P={}))[_.Disabled=0]="Disabled",_[_.Errors=1]="Errors",_[_.Warnings=2]="Warnings",_[_.All=3]="All";var eI=new class{get logLevel(){return this._logLevel}set logLevel(e){this._logLevel=e}log(...e){this._logLevel>=3&&this._print(3,...e)}warn(...e){this._logLevel>=2&&this._print(2,...e)}error(...e){this._logLevel>=1&&this._print(1,...e)}setLogFunction(e){this._print=e}_print(e,...t){let n=["PeerJS: ",...t];for(let e in n)n[e]instanceof Error&&(n[e]="("+n[e].name+") "+n[e].message);e>=3?console.log(...n):e>=2?console.warn("WARNING",...n):e>=1&&console.error("ERROR",...n)}constructor(){this._logLevel=0}},eM={},eO=Object.prototype.hasOwnProperty,ej="~";function eL(){}function eA(e,t,n){this.fn=e,this.context=t,this.once=n||!1}function eB(e,t,n,r,i){if("function"!=typeof n)throw TypeError("The listener must be a function");var o=new eA(n,r||e,i),s=ej?ej+t:t;return e._events[s]?e._events[s].fn?e._events[s]=[e._events[s],o]:e._events[s].push(o):(e._events[s]=o,e._eventsCount++),e}function eF(e,t){0==--e._eventsCount?e._events=new eL:delete e._events[t]}function eU(){this._events=new eL,this._eventsCount=0}Object.create&&(eL.prototype=Object.create(null),new eL().__proto__||(ej=!1)),eU.prototype.eventNames=function(){var e,t,n=[];if(0===this._eventsCount)return n;for(t in e=this._events)eO.call(e,t)&&n.push(ej?t.slice(1):t);return Object.getOwnPropertySymbols?n.concat(Object.getOwnPropertySymbols(e)):n},eU.prototype.listeners=function(e){var t=ej?ej+e:e,n=this._events[t];if(!n)return[];if(n.fn)return[n.fn];for(var r=0,i=n.length,o=Array(i);r<i;r++)o[r]=n[r].fn;return o},eU.prototype.listenerCount=function(e){var t=ej?ej+e:e,n=this._events[t];return n?n.fn?1:n.length:0},eU.prototype.emit=function(e,t,n,r,i,o){var s=ej?ej+e:e;if(!this._events[s])return!1;var a,c,l=this._events[s],p=arguments.length;if(l.fn){switch(l.once&&this.removeListener(e,l.fn,void 0,!0),p){case 1:return l.fn.call(l.context),!0;case 2:return l.fn.call(l.context,t),!0;case 3:return l.fn.call(l.context,t,n),!0;case 4:return l.fn.call(l.context,t,n,r),!0;case 5:return l.fn.call(l.context,t,n,r,i),!0;case 6:return l.fn.call(l.context,t,n,r,i,o),!0}for(c=1,a=Array(p-1);c<p;c++)a[c-1]=arguments[c];l.fn.apply(l.context,a)}else{var d,h=l.length;for(c=0;c<h;c++)switch(l[c].once&&this.removeListener(e,l[c].fn,void 0,!0),p){case 1:l[c].fn.call(l[c].context);break;case 2:l[c].fn.call(l[c].context,t);break;case 3:l[c].fn.call(l[c].context,t,n);break;case 4:l[c].fn.call(l[c].context,t,n,r);break;default:if(!a)for(d=1,a=Array(p-1);d<p;d++)a[d-1]=arguments[d];l[c].fn.apply(l[c].context,a)}}return!0},eU.prototype.on=function(e,t,n){return eB(this,e,t,n,!1)},eU.prototype.once=function(e,t,n){return eB(this,e,t,n,!0)},eU.prototype.removeListener=function(e,t,n,r){var i=ej?ej+e:e;if(!this._events[i])return this;if(!t)return eF(this,i),this;var o=this._events[i];if(o.fn)o.fn!==t||r&&!o.once||n&&o.context!==n||eF(this,i);else{for(var s=0,a=[],c=o.length;s<c;s++)(o[s].fn!==t||r&&!o[s].once||n&&o[s].context!==n)&&a.push(o[s]);a.length?this._events[i]=1===a.length?a[0]:a:eF(this,i)}return this},eU.prototype.removeAllListeners=function(e){var t;return e?(t=ej?ej+e:e,this._events[t]&&eF(this,t)):(this._events=new eL,this._eventsCount=0),this},eU.prototype.off=eU.prototype.removeListener,eU.prototype.addListener=eU.prototype.on,eU.prefixed=ej,eU.EventEmitter=eU,eM=eU,(C=w||(w={})).Data="data",C.Media="media",(b=E||(E={})).BrowserIncompatible="browser-incompatible",b.Disconnected="disconnected",b.InvalidID="invalid-id",b.InvalidKey="invalid-key",b.Network="network",b.PeerUnavailable="peer-unavailable",b.SslUnavailable="ssl-unavailable",b.ServerError="server-error",b.SocketError="socket-error",b.SocketClosed="socket-closed",b.UnavailableID="unavailable-id",b.WebRTC="webrtc",(v=D||(D={})).NegotiationFailed="negotiation-failed",v.ConnectionClosed="connection-closed",(k=x||(x={})).NotOpenYet="not-open-yet",k.MessageToBig="message-too-big",(T=I||(I={})).Binary="binary",T.BinaryUTF8="binary-utf8",T.JSON="json",T.None="raw",(S=M||(M={})).Message="message",S.Disconnected="disconnected",S.Error="error",S.Close="close",(R=O||(O={})).Heartbeat="HEARTBEAT",R.Candidate="CANDIDATE",R.Offer="OFFER",R.Answer="ANSWER",R.Open="OPEN",R.Error="ERROR",R.IdTaken="ID-TAKEN",R.InvalidKey="INVALID-KEY",R.Leave="LEAVE",R.Expire="EXPIRE";var ez={};ez=JSON.parse('{"name":"peerjs","version":"1.5.4","keywords":["peerjs","webrtc","p2p","rtc"],"description":"PeerJS client","homepage":"https://peerjs.com","bugs":{"url":"https://github.com/peers/peerjs/issues"},"repository":{"type":"git","url":"https://github.com/peers/peerjs"},"license":"MIT","contributors":["Michelle Bu <michelle@michellebu.com>","afrokick <devbyru@gmail.com>","ericz <really.ez@gmail.com>","Jairo <kidandcat@gmail.com>","Jonas Gloning <34194370+jonasgloning@users.noreply.github.com>","Jairo Caro-Accino Viciana <jairo@galax.be>","Carlos Caballero <carlos.caballero.gonzalez@gmail.com>","hc <hheennrryy@gmail.com>","Muhammad Asif <capripio@gmail.com>","PrashoonB <prashoonbhattacharjee@gmail.com>","Harsh Bardhan Mishra <47351025+HarshCasper@users.noreply.github.com>","akotynski <aleksanderkotbury@gmail.com>","lmb <i@lmb.io>","Jairooo <jairocaro@msn.com>","Moritz Stückler <moritz.stueckler@gmail.com>","Simon <crydotsnakegithub@gmail.com>","Denis Lukov <denismassters@gmail.com>","Philipp Hancke <fippo@andyet.net>","Hans Oksendahl <hansoksendahl@gmail.com>","Jess <jessachandler@gmail.com>","khankuan <khankuan@gmail.com>","DUODVK <kurmanov.work@gmail.com>","XiZhao <kwang1imsa@gmail.com>","Matthias Lohr <matthias@lohr.me>","=frank tree <=frnktrb@googlemail.com>","Andre Eckardt <aeckardt@outlook.com>","Chris Cowan <agentme49@gmail.com>","Alex Chuev <alex@chuev.com>","alxnull <alxnull@e.mail.de>","Yemel Jardi <angel.jardi@gmail.com>","Ben Parnell <benjaminparnell.94@gmail.com>","Benny Lichtner <bennlich@gmail.com>","fresheneesz <bitetrudpublic@gmail.com>","bob.barstead@exaptive.com <bob.barstead@exaptive.com>","chandika <chandika@gmail.com>","emersion <contact@emersion.fr>","Christopher Van <cvan@users.noreply.github.com>","eddieherm <edhermoso@gmail.com>","Eduardo Pinho <enet4mikeenet@gmail.com>","Evandro Zanatta <ezanatta@tray.net.br>","Gardner Bickford <gardner@users.noreply.github.com>","Gian Luca <gianluca.cecchi@cynny.com>","PatrickJS <github@gdi2290.com>","jonnyf <github@jonathanfoss.co.uk>","Hizkia Felix <hizkifw@gmail.com>","Hristo Oskov <hristo.oskov@gmail.com>","Isaac Madwed <i.madwed@gmail.com>","Ilya Konanykhin <ilya.konanykhin@gmail.com>","jasonbarry <jasbarry@me.com>","Jonathan Burke <jonathan.burke.1311@googlemail.com>","Josh Hamit <josh.hamit@gmail.com>","Jordan Austin <jrax86@gmail.com>","Joel Wetzell <jwetzell@yahoo.com>","xizhao <kevin.wang@cloudera.com>","Alberto Torres <kungfoobar@gmail.com>","Jonathan Mayol <mayoljonathan@gmail.com>","Jefferson Felix <me@jsfelix.dev>","Rolf Erik Lekang <me@rolflekang.com>","Kevin Mai-Husan Chia <mhchia@users.noreply.github.com>","Pepijn de Vos <pepijndevos@gmail.com>","JooYoung <qkdlql@naver.com>","Tobias Speicher <rootcommander@gmail.com>","Steve Blaurock <sblaurock@gmail.com>","Kyrylo Shegeda <shegeda@ualberta.ca>","Diwank Singh Tomer <singh@diwank.name>","Sören Balko <Soeren.Balko@gmail.com>","Arpit Solanki <solankiarpit1997@gmail.com>","Yuki Ito <yuki@gnnk.net>","Artur Zayats <zag2art@gmail.com>"],"funding":{"type":"opencollective","url":"https://opencollective.com/peer"},"collective":{"type":"opencollective","url":"https://opencollective.com/peer"},"files":["dist/*"],"sideEffects":["lib/global.ts","lib/supports.ts"],"main":"dist/bundler.cjs","module":"dist/bundler.mjs","browser-minified":"dist/peerjs.min.js","browser-unminified":"dist/peerjs.js","browser-minified-msgpack":"dist/serializer.msgpack.mjs","types":"dist/types.d.ts","engines":{"node":">= 14"},"targets":{"types":{"source":"lib/exports.ts"},"main":{"source":"lib/exports.ts","sourceMap":{"inlineSources":true}},"module":{"source":"lib/exports.ts","includeNodeModules":["eventemitter3"],"sourceMap":{"inlineSources":true}},"browser-minified":{"context":"browser","outputFormat":"global","optimize":true,"engines":{"browsers":"chrome >= 83, edge >= 83, firefox >= 80, safari >= 15"},"source":"lib/global.ts"},"browser-unminified":{"context":"browser","outputFormat":"global","optimize":false,"engines":{"browsers":"chrome >= 83, edge >= 83, firefox >= 80, safari >= 15"},"source":"lib/global.ts"},"browser-minified-msgpack":{"context":"browser","outputFormat":"esmodule","isLibrary":true,"optimize":true,"engines":{"browsers":"chrome >= 83, edge >= 83, firefox >= 102, safari >= 15"},"source":"lib/dataconnection/StreamConnection/MsgPack.ts"}},"scripts":{"contributors":"git-authors-cli --print=false && prettier --write package.json && git add package.json package-lock.json && git commit -m \\"chore(contributors): update and sort contributors list\\"","check":"tsc --noEmit && tsc -p e2e/tsconfig.json --noEmit","watch":"parcel watch","build":"rm -rf dist && parcel build","prepublishOnly":"npm run build","test":"jest","test:watch":"jest --watch","coverage":"jest --coverage --collectCoverageFrom=\\"./lib/**\\"","format":"prettier --write .","format:check":"prettier --check .","semantic-release":"semantic-release","e2e":"wdio run e2e/wdio.local.conf.ts","e2e:bstack":"wdio run e2e/wdio.bstack.conf.ts"},"devDependencies":{"@parcel/config-default":"^2.9.3","@parcel/packager-ts":"^2.9.3","@parcel/transformer-typescript-tsc":"^2.9.3","@parcel/transformer-typescript-types":"^2.9.3","@semantic-release/changelog":"^6.0.1","@semantic-release/git":"^10.0.1","@swc/core":"^1.3.27","@swc/jest":"^0.2.24","@types/jasmine":"^4.3.4","@wdio/browserstack-service":"^8.11.2","@wdio/cli":"^8.11.2","@wdio/globals":"^8.11.2","@wdio/jasmine-framework":"^8.11.2","@wdio/local-runner":"^8.11.2","@wdio/spec-reporter":"^8.11.2","@wdio/types":"^8.10.4","http-server":"^14.1.1","jest":"^29.3.1","jest-environment-jsdom":"^29.3.1","mock-socket":"^9.0.0","parcel":"^2.9.3","prettier":"^3.0.0","semantic-release":"^21.0.0","ts-node":"^10.9.1","typescript":"^5.0.0","wdio-geckodriver-service":"^5.0.1"},"dependencies":{"@msgpack/msgpack":"^2.8.0","eventemitter3":"^4.0.7","peerjs-js-binarypack":"^2.1.0","webrtc-adapter":"^9.0.0"},"alias":{"process":false,"buffer":false}}');class eN extends eM.EventEmitter{start(e,t){this._id=e;let n=`${this._baseUrl}&id=${e}&token=${t}`;!this._socket&&this._disconnected&&(this._socket=new WebSocket(n+"&version="+ez.version),this._disconnected=!1,this._socket.onmessage=e=>{let t;try{t=JSON.parse(e.data),eI.log("Server message received:",t)}catch(t){eI.log("Invalid server message",e.data);return}this.emit(M.Message,t)},this._socket.onclose=e=>{this._disconnected||(eI.log("Socket closed.",e),this._cleanup(),this._disconnected=!0,this.emit(M.Disconnected))},this._socket.onopen=()=>{this._disconnected||(this._sendQueuedMessages(),eI.log("Socket open"),this._scheduleHeartbeat())})}_scheduleHeartbeat(){this._wsPingTimer=setTimeout(()=>{this._sendHeartbeat()},this.pingInterval)}_sendHeartbeat(){if(!this._wsOpen()){eI.log("Cannot send heartbeat, because socket closed");return}let e=JSON.stringify({type:O.Heartbeat});this._socket.send(e),this._scheduleHeartbeat()}_wsOpen(){return!!this._socket&&1===this._socket.readyState}_sendQueuedMessages(){let e=[...this._messagesQueue];for(let t of(this._messagesQueue=[],e))this.send(t)}send(e){if(this._disconnected)return;if(!this._id){this._messagesQueue.push(e);return}if(!e.type){this.emit(M.Error,"Invalid message");return}if(!this._wsOpen())return;let t=JSON.stringify(e);this._socket.send(t)}close(){this._disconnected||(this._cleanup(),this._disconnected=!0)}_cleanup(){this._socket&&(this._socket.onopen=this._socket.onmessage=this._socket.onclose=null,this._socket.close(),this._socket=void 0),clearTimeout(this._wsPingTimer)}constructor(e,t,n,r,i,o=5e3){super(),this.pingInterval=o,this._disconnected=!0,this._messagesQueue=[],this._baseUrl=(e?"wss://":"ws://")+t+":"+n+r+"peerjs?key="+i}}class e${startConnection(e){let t=this._startPeerConnection();if(this.connection.peerConnection=t,this.connection.type===w.Media&&e._stream&&this._addTracksToConnection(e._stream,t),e.originator){let n=this.connection,r={ordered:!!e.reliable},i=t.createDataChannel(n.label,r);n._initializeDataChannel(i),this._makeOffer()}else this.handleSDP("OFFER",e.sdp)}_startPeerConnection(){eI.log("Creating RTCPeerConnection.");let e=new RTCPeerConnection(this.connection.provider.options.config);return this._setupListeners(e),e}_setupListeners(e){let t=this.connection.peer,n=this.connection.connectionId,r=this.connection.type,i=this.connection.provider;eI.log("Listening for ICE candidates."),e.onicecandidate=e=>{e.candidate&&e.candidate.candidate&&(eI.log(`Received ICE candidates for ${t}:`,e.candidate),i.socket.send({type:O.Candidate,payload:{candidate:e.candidate,type:r,connectionId:n},dst:t}))},e.oniceconnectionstatechange=()=>{switch(e.iceConnectionState){case"failed":eI.log("iceConnectionState is failed, closing connections to "+t),this.connection.emitError(D.NegotiationFailed,"Negotiation of connection to "+t+" failed."),this.connection.close();break;case"closed":eI.log("iceConnectionState is closed, closing connections to "+t),this.connection.emitError(D.ConnectionClosed,"Connection to "+t+" closed."),this.connection.close();break;case"disconnected":eI.log("iceConnectionState changed to disconnected on the connection with "+t);break;case"completed":e.onicecandidate=()=>{}}this.connection.emit("iceStateChanged",e.iceConnectionState)},eI.log("Listening for data channel"),e.ondatachannel=e=>{eI.log("Received data channel");let r=e.channel;i.getConnection(t,n)._initializeDataChannel(r)},eI.log("Listening for remote stream"),e.ontrack=e=>{eI.log("Received remote stream");let r=e.streams[0],o=i.getConnection(t,n);o.type===w.Media&&this._addStreamToMediaConnection(r,o)}}cleanup(){eI.log("Cleaning up PeerConnection to "+this.connection.peer);let e=this.connection.peerConnection;if(!e)return;this.connection.peerConnection=null,e.onicecandidate=e.oniceconnectionstatechange=e.ondatachannel=e.ontrack=()=>{};let t="closed"!==e.signalingState,n=!1,r=this.connection.dataChannel;r&&(n=!!r.readyState&&"closed"!==r.readyState),(t||n)&&e.close()}async _makeOffer(){let e=this.connection.peerConnection,t=this.connection.provider;try{let n=await e.createOffer(this.connection.options.constraints);eI.log("Created offer."),this.connection.options.sdpTransform&&"function"==typeof this.connection.options.sdpTransform&&(n.sdp=this.connection.options.sdpTransform(n.sdp)||n.sdp);try{await e.setLocalDescription(n),eI.log("Set localDescription:",n,`for:${this.connection.peer}`);let r={sdp:n,type:this.connection.type,connectionId:this.connection.connectionId,metadata:this.connection.metadata};if(this.connection.type===w.Data){let e=this.connection;r={...r,label:e.label,reliable:e.reliable,serialization:e.serialization}}t.socket.send({type:O.Offer,payload:r,dst:this.connection.peer})}catch(e){"OperationError: Failed to set local offer sdp: Called in wrong state: kHaveRemoteOffer"!=e&&(t.emitError(E.WebRTC,e),eI.log("Failed to setLocalDescription, ",e))}}catch(e){t.emitError(E.WebRTC,e),eI.log("Failed to createOffer, ",e)}}async _makeAnswer(){let e=this.connection.peerConnection,t=this.connection.provider;try{let n=await e.createAnswer();eI.log("Created answer."),this.connection.options.sdpTransform&&"function"==typeof this.connection.options.sdpTransform&&(n.sdp=this.connection.options.sdpTransform(n.sdp)||n.sdp);try{await e.setLocalDescription(n),eI.log("Set localDescription:",n,`for:${this.connection.peer}`),t.socket.send({type:O.Answer,payload:{sdp:n,type:this.connection.type,connectionId:this.connection.connectionId},dst:this.connection.peer})}catch(e){t.emitError(E.WebRTC,e),eI.log("Failed to setLocalDescription, ",e)}}catch(e){t.emitError(E.WebRTC,e),eI.log("Failed to create answer, ",e)}}async handleSDP(e,t){t=new RTCSessionDescription(t);let n=this.connection.peerConnection,r=this.connection.provider;eI.log("Setting remote description",t);try{await n.setRemoteDescription(t),eI.log(`Set remoteDescription:${e} for:${this.connection.peer}`),"OFFER"===e&&await this._makeAnswer()}catch(e){r.emitError(E.WebRTC,e),eI.log("Failed to setRemoteDescription, ",e)}}async handleCandidate(e){eI.log("handleCandidate:",e);try{await this.connection.peerConnection.addIceCandidate(e),eI.log(`Added ICE candidate for:${this.connection.peer}`)}catch(e){this.connection.provider.emitError(E.WebRTC,e),eI.log("Failed to handleCandidate, ",e)}}_addTracksToConnection(e,t){if(eI.log(`add tracks from stream ${e.id} to peer connection`),!t.addTrack)return eI.error("Your browser does't support RTCPeerConnection#addTrack. Ignored.");e.getTracks().forEach(n=>{t.addTrack(n,e)})}_addStreamToMediaConnection(e,t){eI.log(`add stream ${e.id} to media connection ${t.connectionId}`),t.addStream(e)}constructor(e){this.connection=e}}class eJ extends eM.EventEmitter{emitError(e,t){eI.error("Error:",t),this.emit("error",new eV(`${e}`,t))}}class eV extends Error{constructor(e,t){"string"==typeof t?super(t):(super(),Object.assign(this,t)),this.type=e}}class eG extends eJ{get open(){return this._open}constructor(e,t,n){super(),this.peer=e,this.provider=t,this.options=n,this._open=!1,this.metadata=n.metadata}}class eW extends eG{get type(){return w.Media}get localStream(){return this._localStream}get remoteStream(){return this._remoteStream}_initializeDataChannel(e){this.dataChannel=e,this.dataChannel.onopen=()=>{eI.log(`DC#${this.connectionId} dc connection success`),this.emit("willCloseOnRemote")},this.dataChannel.onclose=()=>{eI.log(`DC#${this.connectionId} dc closed for:`,this.peer),this.close()}}addStream(e){eI.log("Receiving stream",e),this._remoteStream=e,super.emit("stream",e)}handleMessage(e){let t=e.type,n=e.payload;switch(e.type){case O.Answer:this._negotiator.handleSDP(t,n.sdp),this._open=!0;break;case O.Candidate:this._negotiator.handleCandidate(n.candidate);break;default:eI.warn(`Unrecognized message type:${t} from peer:${this.peer}`)}}answer(e,t={}){if(this._localStream){eI.warn("Local stream already exists on this MediaConnection. Are you answering a call twice?");return}for(let n of(this._localStream=e,t&&t.sdpTransform&&(this.options.sdpTransform=t.sdpTransform),this._negotiator.startConnection({...this.options._payload,_stream:e}),this.provider._getMessages(this.connectionId)))this.handleMessage(n);this._open=!0}close(){this._negotiator&&(this._negotiator.cleanup(),this._negotiator=null),this._localStream=null,this._remoteStream=null,this.provider&&(this.provider._removeConnection(this),this.provider=null),this.options&&this.options._stream&&(this.options._stream=null),this.open&&(this._open=!1,super.emit("close"))}constructor(e,t,n){super(e,t,n),this._localStream=this.options._stream,this.connectionId=this.options.connectionId||eW.ID_PREFIX+ex.randomToken(),this._negotiator=new e$(this),this._localStream&&this._negotiator.startConnection({_stream:this._localStream,originator:!0})}}eW.ID_PREFIX="mc_";class eH{_buildRequest(e){let t=this._options.secure?"https":"http",{host:n,port:r,path:i,key:o}=this._options,s=new URL(`${t}://${n}:${r}${i}${o}/${e}`);return s.searchParams.set("ts",`${Date.now()}${Math.random()}`),s.searchParams.set("version",ez.version),fetch(s.href,{referrerPolicy:this._options.referrerPolicy})}async retrieveId(){try{let e=await this._buildRequest("id");if(200!==e.status)throw Error(`Error. Status:${e.status}`);return e.text()}catch(t){eI.error("Error retrieving ID",t);let e="";throw"/"===this._options.path&&this._options.host!==ex.CLOUD_HOST&&(e=" If you passed in a `path` to your self-hosted PeerServer, you'll also need to pass in that same path when creating a new Peer."),Error("Could not get an ID from the server."+e)}}async listAllPeers(){try{let e=await this._buildRequest("peers");if(200!==e.status){if(401===e.status){let e="";throw e=this._options.host===ex.CLOUD_HOST?"It looks like you're using the cloud server. You can email team@peerjs.com to enable peer listing for your API key.":"You need to enable `allow_discovery` on your self-hosted PeerServer to use this feature.",Error("It doesn't look like you have permission to list peers IDs. "+e)}throw Error(`Error. Status:${e.status}`)}return e.json()}catch(e){throw eI.error("Error retrieving list peers",e),Error("Could not get list peers from the server."+e)}}constructor(e){this._options=e}}class eY extends eG{get type(){return w.Data}_initializeDataChannel(e){this.dataChannel=e,this.dataChannel.onopen=()=>{eI.log(`DC#${this.connectionId} dc connection success`),this._open=!0,this.emit("open")},this.dataChannel.onmessage=e=>{eI.log(`DC#${this.connectionId} dc onmessage:`,e.data)},this.dataChannel.onclose=()=>{eI.log(`DC#${this.connectionId} dc closed for:`,this.peer),this.close()}}close(e){if(e?.flush){this.send({__peerData:{type:"close"}});return}this._negotiator&&(this._negotiator.cleanup(),this._negotiator=null),this.provider&&(this.provider._removeConnection(this),this.provider=null),this.dataChannel&&(this.dataChannel.onopen=null,this.dataChannel.onmessage=null,this.dataChannel.onclose=null,this.dataChannel=null),this.open&&(this._open=!1,super.emit("close"))}send(e,t=!1){if(!this.open){this.emitError(x.NotOpenYet,"Connection is not open. You should listen for the `open` event before sending messages.");return}return this._send(e,t)}async handleMessage(e){let t=e.payload;switch(e.type){case O.Answer:await this._negotiator.handleSDP(e.type,t.sdp);break;case O.Candidate:await this._negotiator.handleCandidate(t.candidate);break;default:eI.warn("Unrecognized message type:",e.type,"from peer:",this.peer)}}constructor(e,t,n){super(e,t,n),this.connectionId=this.options.connectionId||eY.ID_PREFIX+eE(),this.label=this.options.label||this.connectionId,this.reliable=!!this.options.reliable,this._negotiator=new e$(this),this._negotiator.startConnection(this.options._payload||{originator:!0,reliable:this.reliable})}}eY.ID_PREFIX="dc_",eY.MAX_BUFFERED_AMOUNT=8388608;class eK extends eY{get bufferSize(){return this._bufferSize}_initializeDataChannel(e){super._initializeDataChannel(e),this.dataChannel.binaryType="arraybuffer",this.dataChannel.addEventListener("message",e=>this._handleDataMessage(e))}_bufferedSend(e){(this._buffering||!this._trySend(e))&&(this._buffer.push(e),this._bufferSize=this._buffer.length)}_trySend(e){if(!this.open)return!1;if(this.dataChannel.bufferedAmount>eY.MAX_BUFFERED_AMOUNT)return this._buffering=!0,setTimeout(()=>{this._buffering=!1,this._tryBuffer()},50),!1;try{this.dataChannel.send(e)}catch(e){return eI.error(`DC#:${this.connectionId} Error when sending:`,e),this._buffering=!0,this.close(),!1}return!0}_tryBuffer(){if(!this.open||0===this._buffer.length)return;let e=this._buffer[0];this._trySend(e)&&(this._buffer.shift(),this._bufferSize=this._buffer.length,this._tryBuffer())}close(e){if(e?.flush){this.send({__peerData:{type:"close"}});return}this._buffer=[],this._bufferSize=0,super.close()}constructor(...e){super(...e),this._buffer=[],this._bufferSize=0,this._buffering=!1}}class eX extends eK{close(e){super.close(e),this._chunkedData={}}_handleDataMessage({data:e}){let t=i(e),n=t.__peerData;if(n){if("close"===n.type){this.close();return}this._handleChunk(t);return}this.emit("data",t)}_handleChunk(e){let t=e.__peerData,n=this._chunkedData[t]||{data:[],count:0,total:e.total};if(n.data[e.n]=new Uint8Array(e.data),n.count++,this._chunkedData[t]=n,n.total===n.count){delete this._chunkedData[t];let e=function(e){let t=0;for(let n of e)t+=n.byteLength;let n=new Uint8Array(t),r=0;for(let t of e)n.set(t,r),r+=t.byteLength;return n}(n.data);this._handleDataMessage({data:e})}}_send(e,t){let n=o(e);if(n instanceof Promise)return this._send_blob(n);if(!t&&n.byteLength>this.chunker.chunkedMTU){this._sendChunks(n);return}this._bufferedSend(n)}async _send_blob(e){let t=await e;if(t.byteLength>this.chunker.chunkedMTU){this._sendChunks(t);return}this._bufferedSend(t)}_sendChunks(e){let t=this.chunker.chunk(e);for(let e of(eI.log(`DC#${this.connectionId} Try to send ${t.length} chunks...`),t))this.send(e,!0)}constructor(e,t,r){super(e,t,r),this.chunker=new n,this.serialization=I.Binary,this._chunkedData={}}}class eq extends eK{_handleDataMessage({data:e}){super.emit("data",e)}_send(e,t){this._bufferedSend(e)}constructor(...e){super(...e),this.serialization=I.None}}class eQ extends eK{_handleDataMessage({data:e}){let t=this.parse(this.decoder.decode(e)),n=t.__peerData;if(n&&"close"===n.type){this.close();return}this.emit("data",t)}_send(e,t){let n=this.encoder.encode(this.stringify(e));if(n.byteLength>=ex.chunkedMTU){this.emitError(x.MessageToBig,"Message too big for JSON channel");return}this._bufferedSend(n)}constructor(...e){super(...e),this.serialization=I.JSON,this.encoder=new TextEncoder,this.decoder=new TextDecoder,this.stringify=JSON.stringify,this.parse=JSON.parse}}class eZ extends eJ{get id(){return this._id}get options(){return this._options}get open(){return this._open}get socket(){return this._socket}get connections(){let e=Object.create(null);for(let[t,n]of this._connections)e[t]=n;return e}get destroyed(){return this._destroyed}get disconnected(){return this._disconnected}_createServerConnection(){let e=new eN(this._options.secure,this._options.host,this._options.port,this._options.path,this._options.key,this._options.pingInterval);return e.on(M.Message,e=>{this._handleMessage(e)}),e.on(M.Error,e=>{this._abort(E.SocketError,e)}),e.on(M.Disconnected,()=>{this.disconnected||(this.emitError(E.Network,"Lost connection to server."),this.disconnect())}),e.on(M.Close,()=>{this.disconnected||this._abort(E.SocketClosed,"Underlying socket is already closed.")}),e}_initialize(e){this._id=e,this.socket.start(e,this._options.token)}_handleMessage(e){let t=e.type,n=e.payload,r=e.src;switch(t){case O.Open:this._lastServerId=this.id,this._open=!0,this.emit("open",this.id);break;case O.Error:this._abort(E.ServerError,n.msg);break;case O.IdTaken:this._abort(E.UnavailableID,`ID "${this.id}" is taken`);break;case O.InvalidKey:this._abort(E.InvalidKey,`API KEY "${this._options.key}" is invalid`);break;case O.Leave:eI.log(`Received leave message from ${r}`),this._cleanupPeer(r),this._connections.delete(r);break;case O.Expire:this.emitError(E.PeerUnavailable,`Could not connect to peer ${r}`);break;case O.Offer:{let e=n.connectionId,t=this.getConnection(r,e);if(t&&(t.close(),eI.warn(`Offer received for existing Connection ID:${e}`)),n.type===w.Media){let i=new eW(r,this,{connectionId:e,_payload:n,metadata:n.metadata});t=i,this._addConnection(r,t),this.emit("call",i)}else if(n.type===w.Data){let i=new this._serializers[n.serialization](r,this,{connectionId:e,_payload:n,metadata:n.metadata,label:n.label,serialization:n.serialization,reliable:n.reliable});t=i,this._addConnection(r,t),this.emit("connection",i)}else{eI.warn(`Received malformed connection type:${n.type}`);return}for(let n of this._getMessages(e))t.handleMessage(n);break}default:{if(!n){eI.warn(`You received a malformed message from ${r} of type ${t}`);return}let i=n.connectionId,o=this.getConnection(r,i);o&&o.peerConnection?o.handleMessage(e):i?this._storeMessage(i,e):eI.warn("You received an unrecognized message:",e)}}}_storeMessage(e,t){this._lostMessages.has(e)||this._lostMessages.set(e,[]),this._lostMessages.get(e).push(t)}_getMessages(e){let t=this._lostMessages.get(e);return t?(this._lostMessages.delete(e),t):[]}connect(e,t={}){if(t={serialization:"default",...t},this.disconnected){eI.warn("You cannot connect to a new Peer because you called .disconnect() on this Peer and ended your connection with the server. You can create a new Peer to reconnect, or call reconnect on this peer if you believe its ID to still be available."),this.emitError(E.Disconnected,"Cannot connect to new Peer after disconnecting from server.");return}let n=new this._serializers[t.serialization](e,this,t);return this._addConnection(e,n),n}call(e,t,n={}){if(this.disconnected){eI.warn("You cannot connect to a new Peer because you called .disconnect() on this Peer and ended your connection with the server. You can create a new Peer to reconnect."),this.emitError(E.Disconnected,"Cannot connect to new Peer after disconnecting from server.");return}if(!t){eI.error("To call a peer, you must provide a stream from your browser's `getUserMedia`.");return}let r=new eW(e,this,{...n,_stream:t});return this._addConnection(e,r),r}_addConnection(e,t){eI.log(`add connection ${t.type}:${t.connectionId} to peerId:${e}`),this._connections.has(e)||this._connections.set(e,[]),this._connections.get(e).push(t)}_removeConnection(e){let t=this._connections.get(e.peer);if(t){let n=t.indexOf(e);-1!==n&&t.splice(n,1)}this._lostMessages.delete(e.connectionId)}getConnection(e,t){let n=this._connections.get(e);if(!n)return null;for(let e of n)if(e.connectionId===t)return e;return null}_delayedAbort(e,t){setTimeout(()=>{this._abort(e,t)},0)}_abort(e,t){eI.error("Aborting!"),this.emitError(e,t),this._lastServerId?this.disconnect():this.destroy()}destroy(){this.destroyed||(eI.log(`Destroy peer with ID:${this.id}`),this.disconnect(),this._cleanup(),this._destroyed=!0,this.emit("close"))}_cleanup(){for(let e of this._connections.keys())this._cleanupPeer(e),this._connections.delete(e);this.socket.removeAllListeners()}_cleanupPeer(e){let t=this._connections.get(e);if(t)for(let e of t)e.close()}disconnect(){if(this.disconnected)return;let e=this.id;eI.log(`Disconnect peer with ID:${e}`),this._disconnected=!0,this._open=!1,this.socket.close(),this._lastServerId=e,this._id=null,this.emit("disconnected",e)}reconnect(){if(this.disconnected&&!this.destroyed)eI.log(`Attempting reconnection to server with ID ${this._lastServerId}`),this._disconnected=!1,this._initialize(this._lastServerId);else if(this.destroyed)throw Error("This peer cannot reconnect to the server. It has already been destroyed.");else if(this.disconnected||this.open)throw Error(`Peer ${this.id} cannot reconnect because it is not disconnected from the server!`);else eI.error("In a hurry? We're still trying to make the initial connection!")}listAllPeers(e=e=>{}){this._api.listAllPeers().then(t=>e(t)).catch(e=>this._abort(E.ServerError,e))}constructor(e,t){let n;if(super(),this._serializers={raw:eq,json:eQ,binary:eX,"binary-utf8":eX,default:eX},this._id=null,this._lastServerId=null,this._destroyed=!1,this._disconnected=!1,this._open=!1,this._connections=new Map,this._lostMessages=new Map,e&&e.constructor==Object?t=e:e&&(n=e.toString()),t={debug:0,host:ex.CLOUD_HOST,port:ex.CLOUD_PORT,path:"/",key:eZ.DEFAULT_KEY,token:ex.randomToken(),config:ex.defaultConfig,referrerPolicy:"strict-origin-when-cross-origin",serializers:{},...t},this._options=t,this._serializers={...this._serializers,...this.options.serializers},"/"===this._options.host&&(this._options.host=window.location.hostname),this._options.path&&("/"!==this._options.path[0]&&(this._options.path="/"+this._options.path),"/"!==this._options.path[this._options.path.length-1]&&(this._options.path+="/")),void 0===this._options.secure&&this._options.host!==ex.CLOUD_HOST?this._options.secure=ex.isSecure():this._options.host==ex.CLOUD_HOST&&(this._options.secure=!0),this._options.logFunction&&eI.setLogFunction(this._options.logFunction),eI.logLevel=this._options.debug||0,this._api=new eH(t),this._socket=this._createServerConnection(),!ex.supports.audioVideo&&!ex.supports.data){this._delayedAbort(E.BrowserIncompatible,"The current browser does not support WebRTC");return}if(n&&!ex.validateId(n)){this._delayedAbort(E.InvalidID,`ID "${n}" is invalid`);return}n?this._initialize(n):this._api.retrieveId().then(e=>this._initialize(e)).catch(e=>this._abort(E.ServerError,e))}}eZ.DEFAULT_KEY="peerjs",window.peerjs={Peer:eZ,util:ex},window.Peer=eZ})();
+    isUnifiedPlanSupported:${this.isUnifiedPlanSupported()}`}constructor(){this.isIOS="undefined"!=typeof navigator&&["iPad","iPhone","iPod"].includes(navigator.platform),this.supportedBrowsers=["firefox","chrome","safari"],this.minFirefoxVersion=59,this.minChromeVersion=72,this.minSafariVersion=605}},ew=e=>!e||/^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$/.test(e),eE=()=>Math.random().toString(36).slice(2),eD={iceServers:[{urls:"stun:stun.l.google.com:19302"},{urls:["turn:eu-0.turn.peerjs.com:3478","turn:us-0.turn.peerjs.com:3478"],username:"peerjs",credential:"peerjsp"}],sdpSemantics:"unified-plan"},ex=new class extends n{noop(){}blobToArrayBuffer(e,t){let n=new FileReader;return n.onload=function(e){e.target&&t(e.target.result)},n.readAsArrayBuffer(e),n}binaryStringToArrayBuffer(e){let t=new Uint8Array(e.length);for(let n=0;n<e.length;n++)t[n]=255&e.charCodeAt(n);return t.buffer}isSecure(){return"https:"===location.protocol}constructor(...e){super(...e),this.CLOUD_HOST="0.peerjs.com",this.CLOUD_PORT=443,this.chunkedBrowsers={Chrome:1,chrome:1},this.defaultConfig=eD,this.browser=eP.getBrowser(),this.browserVersion=eP.getVersion(),this.pack=o,this.unpack=i,this.supports=function(){let e;let t={browser:eP.isBrowserSupported(),webRTC:eP.isWebRTCSupported(),audioVideo:!1,data:!1,binaryBlob:!1,reliable:!1};if(!t.webRTC)return t;try{let n;e=new RTCPeerConnection(eD),t.audioVideo=!0;try{n=e.createDataChannel("_PEERJSTEST",{ordered:!0}),t.data=!0,t.reliable=!!n.ordered;try{n.binaryType="blob",t.binaryBlob=!eP.isIOS}catch(e){}}catch(e){}finally{n&&n.close()}}catch(e){}finally{e&&e.close()}return t}(),this.validateId=ew,this.randomToken=eE}};(_=P||(P={}))[_.Disabled=0]="Disabled",_[_.Errors=1]="Errors",_[_.Warnings=2]="Warnings",_[_.All=3]="All";var eI=new class{get logLevel(){return this._logLevel}set logLevel(e){this._logLevel=e}log(...e){this._logLevel>=3&&this._print(3,...e)}warn(...e){this._logLevel>=2&&this._print(2,...e)}error(...e){this._logLevel>=1&&this._print(1,...e)}setLogFunction(e){this._print=e}_print(e,...t){let n=["PeerJS: ",...t];for(let e in n)n[e]instanceof Error&&(n[e]="("+n[e].name+") "+n[e].message);e>=3?console.log(...n):e>=2?console.warn("WARNING",...n):e>=1&&console.error("ERROR",...n)}constructor(){this._logLevel=0}},eM={},eO=Object.prototype.hasOwnProperty,ej="~";function eL(){}function eA(e,t,n){this.fn=e,this.context=t,this.once=n||!1}function eB(e,t,n,r,i){if("function"!=typeof n)throw TypeError("The listener must be a function");var o=new eA(n,r||e,i),s=ej?ej+t:t;return e._events[s]?e._events[s].fn?e._events[s]=[e._events[s],o]:e._events[s].push(o):(e._events[s]=o,e._eventsCount++),e}function eF(e,t){0==--e._eventsCount?e._events=new eL:delete e._events[t]}function eU(){this._events=new eL,this._eventsCount=0}Object.create&&(eL.prototype=Object.create(null),new eL().__proto__||(ej=!1)),eU.prototype.eventNames=function(){var e,t,n=[];if(0===this._eventsCount)return n;for(t in e=this._events)eO.call(e,t)&&n.push(ej?t.slice(1):t);return Object.getOwnPropertySymbols?n.concat(Object.getOwnPropertySymbols(e)):n},eU.prototype.listeners=function(e){var t=ej?ej+e:e,n=this._events[t];if(!n)return[];if(n.fn)return[n.fn];for(var r=0,i=n.length,o=Array(i);r<i;r++)o[r]=n[r].fn;return o},eU.prototype.listenerCount=function(e){var t=ej?ej+e:e,n=this._events[t];return n?n.fn?1:n.length:0},eU.prototype.emit=function(e,t,n,r,i,o){var s=ej?ej+e:e;if(!this._events[s])return!1;var a,c,l=this._events[s],p=arguments.length;if(l.fn){switch(l.once&&this.removeListener(e,l.fn,void 0,!0),p){case 1:return l.fn.call(l.context),!0;case 2:return l.fn.call(l.context,t),!0;case 3:return l.fn.call(l.context,t,n),!0;case 4:return l.fn.call(l.context,t,n,r),!0;case 5:return l.fn.call(l.context,t,n,r,i),!0;case 6:return l.fn.call(l.context,t,n,r,i,o),!0}for(c=1,a=Array(p-1);c<p;c++)a[c-1]=arguments[c];l.fn.apply(l.context,a)}else{var d,h=l.length;for(c=0;c<h;c++)switch(l[c].once&&this.removeListener(e,l[c].fn,void 0,!0),p){case 1:l[c].fn.call(l[c].context);break;case 2:l[c].fn.call(l[c].context,t);break;case 3:l[c].fn.call(l[c].context,t,n);break;case 4:l[c].fn.call(l[c].context,t,n,r);break;default:if(!a)for(d=1,a=Array(p-1);d<p;d++)a[d-1]=arguments[d];l[c].fn.apply(l[c].context,a)}}return!0},eU.prototype.on=function(e,t,n){return eB(this,e,t,n,!1)},eU.prototype.once=function(e,t,n){return eB(this,e,t,n,!0)},eU.prototype.removeListener=function(e,t,n,r){var i=ej?ej+e:e;if(!this._events[i])return this;if(!t)return eF(this,i),this;var o=this._events[i];if(o.fn)o.fn!==t||r&&!o.once||n&&o.context!==n||eF(this,i);else{for(var s=0,a=[],c=o.length;s<c;s++)(o[s].fn!==t||r&&!o[s].once||n&&o[s].context!==n)&&a.push(o[s]);a.length?this._events[i]=1===a.length?a[0]:a:eF(this,i)}return this},eU.prototype.removeAllListeners=function(e){var t;return e?(t=ej?ej+e:e,this._events[t]&&eF(this,t)):(this._events=new eL,this._eventsCount=0),this},eU.prototype.off=eU.prototype.removeListener,eU.prototype.addListener=eU.prototype.on,eU.prefixed=ej,eU.EventEmitter=eU,eM=eU,(C=w||(w={})).Data="data",C.Media="media",(b=E||(E={})).BrowserIncompatible="browser-incompatible",b.Disconnected="disconnected",b.InvalidID="invalid-id",b.InvalidKey="invalid-key",b.Network="network",b.PeerUnavailable="peer-unavailable",b.SslUnavailable="ssl-unavailable",b.ServerError="server-error",b.SocketError="socket-error",b.SocketClosed="socket-closed",b.UnavailableID="unavailable-id",b.WebRTC="webrtc",(v=D||(D={})).NegotiationFailed="negotiation-failed",v.ConnectionClosed="connection-closed",(k=x||(x={})).NotOpenYet="not-open-yet",k.MessageToBig="message-too-big",(T=I||(I={})).Binary="binary",T.BinaryUTF8="binary-utf8",T.JSON="json",T.None="raw",(S=M||(M={})).Message="message",S.Disconnected="disconnected",S.Error="error",S.Close="close",(R=O||(O={})).Heartbeat="HEARTBEAT",R.Candidate="CANDIDATE",R.Offer="OFFER",R.Answer="ANSWER",R.Open="OPEN",R.Error="ERROR",R.IdTaken="ID-TAKEN",R.InvalidKey="INVALID-KEY",R.Leave="LEAVE",R.Expire="EXPIRE";var ez={};ez=JSON.parse('{"name":"peerjs","version":"1.5.4","keywords":["peerjs","webrtc","p2p","rtc"],"description":"PeerJS client","homepage":"https://peerjs.com","bugs":{"url":"https://github.com/peers/peerjs/issues"},"repository":{"type":"git","url":"https://github.com/peers/peerjs"},"license":"MIT","contributors":["Michelle Bu <michelle@michellebu.com>","afrokick <devbyru@gmail.com>","ericz <really.ez@gmail.com>","Jairo <kidandcat@gmail.com>","Jonas Gloning <34194370+jonasgloning@users.noreply.github.com>","Jairo Caro-Accino Viciana <jairo@galax.be>","Carlos Caballero <carlos.caballero.gonzalez@gmail.com>","hc <hheennrryy@gmail.com>","Muhammad Asif <capripio@gmail.com>","PrashoonB <prashoonbhattacharjee@gmail.com>","Harsh Bardhan Mishra <47351025+HarshCasper@users.noreply.github.com>","akotynski <aleksanderkotbury@gmail.com>","lmb <i@lmb.io>","Jairooo <jairocaro@msn.com>","Moritz Stückler <moritz.stueckler@gmail.com>","Simon <crydotsnakegithub@gmail.com>","Denis Lukov <denismassters@gmail.com>","Philipp Hancke <fippo@andyet.net>","Hans Oksendahl <hansoksendahl@gmail.com>","Jess <jessachandler@gmail.com>","khankuan <khankuan@gmail.com>","DUODVK <kurmanov.work@gmail.com>","XiZhao <kwang1imsa@gmail.com>","Matthias Lohr <matthias@lohr.me>","=frank tree <=frnktrb@googlemail.com>","Andre Eckardt <aeckardt@outlook.com>","Chris Cowan <agentme49@gmail.com>","Alex Chuev <alex@chuev.com>","alxnull <alxnull@e.mail.de>","Yemel Jardi <angel.jardi@gmail.com>","Ben Parnell <benjaminparnell.94@gmail.com>","Benny Lichtner <bennlich@gmail.com>","fresheneesz <bitetrudpublic@gmail.com>","bob.barstead@exaptive.com <bob.barstead@exaptive.com>","chandika <chandika@gmail.com>","emersion <contact@emersion.fr>","Christopher Van <cvan@users.noreply.github.com>","eddieherm <edhermoso@gmail.com>","Eduardo Pinho <enet4mikeenet@gmail.com>","Evandro Zanatta <ezanatta@tray.net.br>","Gardner Bickford <gardner@users.noreply.github.com>","Gian Luca <gianluca.cecchi@cynny.com>","PatrickJS <github@gdi2290.com>","jonnyf <github@jonathanfoss.co.uk>","Hizkia Felix <hizkifw@gmail.com>","Hristo Oskov <hristo.oskov@gmail.com>","Isaac Madwed <i.madwed@gmail.com>","Ilya Konanykhin <ilya.konanykhin@gmail.com>","jasonbarry <jasbarry@me.com>","Jonathan Burke <jonathan.burke.1311@googlemail.com>","Josh Hamit <josh.hamit@gmail.com>","Jordan Austin <jrax86@gmail.com>","Joel Wetzell <jwetzell@yahoo.com>","xizhao <kevin.wang@cloudera.com>","Alberto Torres <kungfoobar@gmail.com>","Jonathan Mayol <mayoljonathan@gmail.com>","Jefferson Felix <me@jsfelix.dev>","Rolf Erik Lekang <me@rolflekang.com>","Kevin Mai-Husan Chia <mhchia@users.noreply.github.com>","Pepijn de Vos <pepijndevos@gmail.com>","JooYoung <qkdlql@naver.com>","Tobias Speicher <rootcommander@gmail.com>","Steve Blaurock <sblaurock@gmail.com>","Kyrylo Shegeda <shegeda@ualberta.ca>","Diwank Singh Mallower <singh@diwank.name>","Sören Balko <Soeren.Balko@gmail.com>","Arpit Solanki <solankiarpit1997@gmail.com>","Yuki Ito <yuki@gnnk.net>","Artur Zayats <zag2art@gmail.com>"],"funding":{"type":"opencollective","url":"https://opencollective.com/peer"},"collective":{"type":"opencollective","url":"https://opencollective.com/peer"},"files":["dist/*"],"sideEffects":["lib/global.ts","lib/supports.ts"],"main":"dist/bundler.cjs","module":"dist/bundler.mjs","browser-minified":"dist/peerjs.min.js","browser-unminified":"dist/peerjs.js","browser-minified-msgpack":"dist/serializer.msgpack.mjs","types":"dist/types.d.ts","engines":{"node":">= 14"},"targets":{"types":{"source":"lib/exports.ts"},"main":{"source":"lib/exports.ts","sourceMap":{"inlineSources":true}},"module":{"source":"lib/exports.ts","includeNodeModules":["eventemitter3"],"sourceMap":{"inlineSources":true}},"browser-minified":{"context":"browser","outputFormat":"global","optimize":true,"engines":{"browsers":"chrome >= 83, edge >= 83, firefox >= 80, safari >= 15"},"source":"lib/global.ts"},"browser-unminified":{"context":"browser","outputFormat":"global","optimize":false,"engines":{"browsers":"chrome >= 83, edge >= 83, firefox >= 80, safari >= 15"},"source":"lib/global.ts"},"browser-minified-msgpack":{"context":"browser","outputFormat":"esmodule","isLibrary":true,"optimize":true,"engines":{"browsers":"chrome >= 83, edge >= 83, firefox >= 102, safari >= 15"},"source":"lib/dataconnection/StreamConnection/MsgPack.ts"}},"scripts":{"contributors":"git-authors-cli --print=false && prettier --write package.json && git add package.json package-lock.json && git commit -m \\"chore(contributors): update and sort contributors list\\"","check":"tsc --noEmit && tsc -p e2e/tsconfig.json --noEmit","watch":"parcel watch","build":"rm -rf dist && parcel build","prepublishOnly":"npm run build","test":"jest","test:watch":"jest --watch","coverage":"jest --coverage --collectCoverageFrom=\\"./lib/**\\"","format":"prettier --write .","format:check":"prettier --check .","semantic-release":"semantic-release","e2e":"wdio run e2e/wdio.local.conf.ts","e2e:bstack":"wdio run e2e/wdio.bstack.conf.ts"},"devDependencies":{"@parcel/config-default":"^2.9.3","@parcel/packager-ts":"^2.9.3","@parcel/transformer-typescript-tsc":"^2.9.3","@parcel/transformer-typescript-types":"^2.9.3","@semantic-release/changelog":"^6.0.1","@semantic-release/git":"^10.0.1","@swc/core":"^1.3.27","@swc/jest":"^0.2.24","@types/jasmine":"^4.3.4","@wdio/browserstack-service":"^8.11.2","@wdio/cli":"^8.11.2","@wdio/globals":"^8.11.2","@wdio/jasmine-framework":"^8.11.2","@wdio/local-runner":"^8.11.2","@wdio/spec-reporter":"^8.11.2","@wdio/types":"^8.10.4","http-server":"^14.1.1","jest":"^29.3.1","jest-environment-jsdom":"^29.3.1","mock-socket":"^9.0.0","parcel":"^2.9.3","prettier":"^3.0.0","semantic-release":"^21.0.0","ts-node":"^10.9.1","typescript":"^5.0.0","wdio-geckodriver-service":"^5.0.1"},"dependencies":{"@msgpack/msgpack":"^2.8.0","eventemitter3":"^4.0.7","peerjs-js-binarypack":"^2.1.0","webrtc-adapter":"^9.0.0"},"alias":{"process":false,"buffer":false}}');class eN extends eM.EventEmitter{start(e,t){this._id=e;let n=`${this._baseUrl}&id=${e}&token=${t}`;!this._socket&&this._disconnected&&(this._socket=new WebSocket(n+"&version="+ez.version),this._disconnected=!1,this._socket.onmessage=e=>{let t;try{t=JSON.parse(e.data),eI.log("Server message received:",t)}catch(t){eI.log("Invalid server message",e.data);return}this.emit(M.Message,t)},this._socket.onclose=e=>{this._disconnected||(eI.log("Socket closed.",e),this._cleanup(),this._disconnected=!0,this.emit(M.Disconnected))},this._socket.onopen=()=>{this._disconnected||(this._sendQueuedMessages(),eI.log("Socket open"),this._scheduleHeartbeat())})}_scheduleHeartbeat(){this._wsPingTimer=setTimeout(()=>{this._sendHeartbeat()},this.pingInterval)}_sendHeartbeat(){if(!this._wsOpen()){eI.log("Cannot send heartbeat, because socket closed");return}let e=JSON.stringify({type:O.Heartbeat});this._socket.send(e),this._scheduleHeartbeat()}_wsOpen(){return!!this._socket&&1===this._socket.readyState}_sendQueuedMessages(){let e=[...this._messagesQueue];for(let t of(this._messagesQueue=[],e))this.send(t)}send(e){if(this._disconnected)return;if(!this._id){this._messagesQueue.push(e);return}if(!e.type){this.emit(M.Error,"Invalid message");return}if(!this._wsOpen())return;let t=JSON.stringify(e);this._socket.send(t)}close(){this._disconnected||(this._cleanup(),this._disconnected=!0)}_cleanup(){this._socket&&(this._socket.onopen=this._socket.onmessage=this._socket.onclose=null,this._socket.close(),this._socket=void 0),clearTimeout(this._wsPingTimer)}constructor(e,t,n,r,i,o=5e3){super(),this.pingInterval=o,this._disconnected=!0,this._messagesQueue=[],this._baseUrl=(e?"wss://":"ws://")+t+":"+n+r+"peerjs?key="+i}}class e${startConnection(e){let t=this._startPeerConnection();if(this.connection.peerConnection=t,this.connection.type===w.Media&&e._stream&&this._addTracksToConnection(e._stream,t),e.originator){let n=this.connection,r={ordered:!!e.reliable},i=t.createDataChannel(n.label,r);n._initializeDataChannel(i),this._makeOffer()}else this.handleSDP("OFFER",e.sdp)}_startPeerConnection(){eI.log("Creating RTCPeerConnection.");let e=new RTCPeerConnection(this.connection.provider.options.config);return this._setupListeners(e),e}_setupListeners(e){let t=this.connection.peer,n=this.connection.connectionId,r=this.connection.type,i=this.connection.provider;eI.log("Listening for ICE candidates."),e.onicecandidate=e=>{e.candidate&&e.candidate.candidate&&(eI.log(`Received ICE candidates for ${t}:`,e.candidate),i.socket.send({type:O.Candidate,payload:{candidate:e.candidate,type:r,connectionId:n},dst:t}))},e.oniceconnectionstatechange=()=>{switch(e.iceConnectionState){case"failed":eI.log("iceConnectionState is failed, closing connections to "+t),this.connection.emitError(D.NegotiationFailed,"Negotiation of connection to "+t+" failed."),this.connection.close();break;case"closed":eI.log("iceConnectionState is closed, closing connections to "+t),this.connection.emitError(D.ConnectionClosed,"Connection to "+t+" closed."),this.connection.close();break;case"disconnected":eI.log("iceConnectionState changed to disconnected on the connection with "+t);break;case"completed":e.onicecandidate=()=>{}}this.connection.emit("iceStateChanged",e.iceConnectionState)},eI.log("Listening for data channel"),e.ondatachannel=e=>{eI.log("Received data channel");let r=e.channel;i.getConnection(t,n)._initializeDataChannel(r)},eI.log("Listening for remote stream"),e.ontrack=e=>{eI.log("Received remote stream");let r=e.streams[0],o=i.getConnection(t,n);o.type===w.Media&&this._addStreamToMediaConnection(r,o)}}cleanup(){eI.log("Cleaning up PeerConnection to "+this.connection.peer);let e=this.connection.peerConnection;if(!e)return;this.connection.peerConnection=null,e.onicecandidate=e.oniceconnectionstatechange=e.ondatachannel=e.ontrack=()=>{};let t="closed"!==e.signalingState,n=!1,r=this.connection.dataChannel;r&&(n=!!r.readyState&&"closed"!==r.readyState),(t||n)&&e.close()}async _makeOffer(){let e=this.connection.peerConnection,t=this.connection.provider;try{let n=await e.createOffer(this.connection.options.constraints);eI.log("Created offer."),this.connection.options.sdpTransform&&"function"==typeof this.connection.options.sdpTransform&&(n.sdp=this.connection.options.sdpTransform(n.sdp)||n.sdp);try{await e.setLocalDescription(n),eI.log("Set localDescription:",n,`for:${this.connection.peer}`);let r={sdp:n,type:this.connection.type,connectionId:this.connection.connectionId,metadata:this.connection.metadata};if(this.connection.type===w.Data){let e=this.connection;r={...r,label:e.label,reliable:e.reliable,serialization:e.serialization}}t.socket.send({type:O.Offer,payload:r,dst:this.connection.peer})}catch(e){"OperationError: Failed to set local offer sdp: Called in wrong state: kHaveRemoteOffer"!=e&&(t.emitError(E.WebRTC,e),eI.log("Failed to setLocalDescription, ",e))}}catch(e){t.emitError(E.WebRTC,e),eI.log("Failed to createOffer, ",e)}}async _makeAnswer(){let e=this.connection.peerConnection,t=this.connection.provider;try{let n=await e.createAnswer();eI.log("Created answer."),this.connection.options.sdpTransform&&"function"==typeof this.connection.options.sdpTransform&&(n.sdp=this.connection.options.sdpTransform(n.sdp)||n.sdp);try{await e.setLocalDescription(n),eI.log("Set localDescription:",n,`for:${this.connection.peer}`),t.socket.send({type:O.Answer,payload:{sdp:n,type:this.connection.type,connectionId:this.connection.connectionId},dst:this.connection.peer})}catch(e){t.emitError(E.WebRTC,e),eI.log("Failed to setLocalDescription, ",e)}}catch(e){t.emitError(E.WebRTC,e),eI.log("Failed to create answer, ",e)}}async handleSDP(e,t){t=new RTCSessionDescription(t);let n=this.connection.peerConnection,r=this.connection.provider;eI.log("Setting remote description",t);try{await n.setRemoteDescription(t),eI.log(`Set remoteDescription:${e} for:${this.connection.peer}`),"OFFER"===e&&await this._makeAnswer()}catch(e){r.emitError(E.WebRTC,e),eI.log("Failed to setRemoteDescription, ",e)}}async handleCandidate(e){eI.log("handleCandidate:",e);try{await this.connection.peerConnection.addIceCandidate(e),eI.log(`Added ICE candidate for:${this.connection.peer}`)}catch(e){this.connection.provider.emitError(E.WebRTC,e),eI.log("Failed to handleCandidate, ",e)}}_addTracksToConnection(e,t){if(eI.log(`add tracks from stream ${e.id} to peer connection`),!t.addTrack)return eI.error("Your browser does't support RTCPeerConnection#addTrack. Ignored.");e.getTracks().forEach(n=>{t.addTrack(n,e)})}_addStreamToMediaConnection(e,t){eI.log(`add stream ${e.id} to media connection ${t.connectionId}`),t.addStream(e)}constructor(e){this.connection=e}}class eJ extends eM.EventEmitter{emitError(e,t){eI.error("Error:",t),this.emit("error",new eV(`${e}`,t))}}class eV extends Error{constructor(e,t){"string"==typeof t?super(t):(super(),Object.assign(this,t)),this.type=e}}class eG extends eJ{get open(){return this._open}constructor(e,t,n){super(),this.peer=e,this.provider=t,this.options=n,this._open=!1,this.metadata=n.metadata}}class eW extends eG{get type(){return w.Media}get localStream(){return this._localStream}get remoteStream(){return this._remoteStream}_initializeDataChannel(e){this.dataChannel=e,this.dataChannel.onopen=()=>{eI.log(`DC#${this.connectionId} dc connection success`),this.emit("willCloseOnRemote")},this.dataChannel.onclose=()=>{eI.log(`DC#${this.connectionId} dc closed for:`,this.peer),this.close()}}addStream(e){eI.log("Receiving stream",e),this._remoteStream=e,super.emit("stream",e)}handleMessage(e){let t=e.type,n=e.payload;switch(e.type){case O.Answer:this._negotiator.handleSDP(t,n.sdp),this._open=!0;break;case O.Candidate:this._negotiator.handleCandidate(n.candidate);break;default:eI.warn(`Unrecognized message type:${t} from peer:${this.peer}`)}}answer(e,t={}){if(this._localStream){eI.warn("Local stream already exists on this MediaConnection. Are you answering a call twice?");return}for(let n of(this._localStream=e,t&&t.sdpTransform&&(this.options.sdpTransform=t.sdpTransform),this._negotiator.startConnection({...this.options._payload,_stream:e}),this.provider._getMessages(this.connectionId)))this.handleMessage(n);this._open=!0}close(){this._negotiator&&(this._negotiator.cleanup(),this._negotiator=null),this._localStream=null,this._remoteStream=null,this.provider&&(this.provider._removeConnection(this),this.provider=null),this.options&&this.options._stream&&(this.options._stream=null),this.open&&(this._open=!1,super.emit("close"))}constructor(e,t,n){super(e,t,n),this._localStream=this.options._stream,this.connectionId=this.options.connectionId||eW.ID_PREFIX+ex.randomToken(),this._negotiator=new e$(this),this._localStream&&this._negotiator.startConnection({_stream:this._localStream,originator:!0})}}eW.ID_PREFIX="mc_";class eH{_buildRequest(e){let t=this._options.secure?"https":"http",{host:n,port:r,path:i,key:o}=this._options,s=new URL(`${t}://${n}:${r}${i}${o}/${e}`);return s.searchParams.set("ts",`${Date.now()}${Math.random()}`),s.searchParams.set("version",ez.version),fetch(s.href,{referrerPolicy:this._options.referrerPolicy})}async retrieveId(){try{let e=await this._buildRequest("id");if(200!==e.status)throw Error(`Error. Status:${e.status}`);return e.text()}catch(t){eI.error("Error retrieving ID",t);let e="";throw"/"===this._options.path&&this._options.host!==ex.CLOUD_HOST&&(e=" If you passed in a `path` to your self-hosted PeerServer, you'll also need to pass in that same path when creating a new Peer."),Error("Could not get an ID from the server."+e)}}async listAllPeers(){try{let e=await this._buildRequest("peers");if(200!==e.status){if(401===e.status){let e="";throw e=this._options.host===ex.CLOUD_HOST?"It looks like you're using the cloud server. You can email team@peerjs.com to enable peer listing for your API key.":"You need to enable `allow_discovery` on your self-hosted PeerServer to use this feature.",Error("It doesn't look like you have permission to list peers IDs. "+e)}throw Error(`Error. Status:${e.status}`)}return e.json()}catch(e){throw eI.error("Error retrieving list peers",e),Error("Could not get list peers from the server."+e)}}constructor(e){this._options=e}}class eY extends eG{get type(){return w.Data}_initializeDataChannel(e){this.dataChannel=e,this.dataChannel.onopen=()=>{eI.log(`DC#${this.connectionId} dc connection success`),this._open=!0,this.emit("open")},this.dataChannel.onmessage=e=>{eI.log(`DC#${this.connectionId} dc onmessage:`,e.data)},this.dataChannel.onclose=()=>{eI.log(`DC#${this.connectionId} dc closed for:`,this.peer),this.close()}}close(e){if(e?.flush){this.send({__peerData:{type:"close"}});return}this._negotiator&&(this._negotiator.cleanup(),this._negotiator=null),this.provider&&(this.provider._removeConnection(this),this.provider=null),this.dataChannel&&(this.dataChannel.onopen=null,this.dataChannel.onmessage=null,this.dataChannel.onclose=null,this.dataChannel=null),this.open&&(this._open=!1,super.emit("close"))}send(e,t=!1){if(!this.open){this.emitError(x.NotOpenYet,"Connection is not open. You should listen for the `open` event before sending messages.");return}return this._send(e,t)}async handleMessage(e){let t=e.payload;switch(e.type){case O.Answer:await this._negotiator.handleSDP(e.type,t.sdp);break;case O.Candidate:await this._negotiator.handleCandidate(t.candidate);break;default:eI.warn("Unrecognized message type:",e.type,"from peer:",this.peer)}}constructor(e,t,n){super(e,t,n),this.connectionId=this.options.connectionId||eY.ID_PREFIX+eE(),this.label=this.options.label||this.connectionId,this.reliable=!!this.options.reliable,this._negotiator=new e$(this),this._negotiator.startConnection(this.options._payload||{originator:!0,reliable:this.reliable})}}eY.ID_PREFIX="dc_",eY.MAX_BUFFERED_AMOUNT=8388608;class eK extends eY{get bufferSize(){return this._bufferSize}_initializeDataChannel(e){super._initializeDataChannel(e),this.dataChannel.binaryType="arraybuffer",this.dataChannel.addEventListener("message",e=>this._handleDataMessage(e))}_bufferedSend(e){(this._buffering||!this._trySend(e))&&(this._buffer.push(e),this._bufferSize=this._buffer.length)}_trySend(e){if(!this.open)return!1;if(this.dataChannel.bufferedAmount>eY.MAX_BUFFERED_AMOUNT)return this._buffering=!0,setTimeout(()=>{this._buffering=!1,this._tryBuffer()},50),!1;try{this.dataChannel.send(e)}catch(e){return eI.error(`DC#:${this.connectionId} Error when sending:`,e),this._buffering=!0,this.close(),!1}return!0}_tryBuffer(){if(!this.open||0===this._buffer.length)return;let e=this._buffer[0];this._trySend(e)&&(this._buffer.shift(),this._bufferSize=this._buffer.length,this._tryBuffer())}close(e){if(e?.flush){this.send({__peerData:{type:"close"}});return}this._buffer=[],this._bufferSize=0,super.close()}constructor(...e){super(...e),this._buffer=[],this._bufferSize=0,this._buffering=!1}}class eX extends eK{close(e){super.close(e),this._chunkedData={}}_handleDataMessage({data:e}){let t=i(e),n=t.__peerData;if(n){if("close"===n.type){this.close();return}this._handleChunk(t);return}this.emit("data",t)}_handleChunk(e){let t=e.__peerData,n=this._chunkedData[t]||{data:[],count:0,total:e.total};if(n.data[e.n]=new Uint8Array(e.data),n.count++,this._chunkedData[t]=n,n.total===n.count){delete this._chunkedData[t];let e=function(e){let t=0;for(let n of e)t+=n.byteLength;let n=new Uint8Array(t),r=0;for(let t of e)n.set(t,r),r+=t.byteLength;return n}(n.data);this._handleDataMessage({data:e})}}_send(e,t){let n=o(e);if(n instanceof Promise)return this._send_blob(n);if(!t&&n.byteLength>this.chunker.chunkedMTU){this._sendChunks(n);return}this._bufferedSend(n)}async _send_blob(e){let t=await e;if(t.byteLength>this.chunker.chunkedMTU){this._sendChunks(t);return}this._bufferedSend(t)}_sendChunks(e){let t=this.chunker.chunk(e);for(let e of(eI.log(`DC#${this.connectionId} Try to send ${t.length} chunks...`),t))this.send(e,!0)}constructor(e,t,r){super(e,t,r),this.chunker=new n,this.serialization=I.Binary,this._chunkedData={}}}class eq extends eK{_handleDataMessage({data:e}){super.emit("data",e)}_send(e,t){this._bufferedSend(e)}constructor(...e){super(...e),this.serialization=I.None}}class eQ extends eK{_handleDataMessage({data:e}){let t=this.parse(this.decoder.decode(e)),n=t.__peerData;if(n&&"close"===n.type){this.close();return}this.emit("data",t)}_send(e,t){let n=this.encoder.encode(this.stringify(e));if(n.byteLength>=ex.chunkedMTU){this.emitError(x.MessageToBig,"Message too big for JSON channel");return}this._bufferedSend(n)}constructor(...e){super(...e),this.serialization=I.JSON,this.encoder=new TextEncoder,this.decoder=new TextDecoder,this.stringify=JSON.stringify,this.parse=JSON.parse}}class eZ extends eJ{get id(){return this._id}get options(){return this._options}get open(){return this._open}get socket(){return this._socket}get connections(){let e=Object.create(null);for(let[t,n]of this._connections)e[t]=n;return e}get destroyed(){return this._destroyed}get disconnected(){return this._disconnected}_createServerConnection(){let e=new eN(this._options.secure,this._options.host,this._options.port,this._options.path,this._options.key,this._options.pingInterval);return e.on(M.Message,e=>{this._handleMessage(e)}),e.on(M.Error,e=>{this._abort(E.SocketError,e)}),e.on(M.Disconnected,()=>{this.disconnected||(this.emitError(E.Network,"Lost connection to server."),this.disconnect())}),e.on(M.Close,()=>{this.disconnected||this._abort(E.SocketClosed,"Underlying socket is already closed.")}),e}_initialize(e){this._id=e,this.socket.start(e,this._options.token)}_handleMessage(e){let t=e.type,n=e.payload,r=e.src;switch(t){case O.Open:this._lastServerId=this.id,this._open=!0,this.emit("open",this.id);break;case O.Error:this._abort(E.ServerError,n.msg);break;case O.IdTaken:this._abort(E.UnavailableID,`ID "${this.id}" is taken`);break;case O.InvalidKey:this._abort(E.InvalidKey,`API KEY "${this._options.key}" is invalid`);break;case O.Leave:eI.log(`Received leave message from ${r}`),this._cleanupPeer(r),this._connections.delete(r);break;case O.Expire:this.emitError(E.PeerUnavailable,`Could not connect to peer ${r}`);break;case O.Offer:{let e=n.connectionId,t=this.getConnection(r,e);if(t&&(t.close(),eI.warn(`Offer received for existing Connection ID:${e}`)),n.type===w.Media){let i=new eW(r,this,{connectionId:e,_payload:n,metadata:n.metadata});t=i,this._addConnection(r,t),this.emit("call",i)}else if(n.type===w.Data){let i=new this._serializers[n.serialization](r,this,{connectionId:e,_payload:n,metadata:n.metadata,label:n.label,serialization:n.serialization,reliable:n.reliable});t=i,this._addConnection(r,t),this.emit("connection",i)}else{eI.warn(`Received malformed connection type:${n.type}`);return}for(let n of this._getMessages(e))t.handleMessage(n);break}default:{if(!n){eI.warn(`You received a malformed message from ${r} of type ${t}`);return}let i=n.connectionId,o=this.getConnection(r,i);o&&o.peerConnection?o.handleMessage(e):i?this._storeMessage(i,e):eI.warn("You received an unrecognized message:",e)}}}_storeMessage(e,t){this._lostMessages.has(e)||this._lostMessages.set(e,[]),this._lostMessages.get(e).push(t)}_getMessages(e){let t=this._lostMessages.get(e);return t?(this._lostMessages.delete(e),t):[]}connect(e,t={}){if(t={serialization:"default",...t},this.disconnected){eI.warn("You cannot connect to a new Peer because you called .disconnect() on this Peer and ended your connection with the server. You can create a new Peer to reconnect, or call reconnect on this peer if you believe its ID to still be available."),this.emitError(E.Disconnected,"Cannot connect to new Peer after disconnecting from server.");return}let n=new this._serializers[t.serialization](e,this,t);return this._addConnection(e,n),n}call(e,t,n={}){if(this.disconnected){eI.warn("You cannot connect to a new Peer because you called .disconnect() on this Peer and ended your connection with the server. You can create a new Peer to reconnect."),this.emitError(E.Disconnected,"Cannot connect to new Peer after disconnecting from server.");return}if(!t){eI.error("To call a peer, you must provide a stream from your browser's `getUserMedia`.");return}let r=new eW(e,this,{...n,_stream:t});return this._addConnection(e,r),r}_addConnection(e,t){eI.log(`add connection ${t.type}:${t.connectionId} to peerId:${e}`),this._connections.has(e)||this._connections.set(e,[]),this._connections.get(e).push(t)}_removeConnection(e){let t=this._connections.get(e.peer);if(t){let n=t.indexOf(e);-1!==n&&t.splice(n,1)}this._lostMessages.delete(e.connectionId)}getConnection(e,t){let n=this._connections.get(e);if(!n)return null;for(let e of n)if(e.connectionId===t)return e;return null}_delayedAbort(e,t){setTimeout(()=>{this._abort(e,t)},0)}_abort(e,t){eI.error("Aborting!"),this.emitError(e,t),this._lastServerId?this.disconnect():this.destroy()}destroy(){this.destroyed||(eI.log(`Destroy peer with ID:${this.id}`),this.disconnect(),this._cleanup(),this._destroyed=!0,this.emit("close"))}_cleanup(){for(let e of this._connections.keys())this._cleanupPeer(e),this._connections.delete(e);this.socket.removeAllListeners()}_cleanupPeer(e){let t=this._connections.get(e);if(t)for(let e of t)e.close()}disconnect(){if(this.disconnected)return;let e=this.id;eI.log(`Disconnect peer with ID:${e}`),this._disconnected=!0,this._open=!1,this.socket.close(),this._lastServerId=e,this._id=null,this.emit("disconnected",e)}reconnect(){if(this.disconnected&&!this.destroyed)eI.log(`Attempting reconnection to server with ID ${this._lastServerId}`),this._disconnected=!1,this._initialize(this._lastServerId);else if(this.destroyed)throw Error("This peer cannot reconnect to the server. It has already been destroyed.");else if(this.disconnected||this.open)throw Error(`Peer ${this.id} cannot reconnect because it is not disconnected from the server!`);else eI.error("In a hurry? We're still trying to make the initial connection!")}listAllPeers(e=e=>{}){this._api.listAllPeers().then(t=>e(t)).catch(e=>this._abort(E.ServerError,e))}constructor(e,t){let n;if(super(),this._serializers={raw:eq,json:eQ,binary:eX,"binary-utf8":eX,default:eX},this._id=null,this._lastServerId=null,this._destroyed=!1,this._disconnected=!1,this._open=!1,this._connections=new Map,this._lostMessages=new Map,e&&e.constructor==Object?t=e:e&&(n=e.toString()),t={debug:0,host:ex.CLOUD_HOST,port:ex.CLOUD_PORT,path:"/",key:eZ.DEFAULT_KEY,token:ex.randomToken(),config:ex.defaultConfig,referrerPolicy:"strict-origin-when-cross-origin",serializers:{},...t},this._options=t,this._serializers={...this._serializers,...this.options.serializers},"/"===this._options.host&&(this._options.host=window.location.hostname),this._options.path&&("/"!==this._options.path[0]&&(this._options.path="/"+this._options.path),"/"!==this._options.path[this._options.path.length-1]&&(this._options.path+="/")),void 0===this._options.secure&&this._options.host!==ex.CLOUD_HOST?this._options.secure=ex.isSecure():this._options.host==ex.CLOUD_HOST&&(this._options.secure=!0),this._options.logFunction&&eI.setLogFunction(this._options.logFunction),eI.logLevel=this._options.debug||0,this._api=new eH(t),this._socket=this._createServerConnection(),!ex.supports.audioVideo&&!ex.supports.data){this._delayedAbort(E.BrowserIncompatible,"The current browser does not support WebRTC");return}if(n&&!ex.validateId(n)){this._delayedAbort(E.InvalidID,`ID "${n}" is invalid`);return}n?this._initialize(n):this._api.retrieveId().then(e=>this._initialize(e)).catch(e=>this._abort(E.ServerError,e))}}eZ.DEFAULT_KEY="peerjs",window.peerjs={Peer:eZ,util:ex},window.Peer=eZ})();
 //# sourceMappingURL=peerjs.min.js.map
 </script>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -155,43 +155,79 @@ body.touch #prompt{bottom:150px}
 #netEnd .stat,#netPanel .lab{font-weight:700}
 #bigCode{font-family:'Bangers',cursive;font-size:clamp(56px,16vw,96px);letter-spacing:.25em;padding-left:.25em;background:#fff;border:4px solid var(--ink);border-radius:18px;margin:8px 0}
 #joinCodeIn{font-family:'Bangers',cursive;font-size:clamp(48px,14vw,80px);letter-spacing:.25em;text-align:center;text-transform:uppercase;width:min(340px,80%);border:4px solid var(--ink);border-radius:18px;padding:4px 0 4px .25em;margin:8px 0;background:#fff}
+
+/* ===== polish: minimal HUD, compact controls ===== */
+#hud{display:flex!important;justify-content:space-between;align-items:flex-start;padding:max(4px,env(safe-area-inset-top)) max(6px,env(safe-area-inset-right)) 0 max(6px,env(safe-area-inset-left))!important}
+#hud .hl,#hud .hr{gap:4px;flex-wrap:nowrap}
+#hud .chip{font:600 13px/1.2 Fredoka,sans-serif!important;background:rgba(18,10,6,.34)!important;color:#fff!important;border:0!important;box-shadow:none!important;padding:3px 9px!important;border-radius:10px!important;text-shadow:0 1px 2px rgba(0,0,0,.5)}
+#hud .chip:empty{display:none!important}
+#timer{font:600 15px/1.2 Fredoka,sans-serif!important;letter-spacing:.5px;min-width:44px;text-align:center;background:rgba(18,10,6,.34)!important;border:0!important;box-shadow:none!important;padding:3px 9px!important;border-radius:10px!important;margin:0!important;color:#fff}
+#timer.low{background:rgba(220,50,50,.7)!important;animation:pulse .5s infinite alternate}
+#hud .ib{width:30px!important;min-width:30px!important;height:28px!important;font-size:13px!important;background:rgba(18,10,6,.34)!important;color:#fff;border:0!important;box-shadow:none!important;border-radius:10px!important;opacity:.85}
+#miniWrap{top:34px!important;left:6px!important;width:clamp(92px,15vw,148px)!important;border:2px solid rgba(255,255,255,.55)!important;border-radius:10px!important;box-shadow:none!important;opacity:.82;background:rgba(0,0,0,.25)!important}
+#miniTag{display:none}
+#prompt,#banner.go{display:none!important}
+#hint{position:absolute;left:8px;bottom:max(8px,env(safe-area-inset-bottom));z-index:6;font:600 12px Fredoka,sans-serif;color:#fff;background:rgba(18,10,6,.5);padding:4px 10px;border-radius:10px;opacity:0;transform:translateY(6px);transition:opacity .25s,transform .25s;pointer-events:none;max-width:60vw}
+#hint.show{opacity:1;transform:none}
+#lvlCard{left:auto!important;right:6px!important;top:38px!important;transform:none!important;text-align:right;padding:3px 10px!important;border:0!important;box-shadow:none!important;border-radius:10px!important;background:rgba(18,10,6,.5)!important;color:#fff;max-width:70vw}
+#lvlCard.show{animation:lvlS 3.2s forwards!important}
+#lvlCard small{color:#ffd23f!important;font:600 11px Fredoka,sans-serif!important;letter-spacing:1px!important}
+#lvlCard b{font:600 15px Fredoka,sans-serif!important;letter-spacing:0!important}
+#lvlCard span{display:none}
+body.ingame #lvlCard{top:max(38px,calc(env(safe-area-inset-top) + 34px))!important}
+@keyframes lvlS{0%{opacity:0;transform:translateY(-6px)}12%{opacity:1;transform:none}80%{opacity:1}100%{opacity:0}}
+#banner{top:52px!important;font-size:clamp(24px,4.4vw,44px)!important;-webkit-text-stroke:3px var(--ink)!important;text-shadow:0 3px 0 var(--ink)!important}
+#cdOver.full .big{font-size:34px!important}#cdOver.full .num{font-size:30px!important}#cdOver.full .sm{display:none}
+#cdOver.pill{top:34px!important;padding:2px 14px!important;font-size:16px!important;border:0!important;background:rgba(18,10,6,.5)!important;color:#fff!important;border-radius:10px!important;font-family:Fredoka,sans-serif!important;font-weight:600}
+#cdOver.pill b{color:#ffd23f}
+#fjoy{width:88px!important;height:88px!important;background:rgba(255,255,255,.12)!important;border:2px solid rgba(255,255,255,.45)!important;box-shadow:none!important}
+#fstick{left:24px!important;top:24px!important;width:40px!important;height:40px!important;background:rgba(255,255,255,.55)!important;border:2px solid rgba(255,255,255,.8)!important}
+#actBtn,#sprintBtn{display:none;position:absolute;z-index:7;border-radius:50%;border:2px solid rgba(255,255,255,.6);background:rgba(18,10,6,.38);color:#fff;font:600 11px Fredoka,sans-serif;align-items:center;justify-content:center;flex-direction:column;opacity:.4;transition:opacity .25s,transform .1s;touch-action:none;-webkit-tap-highlight-color:transparent;padding:0;user-select:none}
+#actBtn{width:62px;height:62px;right:max(16px,env(safe-area-inset-right));bottom:max(26px,env(safe-area-inset-bottom));font-size:24px;line-height:1}
+#actBtn small{font-size:10px;margin-top:1px}
+#actBtn.on{opacity:.92;background:rgba(255,200,40,.55)}#actBtn.press,#sprintBtn.press{transform:scale(.92);opacity:1}
+#sprintBtn{width:46px;height:46px;right:calc(max(16px,env(safe-area-inset-right)) + 74px);bottom:max(20px,env(safe-area-inset-bottom));font-size:20px;background:conic-gradient(rgba(255,210,63,.85) var(--st,360deg),rgba(18,10,6,.38) 0)}
+#sprintBtn span{width:36px;height:36px;border-radius:50%;background:rgba(18,10,6,.55);display:flex;align-items:center;justify-content:center}
+#sprintBtn.tired{background:conic-gradient(rgba(255,90,90,.85) var(--st,0deg),rgba(18,10,6,.38) 0)}
+body.touch.ingame #sprintBtn,body.touch.ingame #actBtn{display:flex}
+#stage::after{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 60%,rgba(20,10,5,.3) 100%);z-index:2}
+#settings:not(.show) .ib,#settings:not(.show) .chipbtn,#settings:not(.show) .btn{pointer-events:none!important}
+#settings .lab{font-weight:700;margin-right:8px}
+#settings .row{margin:8px 0;justify-content:center;align-items:center}
+#settings .ib{font-size:18px;min-width:44px;padding:0 10px;height:40px;border:3px solid var(--ink);border-radius:12px;background:var(--sun);box-shadow:0 3px 0 var(--ink)}
 </style>
 </head>
 <body>
 <div id="app">
   <div id="hud">
-    <div class="hl"><span class="chip" id="roleChip"></span><span class="chip" id="roundChip"></span><span class="chip" id="diffChip"></span></div>
-    <div id="timer">1:15</div>
-    <div class="hr"><span class="chip" id="collChip"></span><span class="chip" id="fxChip"></span><span class="chip" id="scoreChip">⭐ 0</span>
-      <button class="ib" id="btnZoom" title="Camera zoom (V)">🔍Normal</button>
-      <button class="ib" id="btnFull" title="Fullscreen">⛶</button>
-      <button class="ib" id="btnHelp" title="Instructions">❓</button>
-      <button class="ib" id="btnMute" title="Sound">🔊</button>
-      <button class="ib" id="btnPause" title="Pause (P)">⏸</button></div>
+    <div class="hl"><span class="chip" id="timer">1:15</span><span class="chip" id="scoreChip">⭐ 0</span><span class="chip" id="collChip"></span><span class="chip" id="fxChip"></span>
+      <span id="roleChip" hidden></span><span id="roundChip" hidden></span><span id="diffChip" hidden></span></div>
+    <div class="hr"><button class="ib" id="btnPause" title="Pause (P)">⏸</button></div>
   </div>
   <div id="stage">
     <canvas id="gl"></canvas><canvas id="ov"></canvas>
-    <div id="miniWrap"><canvas id="mini" width="420" height="262"></canvas><span id="miniTag">MAP</span></div><div id="prompt"></div><div id="banner"></div><div id="cdOver"></div><div id="lvlCard"></div>
+    <div id="miniWrap"><canvas id="mini" width="420" height="262"></canvas><span id="miniTag">MAP</span></div><div id="prompt"></div><div id="hint"></div><div id="banner"></div><div id="cdOver"></div><div id="lvlCard"></div>
     <div id="fjoy"><div id="fstick"></div></div>
+    <button id="sprintBtn" aria-label="Sprint"><span>⚡</span></button><button id="actBtn" aria-label="Action"><span>🫣</span><small>Hide</small></button>
   </div>
 
   <!-- MENU -->
   <div class="screen show" id="menu">
-    <h1 class="logo"><span class="t">Tom</span> <span class="a">&amp;</span> <span class="j">Jerry</span><small>HIDE &amp; SEEK</small></h1>
+    <h1 class="logo"><span class="t">Mallow</span> <span class="a">&amp;</span> <span class="j">Pip</span><small>HOME DASH</small></h1>
     <div class="sub">Choose your character!</div>
     <div class="cards">
-      <button class="card" id="cardTom" data-char="tom">
+      <button class="card" id="cardMallow" data-char="tom">
         <span class="badge">✔ YOU!</span>
         <div class="pv pv-tom"><span class="pv-cat">🐱</span><span class="pv-lens">🔍</span></div>
-        <h3>Play as Tom 🐱</h3>
-        <p>The seeker who tries to find Jerry.</p>
+        <h3>Play as Mallow 🐱</h3>
+        <p>The seeker who tries to find Pip.</p>
         <small>Search rooms &amp; hiding spots before time runs out</small>
       </button>
-      <button class="card" id="cardJerry" data-char="jerry">
+      <button class="card" id="cardPip" data-char="jerry">
         <span class="badge">✔ YOU!</span>
         <div class="pv pv-jerry"><span class="pv-mouse">🐭</span><span class="pv-box">📦</span><span class="pv-cheese">🧀</span></div>
-        <h3>Play as Jerry 🐭</h3>
-        <p>The hider who tries to escape Tom.</p>
+        <h3>Play as Pip 🐭</h3>
+        <p>The hider who tries to escape Mallow.</p>
         <small>Sneak, hide &amp; survive until the countdown ends</small>
       </button>
     </div>
@@ -206,6 +242,7 @@ body.touch #prompt{bottom:150px}
       <button class="btn green" id="btnStart" disabled>Pick a character!</button>
       <button class="btn blue" id="btnHow">How to Play</button>
       <button class="btn" id="btnOnline">👥 Play Online</button>
+      <button class="btn" id="btnSettings">⚙ Settings</button>
     </div>
     <div class="hint" id="menuHint"></div>
   </div>
@@ -215,8 +252,8 @@ body.touch #prompt{bottom:150px}
   <div class="screen dim" id="netPanel"><div class="panel" style="max-width:540px">
     <h2>👥 Play with a Friend</h2>
     <div id="netChoose">
-      <p>Host a game and share the 4-character code — or join with a friend's code. You swap Tom and Jerry every round.</p>
-      <div class="row" id="netRole"><span class="lab">I want to start as:</span><button class="chipbtn on" data-k="tom">🐱 Tom</button><button class="chipbtn" data-k="jerry">🐭 Jerry</button></div>
+      <p>Host a game and share the 4-character code — or join with a friend's code. You swap Mallow and Pip every round.</p>
+      <div class="row" id="netRole"><span class="lab">I want to start as:</span><button class="chipbtn on" data-k="tom">🐱 Mallow</button><button class="chipbtn" data-k="jerry">🐭 Pip</button></div>
       <div class="row"><button class="btn green" id="btnNetHost">Host game</button><button class="btn blue" id="btnNetJoin">Join game</button></div>
       <div class="row"><button class="chipbtn" id="btnManual">🔧 Manual codes</button><button class="chipbtn" id="btnNetBack">← Back</button></div>
     </div>
@@ -263,14 +300,22 @@ body.touch #prompt{bottom:150px}
     <p id="neWait" style="display:none">⏳ Waiting for the host to start the next round…</p>
   </div></div>
 
+  <div class="screen dim" id="settings"><div class="panel" style="max-width:440px">
+    <h2>⚙ Settings</h2>
+    <div class="row"><span class="lab">Graphics</span><span id="qRow"><button class="chipbtn" data-q="auto">Auto</button> <button class="chipbtn" data-q="low">Low</button> <button class="chipbtn" data-q="med">Medium</button> <button class="chipbtn" data-q="high">High</button></span></div>
+    <div class="row"><span class="lab">Hints</span><button class="chipbtn" id="btnHints">On</button></div>
+    <div class="row"><button class="ib" id="btnZoom" title="Camera zoom (V)">🔍Normal</button><button class="ib" id="btnFull" title="Fullscreen">⛶</button><button class="ib" id="btnMute" title="Sound">🔊</button><button class="ib" id="btnHelp" title="Instructions">❓</button></div>
+    <div class="row"><button class="btn green" id="btnSetClose">Done</button></div>
+  </div></div>
+
   <!-- HELP -->
   <div class="screen dim" id="help"><div class="panel">
     <h2>📖 How to Play</h2>
     <ul>
       <li><b>Move:</b> <span class="kbd">W A S D</span> / <span class="kbd">Arrows</span> (or the on-screen stick). <b>Action:</b> <span class="kbd">Space</span> / <span class="kbd">E</span>. <b>Pause:</b> <span class="kbd">P</span></li>
-      <li>🐱 <b>As Tom:</b> Jerry hides while you count. Walk up to furniture and press Action to <b>search</b> it. Find Jerry (or catch him in the open) before the timer ends. Jerry sneaks between spots, so re-check!</li>
-      <li>🐭 <b>As Jerry:</b> Press Action next to furniture to <b>hide</b> (you can't hide while Tom is looking at you). Watch Tom's yellow vision cone &amp; the <b>👂 warning</b> when he heads for your spot, then sneak away. Survive until the timer hits zero!</li>
-      <li><b>Power-ups:</b> ⚡ Speed boost · ⏰ Clock (Tom +10s / Jerry −8s) · 💤 Sleepy dust (freezes the other one) · ✨ Magic (Tom: reveals Jerry / Jerry: invisibility)</li>
+      <li>🐱 <b>As Mallow:</b> Pip hides while you count. Walk up to furniture and press Action to <b>search</b> it. Find Pip (or catch him in the open) before the timer ends. Pip sneaks between spots, so re-check!</li>
+      <li>🐭 <b>As Pip:</b> Press Action next to furniture to <b>hide</b> (you can't hide while Mallow is looking at you). Watch Mallow's yellow vision cone &amp; the <b>👂 warning</b> when he heads for your spot, then sneak away. Survive until the timer hits zero!</li>
+      <li><b>Power-ups:</b> ⚡ Speed boost · ⏰ Clock (Mallow +10s / Pip −8s) · 💤 Sleepy dust (freezes the other one) · ✨ Magic (Mallow: reveals Pip / Pip: invisibility)</li>
       <li>Collect 🧀/🐟 for combo points and earn up to 3 ★ per level. Clear a level to unlock the next map — House, Mansion, SuperMart, Snowy Camp. Every level gets harder. Lose a round and it's game over — chase the high score!</li>
     </ul>
     <div class="row"><button class="btn green" id="btnHelpClose">Got it!</button></div>
@@ -282,6 +327,7 @@ body.touch #prompt{bottom:150px}
     <div class="row" style="flex-direction:column">
       <button class="btn green" id="btnResume">▶ Resume</button>
       <button class="btn blue" id="btnRestart">🔄 Restart</button>
+      <button class="btn" id="btnPauseSet">⚙ Settings</button>
       <button class="btn red" id="btnQuit">🏠 Main Menu</button>
     </div>
   </div></div>
@@ -348,7 +394,7 @@ const Sfx=(()=>{
     s.connect(f);f.connect(g);g.connect(master);s.start(ac.currentTime+delay);
   }
   return{
-    init,toggle(){muted=!muted;return muted},
+    init,toggle(){muted=!muted;return muted},tone,noise,getAc(){return ac},isMuted(){return muted},
     step(vol,pitch){vol=vol==null?1:vol;pitch=pitch||1;if(vol<.05)return;noise(.06,.25*vol,500*pitch);tone(110*pitch,.07,'triangle',.18*vol,70*pitch)},
     hide(vol){vol=vol==null?1:vol;if(vol<.05)return;tone(250,.12,'sine',.3*vol,700);tone(700,.14,'sine',.25*vol,300,.1)},
     unhide(vol){vol=vol==null?1:vol;if(vol<.05)return;tone(300,.1,'sine',.28*vol,800)},
@@ -564,14 +610,14 @@ try{G.best=+localStorage.getItem('tjhs_best')||0}catch(e){}
 const keys={l:0,r:0,u:0,d:0},joy={x:0,y:0};
 
 const LINES={
-  tomSearch:['Come out, you little pest!','I know you\'re here somewhere...','Here, mousey mousey!','I\'ll get you this time!','Nobody outsmarts Tom!','I can smell cheese...'],
+  tomSearch:['Check behind the cushions!','I heard tiny footsteps...','Come on out, Pip!','I will find that clever mouse!','No nook stays secret forever!','I smell a snack nearby...'],
   tomEmpty:['Nothing here...','Empty! Drat!','Just dust bunnies.','Hmph. Not here.','Where IS that mouse?'],
-  tomSee:['I SEE YOU!!','Get back here!','There you are!','Gotcha now!'],
+  tomSee:['There you are!','Quick paws, Pip!','I see a whisker!','Almost got you!'],
   tomLost:['Where did he go?!','Grr... lost him!','Come out, come out...'],
-  jerrySneak:['Hehe! Can\'t catch me!','Squeak squeak!','Tee-hee!','Nyah nyah!','Cheese, please!'],
+  jerrySneak:['Too slow, Mallow!','Not this way!','Tiny feet, big plans!','You missed a turn!','Shortcut time!'],
   jerryScare:['EEEK!','Yikes!','Squeeeak!','Whoa!'],
-  tomPlayerWin:['GOTCHA, JERRY!','Found you!','Ha! Got him!'],
-  jerryWin:['Phew! Safe!','Nyah-nyah! Too slow!','Hehehe, I win!']
+  tomPlayerWin:['Caught you at last!','The chase is over!','That was a close one!'],
+  jerryWin:['Safe at last!','That shortcut worked!','Tiny feet for the win!']
 };
 function params(diff,round){
   const b={easy:{time:90,tom:120,vis:150,ang:36,smart:.05,search:1.5,recheck:20,stay:[7,12],jerry:140,escape:.08,panic:90},
@@ -603,13 +649,13 @@ function finishCountdown(){
   G.phase='playing';G.goT=1.4;Sfx.go();
   G.tom.state='search';G.tom.target=null;
 }
-function caught(touch,spot){ // Tom finds Jerry
+function caught(touch,spot){ // Mallow finds Pip
   if(G.phase!=='playing')return;
   const J=G.jerry,T=G.tom;
-  if(G.online){if(J.hidden)exitSpot(J,T.x,T.y);Sfx.found();G.shake=14;burst(J.x,J.y-10,'star',14);return onlineEnd('tom',touch?'Tom caught Jerry in the open!':'Tom found Jerry'+(spot?' in the '+spot.name:'')+'!')}
+  if(G.online){if(J.hidden)exitSpot(J,T.x,T.y);Sfx.found();G.shake=14;burst(J.x,J.y-10,'star',14);return onlineEnd('tom',touch?'Mallow caught Pip in the open!':'Mallow found Pip'+(spot?' in the '+spot.name:'')+'!')}
   if(J.hidden)exitSpot(J,T.x,T.y);
   Sfx.found();G.shake=14;burst(J.x,J.y-10,'star',14);
-  endRound(G.role==='tom'?'win':'lose',G.role==='tom'?'':'Tom '+(touch?'caught you in the open!':'found your hiding spot'+(spot?' ('+spot.name+')':'')+'!'));
+  endRound(G.role==='tom'?'win':'lose',G.role==='tom'?'':'Mallow '+(touch?'caught you in the open!':'found your hiding spot'+(spot?' ('+spot.name+')':'')+'!'));
 }
 
 /* ===================== hide / search ===================== */
@@ -650,7 +696,7 @@ function resolveSearch(a){
   if(G.online&&!s.counted){s.counted=true;G.pts[own(a)]+=5}
   say(T,pick(LINES.tomEmpty),1.4);
   if(a===G.player&&!s.counted){s.counted=true;G.score+=5;floatText(s.cx,s.y,'+5','#fff')}
-  if(G.role==='jerry'){G.fooled++;G.score+=15;floatText(J.x,J.y,'Tom fooled! +15','#ffd23f')}
+  if(G.role==='jerry'){G.fooled++;G.score+=15;floatText(J.x,J.y,'Mallow fooled! +15','#ffd23f')}
 }
 
 /* ===================== movement ===================== */
@@ -689,6 +735,7 @@ function goTo(a,tx,ty,speed,dt,arriveR){
 
 /* ===================== actors update ===================== */
 function tickActor(a,dt){
+  stamTick(a,dt);
   if(a.boost>0)a.boost-=dt;if(a.invis>0)a.invis-=dt;if(a.frozen>0)a.frozen-=dt;
   a.squash*=Math.pow(.02,dt);
   if(a.bubble){a.bubble.t-=dt;a.bubble.age+=dt;if(a.bubble.t<=0)a.bubble=null}
@@ -698,14 +745,14 @@ function updatePlayer(dt){
   const p=G.player,act=G.actionQ;G.actionQ=false;
   if(p.frozen>0){p.moving=false;return}
   if(p.searching>0){p.searching-=dt;p.moving=false;if(p.searching<=0)resolveSearch(p);return}
-  const[ix,iy]=inputVec(),mag=Math.hypot(ix,iy);
+  p.sprint=!!G.sprint;const iv=inputVec(),sv=smoothIn(p,iv[0],iv[1],dt),ix=sv[0],iy=sv[1],mag=Math.hypot(ix,iy);
   if(p.hidden){
     p.moving=false;
     if(act||(p.hideT>.4&&mag>.6)){exitSpot(p);}
     return;
   }
   if(mag>.05){
-    const sp=(p.kind==='tom'?185:192)*(p.boost>0?1.45:1),ox=p.x,oy=p.y;
+    const sp=(p.kind==='tom'?185:192)*(p.boost>0?1.45:1)*sprintMul(p,dt,true),ox=p.x,oy=p.y;
     moveActor(p,ix*sp*dt,iy*sp*dt);
     p.vx=(p.x-ox)/dt;p.vy=(p.y-oy)/dt;p.face=Math.atan2(iy,ix);p.moving=dist(ox,oy,p.x,p.y)>.1;
     if(p.moving){p.walkT+=dt*(p.boost>0?1.5:1);footsteps(p,dt,sp,p.boost>0)}
@@ -716,7 +763,7 @@ function updatePlayer(dt){
     else{
       if(!s){say(p,'No hiding spot here!',1.2)}
       else if(s.occupant){say(p,'Occupied!',1)}
-      else if(G.phase==='playing'&&tomSees(G.tom,p)){say(p,'Tom is watching!',1.3);Sfx.alert()}
+      else if(G.phase==='playing'&&tomSees(G.tom,p)){say(p,'Mallow is watching!',1.3);Sfx.alert()}
       else enterSpot(p,s);
     }
   }
@@ -729,7 +776,7 @@ function tomChooseSpot(t){
   else{let tot=0;const w=list.map(s=>{const v=1/(dist(s.cx,s.cy,t.x,t.y)+120);tot+=v;return v});let r=Math.random()*tot;for(let i=0;i<list.length;i++){r-=w[i];if(r<=0){ch=list[i];break}}ch=ch||list[0]}
   t.target=ch;t.tAP=nearestAP(ch,t.x,t.y);t.warned=false;
 }
-function updateTomAI(dt){
+function updateMallowAI(dt){
   const t=G.tom,j=G.jerry,D=G.params;
   if(G.phase!=='playing'){t.moving=false;return}
   if(t.frozen>0){t.moving=false;return}
@@ -766,7 +813,7 @@ function jerryMove(panic){
   j.state='sneak';j.target=ch;j.tAP=nearestAP(ch,j.x,j.y);j.panic=panic;j.path=[];
   if(G.phase==='playing')say(j,panic?pick(LINES.jerryScare):pick(LINES.jerrySneak),1.3);
 }
-function updateJerryAI(dt){
+function updatePipAI(dt){
   const j=G.jerry,t=G.tom,D=G.params;
   if(j.frozen>0){j.moving=false;return}
   if(j.state==='hidden'){
@@ -788,7 +835,7 @@ function updateJerryAI(dt){
     }
   }
 }
-/* warnings for Jerry player */
+/* warnings for Pip player */
 function updateWarn(){
   G.warnSpot=null;
   if(G.role!=='jerry'||!G.jerry.hidden)return;
@@ -842,24 +889,24 @@ function update(dt){
   if(G.online){onlineUpdate(dt);updateFx(dt);syncHUD();return}
   if(G.phase==='countdown'){
     G.cd-=dt;const ci=Math.ceil(G.cd);if(ci!==G.lastCd){G.lastCd=ci;Sfx.tick()}
-    if(G.role==='jerry'){updatePlayer(dt);updateJerryAI(dt)} else updateJerryAI(dt);
+    if(G.role==='jerry'){updatePlayer(dt);updatePipAI(dt)} else updatePipAI(dt);
     if(G.cd<=0)finishCountdown();
   }else if(G.phase==='playing'){
     G.timeLeft-=dt;
     const s=Math.ceil(G.timeLeft);if(s<=10&&s!==G.lastSec&&s>0){Sfx.tick()}G.lastSec=s;
     updatePlayer(dt);
-    if(G.role==='tom')updateJerryAI(dt);else updateTomAI(dt);
+    if(G.role==='tom')updatePipAI(dt);else updateMallowAI(dt);
     if(G.role==='jerry'&&G.phase==='playing'){G.score+=dt*4;updateWarn()}
     if(G.phase==='playing'){
       updatePU(dt);updateColl(dt);
       if(G.role==='tom'&&dist(T.x,T.y,J.x,J.y)<27&&!J.hidden)caught(true);
     }
     if(G.phase==='playing'&&G.timeLeft<=0){G.timeLeft=0;
-      if(G.role==='tom')endRound('lose','Time\'s up — Jerry was hiding the whole time!');else endRound('win','');}
+      if(G.role==='tom')endRound('lose','Time\'s up — Pip was hiding the whole time!');else endRound('win','');}
   }else if(G.phase==='ending'){
     G.endT-=dt;if(G.endT<=0)showEndOverlay();
   }
-  updateFx(dt);
+  fxStep(dt);updateFx(dt);
   syncHUD();
 }
 
@@ -877,7 +924,7 @@ function startRound(){
   const ts=MAP.tomStart;G.tom=mkActor('tom',ts[0],ts[1]);
   const p=randFreePoint(300,ts[0],ts[1]);G.jerry=mkActor('jerry',p.x,p.y);
   G.player=G.role==='tom'?G.tom:G.jerry;G.ai=G.role==='tom'?G.jerry:G.tom;
-  spawnColl();
+  spawnColl();fxInit();
   G.timeLeft=D.time;G.cd=5;G.lastCd=6;G.lastSec=99;G.phase='countdown';G.paused=false;G.startTime=G.t;
   if(G.role==='tom'&&!G.online)jerryMove(false);
   hideAllScreens();syncHUD(true);showLevelCard();
@@ -900,7 +947,7 @@ function updateColl(dt){
     }}
 }
 function showLevelCard(){
-  const e=$('#lvlCard');e.innerHTML='<small>LEVEL '+G.round+'</small><b>'+MAP.icon+' '+MAP.name+'</b><span>'+MAP.tip+'</span>';
+  const e=$('#lvlCard');e.innerHTML='<small>LEVEL '+G.round+' · '+(G.role==='tom'?'🐱 Seeker':'🐭 Hider')+'</small><b>'+MAP.icon+' '+MAP.name+'</b>';
   e.classList.remove('show');void e.offsetWidth;e.classList.add('show');
 }
 function endRound(result,reason){
@@ -927,7 +974,7 @@ function showEndOverlay(){
   const secs=Math.round(G.params.time-G.timeLeft);
   if(G.result==='win'){
     const nxt=MAPS[G.round%MAPS.length],isNew=G.round<MAPS.length;
-    $('#reTitle').textContent=G.role==='tom'?'🎉 Found Jerry!':'🎉 You Survived!';
+    $('#reTitle').textContent=G.role==='tom'?'🎉 Found Pip!':'🎉 You Survived!';
     $('#reStats').innerHTML='<div class="stars">'+[0,1,2].map(i=>'<span class="'+(i<G.stars?'on':'')+'" style="animation-delay:'+(.25+i*.3)+'s">★</span>').join('')+'</div>'+
       '<p class="big">Level '+G.round+' · '+MAP.icon+' '+MAP.name+(G.role==='tom'?' · '+secs+'s':'')+'</p>'+
       '<div class="stat"><span>Round bonus</span><span>+'+G.roundBase+'</span></div>'+
@@ -939,7 +986,7 @@ function showEndOverlay(){
   }else{
     try{if(G.score>G.best){G.best=Math.floor(G.score);localStorage.setItem('tjhs_best',G.best)}}catch(e){}
     if(G.score>G.best)G.best=Math.floor(G.score);
-    $('#goTitle').textContent=G.role==='tom'?'😿 Jerry Escaped!':'😿 Caught!';
+    $('#goTitle').textContent=G.role==='tom'?'😿 Pip Escaped!':'😿 Caught!';
     $('#goReason').textContent=G.reason;
     $('#goStats').innerHTML='<div class="stat"><span>Reached</span><span>Level '+G.round+' · '+MAP.icon+' '+MAP.name+'</span></div>'+
       '<div class="stat"><span>Levels cleared</span><span>'+G.roundsWon+'</span></div>'+
@@ -1160,81 +1207,106 @@ function buildSpot(s){
 function mkMats(){return{list:[]}}
 function mesh(g,geo,col,x,y,z,sx,sy,sz,mats,rough){const m=new THREE.Mesh(geo,new THREE.MeshStandardMaterial({color:col,roughness:rough==null?.55:rough}));mats.push(m.material);m.position.set(x,y,z);m.scale.set(sx||1,sy||1,sz||1);m.castShadow=true;g.add(m);return m}
 const G_SPH=new THREE.SphereGeometry(1,20,14),G_CONE=new THREE.ConeGeometry(1,1,14),G_CYL=new THREE.CylinderGeometry(1,1,1,12);
-function makeTom(){ // realistic ginger tabby cat
+const rig=m=>{m.userData.s0=m.scale.clone();m.userData.p0=m.position.clone();return m};
+let _furBump=null;
+function getFurBump(){
+  if(_furBump)return _furBump;
+  const c=document.createElement('canvas');c.width=c.height=256;const g=c.getContext('2d');g.fillStyle='#808080';g.fillRect(0,0,256,256);
+  for(let i=0;i<5200;i++){const x=Math.random()*256,y=Math.random()*256,l=3+Math.random()*8,a=Math.random()*6.28;g.strokeStyle=Math.random()<.5?'rgba(255,255,255,.34)':'rgba(0,0,0,.34)';g.lineWidth=.8;g.beginPath();g.moveTo(x,y);g.lineTo(x+Math.cos(a)*l,y+Math.sin(a)*l);g.stroke()}
+  const t=new THREE.CanvasTexture(c);t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(3,2);return _furBump=t;
+}
+function fmesh(g,geo,col,x,y,z,sx,sy,sz,mats,bump){const m=mesh(g,geo,col,x,y,z,sx,sy,sz,mats,.8);m.material.bumpMap=getFurBump();m.material.bumpScale=bump||.9;return m}
+function makeMallow(){ // original cartoon grey cat
   const root=new THREE.Group(),mats=[],body=new THREE.Group();root.add(body);
-  const fur='#c9803f',dark='#8a4b1f',light='#f3e6d2',pink='#e79aa3';
-  // torso: chest, belly, hips
-  mesh(body,G_SPH,fur,0,18,0,17,10,9,mats);
-  mesh(body,G_SPH,fur,9,19.5,0,9.5,10.5,9.2,mats);          // chest/shoulders
-  mesh(body,G_SPH,fur,-9,18.5,0,9,10,9.4,mats);             // haunches
-  mesh(body,G_SPH,light,8,14.5,0,7,6,6,mats);               // white bib
-  mesh(body,G_SPH,'#e8c9a0',-1,12.2,0,13,4.2,7,mats);       // pale belly
-  // tabby stripes across the back
-  for(let i=-4;i<=4;i++){const x=i*3.5,s=Math.sqrt(Math.max(.05,1-(x/17)*(x/17)));
-    mesh(body,G_SPH,dark,x,18,0,.9,10*s*1.045,9*s*1.045,mats)}
-  mesh(body,G_SPH,dark,0,27.5,0,15,.8,1.4,mats);            // spine line
-  const head=new THREE.Group();head.position.set(17,29,0);body.add(head);
-  mesh(head,G_SPH,fur,0,0,0,9.4,8.3,9,mats);
-  for(const sz of[-1,1])mesh(head,G_SPH,fur,1.5,-2.8,sz*5,6,4.6,4.2,mats);   // cheeks
-  mesh(head,G_SPH,light,6.6,-3.4,0,4.2,3.2,5.4,mats);       // muzzle
-  mesh(head,G_SPH,pink,10.6,-1.6,0,1.1,.9,1.5,mats);        // nose
-  mesh(head,G_SPH,dark,10.2,-4.3,0,.7,.35,1.4,mats);        // mouth line hint
-  for(const x of[-1,1,3])mesh(head,G_SPH,dark,x,7.7,0,1.1,.45,x===1?2.2:1.4,mats); // forehead stripes
+  const fur='#627975',dark='#3b5552',light='#fff0d3',pink='#d88979',belly='#cad7c5';
+  fmesh(body,G_SPH,fur,0,18,0,17,10.5,9.6,mats);
+  fmesh(body,G_SPH,fur,9,19.5,0,9.5,11,9.8,mats);
+  fmesh(body,G_SPH,fur,-9,18.5,0,9.2,10.5,10,mats);
+  fmesh(body,G_SPH,light,9,14.5,0,7.6,6.6,6.6,mats);                 // white chest
+  fmesh(body,G_SPH,belly,-1,12.2,0,13,4.4,7.4,mats);
+  fmesh(body,G_SPH,dark,-3,26.8,0,12,2.2,6.4,mats);                  // darker saddle
+  const collar=mesh(body,new THREE.TorusGeometry(7.4,1.35,8,24),'#d39a55',7.2,18.5,0,1,1,1,mats);collar.rotation.y=Math.PI/2;
+  mesh(body,G_SPH,'#f1c568',14.5,14.5,0,2.2,2.5,2.2,mats);             // Mallow's bell
+  const eyes=[],ears=[];
+  const head=new THREE.Group();head.position.set(17,30,0);head.scale.setScalar(1.14);body.add(head);
+  fmesh(head,G_SPH,fur,0,0,0,9.8,8.8,9.4,mats);
+  for(const sz of[-1,1]){fmesh(head,G_SPH,fur,1.5,-2.8,sz*5.2,6.2,4.8,4.4,mats);
+    for(let k=0;k<3;k++){const t=mesh(head,G_CONE,fur,2+k*.7,-3.4-k*1.1,sz*(9.2+k*.2),1.2,3.4,.9,mats);t.rotation.x=sz*(1.25+k*.15);t.rotation.z=-.4}}   // cheek tufts
+  fmesh(head,G_SPH,light,6.8,-3.4,0,4.4,3.4,5.6,mats);
+  mesh(head,G_SPH,pink,10.9,-1.5,0,1.15,.95,1.55,mats);
+  mesh(head,G_SPH,dark,10.4,-4.3,0,.7,.35,1.4,mats);
+  const mouth=rig(mesh(head,G_SPH,'#6a1626',9.4,-4.6,0,1.9,1.5,2.6,mats));mouth.visible=false;
+  for(const x of[-.5,1.5,3.5])mesh(head,G_SPH,dark,x,8,0,1.1,.5,x===1.5?2.4:1.5,mats);
   for(const sz of[-1,1]){
-    mesh(head,G_SPH,'#e6f2b0',6.9,1.6,sz*4,1.9,2.3,2.0,mats);        // iris
-    mesh(head,G_SPH,'#c3d95a',7.1,1.6,sz*4,1.7,2.1,1.8,mats);
-    mesh(head,G_SPH,'#0b0b0b',8.2,1.6,sz*4,.55,2.0,.6,mats);         // slit pupil
-    mesh(head,G_SPH,dark,6.4,3.9,sz*4,1.4,.45,2.3,mats);             // brow line
-    const ear=mesh(head,G_CONE,fur,-1.5,8.6,sz*5.6,3.9,7.4,2.7,mats);ear.rotation.x=sz*.22;ear.rotation.z=.08;
-    const ie=mesh(head,G_CONE,pink,-.7,8.2,sz*5.5,2.4,5.2,1.6,mats);ie.rotation.x=sz*.22;ie.rotation.z=.08;
-    mesh(head,G_SPH,dark,-1.5,13.6,sz*6.6,1.5,1.1,1.1,mats);        // dark ear tips
-    for(let k=0;k<3;k++){const w=mesh(head,G_CYL,'#fff',8.6,-3-k*.9,sz*7,.16,10,.16,mats);w.rotation.x=Math.PI/2;w.rotation.z=sz*(.05+k*.16);w.rotation.y=sz*.12}
+    const eA=rig(mesh(head,G_SPH,'#ffffff',6.7,1.7,sz*4.1,2.6,3.1,2.5,mats,.25));                 // white of eye
+    const eB=rig(mesh(head,G_SPH,'#78d8bc',8.1,1.7,sz*4.1,1.5,2.3,1.9,mats,.3));                  // sea-glass iris
+    const eP=rig(mesh(head,G_SPH,'#0b0b0b',9.1,1.7,sz*4.1,.6,1.7,.75,mats,.3));                   // pupil
+    mesh(head,G_SPH,'#fff',9.2,2.9,sz*3.5,.45,.55,.45,mats,.2);                                    // glint
+    const eW=rig(mesh(head,G_SPH,dark,6.6,4.5,sz*4.1,1.5,.55,2.5,mats));
+    eyes.push({parts:[eA,eB,eP],brow:eW,sz});
+    const eg=new THREE.Group();eg.position.set(-1.2,8.2,sz*5.8);head.add(eg);
+    const ear=mesh(eg,G_CONE,fur,0,2.6,0,4.6,8.4,3.2,mats);ear.material.bumpMap=getFurBump();
+    mesh(eg,G_CONE,pink,.9,2.2,0,2.9,6,1.9,mats);
+    for(let k=0;k<3;k++)mesh(eg,G_SPH,light,1.2,1+k*1.1,sz*.5,.7,.6,.4,mats);                      // inner ear fluff
+    eg.rotation.x=sz*.2;eg.userData.sz=sz;ears.push(eg);
+    for(let k=0;k<3;k++){const w=mesh(head,G_CYL,'#fff',8.8,-3-k*.9,sz*8,.17,12,.17,mats);w.rotation.x=Math.PI/2;w.rotation.z=sz*(.05+k*.16);w.rotation.y=sz*.12}
   }
   const tail=new THREE.Group();tail.position.set(-17,20,0);body.add(tail);
-  for(let i=0;i<9;i++){const t=i/8;mesh(tail,G_SPH,i===8?light:(i%2?dark:fur),-i*3.4-1,Math.sin(t*1.9)*7+i*.8,0,3-.9*t,3-.9*t,3-.9*t,mats)}
+  for(let i=0;i<12;i++){const t=i/11;fmesh(tail,G_SPH,i>=10?light:(i%3===2?dark:fur),-i*2.7-1,Math.sin(t*2.1)*7.5+i*.8,0,3.1-.9*t,3.1-.9*t,3.1-.9*t,mats,.6)}
   const legs=[];
-  for(const[x,z]of[[10,-4.4],[10,4.4],[-10,-4.6],[-10,4.6]]){
+  for(const[x,z]of[[10,-4.6],[10,4.6],[-10,-4.8],[-10,4.8]]){
     const lg=new THREE.Group();lg.position.set(x,10.5,z);body.add(lg);
-    mesh(lg,G_SPH,fur,0,-4.2,0,2.7,6.4,2.7,mats);
-    mesh(lg,G_SPH,dark,.3,-3,z>0?.9:-.9,2.9,.7,.5,mats);
-    mesh(lg,G_SPH,light,1.2,-9.4,0,3.9,1.9,3.2,mats);legs.push(lg)}
+    fmesh(lg,G_SPH,fur,0,-4.2,0,3,6.6,3,mats);
+    fmesh(lg,G_SPH,light,1.1,-9.4,0,4.4,2.3,3.6,mats);                                              // white mitten paws
+    for(const s of[-1,0,1])mesh(lg,G_SPH,pink,2.9,-10.2,s*1.1,.8,.5,.55,mats);                       // toe beans
+    legs.push(lg)}
   body.scale.setScalar(1.22);
-  root.userData={mats,body,head,tail,legs,h:62,kind:'tom'};
+  root.userData={mats,body,head,tail,legs,ears,h:66,kind:'tom',face:{eyes,mouth,ex:null}};
   return root;
 }
-function makeJerry(){ // realistic grey-brown house mouse
+function makePip(){ // original cartoon brown mouse
   const root=new THREE.Group(),mats=[],body=new THREE.Group();root.add(body);
-  const fur='#8c7f72',dark='#6a5f55',belly='#d9cfc2',pink='#e9a4ab';
-  mesh(body,G_SPH,fur,0,8,0,8.6,5.8,5.3,mats);
-  mesh(body,G_SPH,fur,-4.5,8.3,0,6,6.2,5.6,mats);          // rounded rump
-  mesh(body,G_SPH,dark,-1,12.8,0,8,.7,1.6,mats);           // darker back line
-  mesh(body,G_SPH,belly,2.2,5.4,0,6,3.2,4.2,mats);
-  const head=new THREE.Group();head.position.set(8.2,10.2,0);body.add(head);
-  mesh(head,G_SPH,fur,0,0,0,4.9,4.3,4.2,mats);
-  const sn=mesh(head,G_CONE,fur,6.3,-.8,0,3.1,6.4,3,mats);sn.rotation.z=-Math.PI/2;       // pointed snout
-  mesh(head,G_SPH,belly,5.2,-1.9,0,2.6,1.4,2.3,mats);
-  mesh(head,G_SPH,pink,9.4,-.5,0,.95,.85,1.0,mats);
+  const fur='#bf7950',dark='#824e38',belly='#f5d9aa',pink='#d78e8d';
+  fmesh(body,G_SPH,fur,0,8.4,0,8.8,6.2,5.6,mats);
+  fmesh(body,G_SPH,fur,-4.5,8.6,0,6.2,6.6,5.9,mats);
+  fmesh(body,G_SPH,belly,2.4,5.6,0,6.2,3.6,4.5,mats);
+  fmesh(body,G_SPH,dark,-1,13,0,8,.9,2,mats);
+  const eyes=[],ears=[];
+  const head=new THREE.Group();head.position.set(8,11,0);head.scale.setScalar(1.22);body.add(head);
+  fmesh(head,G_SPH,fur,0,0,0,5.2,4.7,4.6,mats);
+  const sn=fmesh(head,G_CONE,fur,6.2,-.8,0,3.2,5.8,3.1,mats);sn.rotation.z=-Math.PI/2;
+  fmesh(head,G_SPH,belly,5.2,-1.9,0,2.8,1.5,2.5,mats);
+  mesh(head,G_SPH,pink,9,-.6,0,1.05,.95,1.1,mats);
+  for(let k=0;k<3;k++){const t=mesh(head,G_CONE,dark,-1+k*.9,4.8,0,.8,2.6,.7,mats);t.rotation.z=-.5-k*.15}     // head tuft
   for(const sz of[-1,1]){
-    mesh(head,G_SPH,'#0a0a0a',3.3,1.4,sz*2.7,1.15,1.25,1.15,mats);       // bead eyes
-    mesh(head,G_SPH,'#fff',3.9,1.9,sz*2.9,.28,.28,.28,mats);              // eye glint
-    const e=mesh(head,G_CYL,fur,-1.3,4.2,sz*3.9,3.7,.7,3.7,mats);e.rotation.x=Math.PI/2;e.rotation.y=sz*.0;e.position.z=sz*4.1;e.rotation.z=0;
-    const ie=mesh(head,G_CYL,pink,-1,4.2,sz*4.5,2.6,.4,2.6,mats);ie.rotation.x=Math.PI/2;
-    for(let k=0;k<3;k++){const w=mesh(head,G_CYL,'#eee',6.8,-1.1-k*.7,sz*3.6,.12,6,.12,mats);w.rotation.x=Math.PI/2;w.rotation.z=sz*(.05+k*.15)}
+    const m1=rig(mesh(head,G_SPH,'#ffffff',3.3,1.5,sz*2.6,1.9,2.1,1.7,mats,.25));               // big white eyes
+    const m2=rig(mesh(head,G_SPH,'#58b8ad',4.6,1.4,sz*2.7,.9,1.5,1.05,mats,.3));                 // jade iris
+    const m3=rig(mesh(head,G_SPH,'#fff',5.0,2.2,sz*2.4,.3,.34,.3,mats,.2));                     // glint
+    mesh(head,G_SPH,'#211714',5.25,1.35,sz*2.7,.34,1.05,.5,mats,.25);                             // dark pupil
+    const mw=rig(mesh(head,G_SPH,'#5a3a1e',3.2,3.8,sz*2.7,.9,.38,1.7,mats));
+    eyes.push({parts:[m1,m2,m3],brow:mw,sz});
+    const eg=new THREE.Group();eg.position.set(-1.2,3.6,sz*3.9);head.add(eg);
+    const e=mesh(eg,G_CYL,fur,0,2.4,0,5.4,.8,5.4,mats);e.rotation.x=Math.PI/2;e.position.z=sz*.4;
+    const ie=mesh(eg,G_CYL,pink,.2,2.4,sz*.95,4.0,.5,4.0,mats);ie.rotation.x=Math.PI/2;
+    eg.rotation.x=sz*.3;eg.rotation.z=sz===-1?-.12:.16;eg.scale.setScalar(sz===-1?1.08:.88);eg.userData.sz=sz;ears.push(eg);
+    for(let k=0;k<3;k++){const w=mesh(head,G_CYL,'#f4ede4',6.6,-1.1-k*.7,sz*3.8,.13,8,.13,mats);w.rotation.x=Math.PI/2;w.rotation.z=sz*(.05+k*.15)}
   }
-  mesh(head,G_SPH,'#fff',6.6,-3.3,-.5,.5,.8,.4,mats);mesh(head,G_SPH,'#fff',6.6,-3.3,.5,.5,.8,.4,mats);
-  const tail=new THREE.Group();tail.position.set(-9,6.5,0);body.add(tail);
-  for(let i=0;i<11;i++){const t=i/10;mesh(tail,G_SPH,pink,-i*2.4,Math.sin(t*2.6)*3.2+i*.15,Math.sin(t*3.2)*1.4,.95-.4*t,.95-.4*t,.95-.4*t,mats)}
+  mesh(head,G_SPH,'#fff',6.4,-3.3,-.55,.6,.9,.45,mats);mesh(head,G_SPH,'#fff',6.4,-3.3,.55,.6,.9,.45,mats);
+  const mouth=rig(mesh(head,G_SPH,'#6a1626',5.8,-2.7,0,1.4,1,1.7,mats));mouth.visible=false;
+  const scarf=mesh(body,new THREE.TorusGeometry(5.4,1.05,8,20),'#48aaa5',4.2,8.2,0,1,1,1,mats);scarf.rotation.y=Math.PI/2;
+  const tail=new THREE.Group();tail.position.set(-9.4,6.5,0);body.add(tail);
+  for(let i=0;i<14;i++){const t=i/13;mesh(tail,G_SPH,pink,-i*1.9,Math.sin(t*2.6)*3.4+i*.15,Math.sin(t*3.2)*1.6,.95-.4*t,.95-.4*t,.95-.4*t,mats)}
   const legs=[];
-  for(const[x,z]of[[5,-3.2],[5,3.2],[-5,-3.6],[-5,3.6]]){const lg=new THREE.Group();lg.position.set(x,4.5,z);body.add(lg);
-    mesh(lg,G_SPH,fur,0,-1.8,0,1.9,3,1.9,mats);mesh(lg,G_SPH,pink,.9,-3.9,0,2.3,.9,1.8,mats);legs.push(lg)}
-  body.scale.setScalar(1.18);
-  root.userData={mats,body,head,tail,legs,h:42,kind:'jerry'};
+  for(const[x,z]of[[5,-3.3],[5,3.3],[-5,-3.7],[-5,3.7]]){const lg=new THREE.Group();lg.position.set(x,4.6,z);body.add(lg);
+    fmesh(lg,G_SPH,fur,0,-1.8,0,2,3.1,2,mats);mesh(lg,G_SPH,belly,.9,-3.9,0,2.5,1,2,mats);legs.push(lg)}
+  body.scale.setScalar(1.2);
+  root.userData={mats,body,head,tail,legs,ears,h:46,kind:'jerry',face:{eyes,mouth,ex:null}};
   return root;
 }
 function setGhost(o,op){const m=o.userData.mats;if(o.userData.op===op)return;o.userData.op=op;m.forEach(x=>{x.transparent=op<1;x.opacity=op;x.needsUpdate=true})}
 
 /* ---------- scene ---------- */
-let tomObj,jerryObj,coneMesh,coneRing,hiMesh,radarMesh,arrowMesh,floorCanvas,floorTex=null,staticGroup=null,hemi,weather=null,puObjs=[],collObjs=[],menuT=0,flashT=0,nextFlash=6;
+let tomObj,jerryObj,coneMesh,coneRing,hiMesh,radarMesh,arrowMesh,floorCanvas,floorTex=null,staticGroup=null,cameraBlockers=[],hemi,weather=null,puObjs=[],collObjs=[],menuT=0,flashT=0,nextFlash=6;
 const emojiTexCache={};
 function emojiTex(ch){
   if(emojiTexCache[ch])return emojiTexCache[ch];
@@ -1258,7 +1330,7 @@ function buildScene(){
   const cg=new THREE.BufferGeometry();cg.setAttribute('position',new THREE.BufferAttribute(pos,3));cg.setIndex(idx);
   coneMesh=new THREE.Mesh(cg,new THREE.MeshBasicMaterial({color:'#ffe45c',transparent:true,opacity:.3,depthWrite:false,side:THREE.DoubleSide}));coneMesh.frustumCulled=false;coneMesh.visible=false;scene.add(coneMesh);
   coneRing=new THREE.Mesh(new THREE.RingGeometry(53,55,32),new THREE.MeshBasicMaterial({color:'#ff9a3c',transparent:true,opacity:.3,depthWrite:false}));coneRing.rotation.x=-Math.PI/2;coneRing.visible=false;scene.add(coneRing);
-  tomObj=makeTom();jerryObj=makeJerry();tomObj.scale.setScalar(1.1);jerryObj.scale.setScalar(1.15);scene.add(tomObj,jerryObj);
+  tomObj=makeMallow();jerryObj=makePip();tomObj.scale.setScalar(1.1);jerryObj.scale.setScalar(1.15);scene.add(tomObj,jerryObj);
 }
 function buildStatic(){
   if(staticGroup){scene.remove(staticGroup);staticGroup.traverse(o=>{if(o.geometry)o.geometry.dispose()});if(floorTex)floorTex.dispose()}
@@ -1278,8 +1350,8 @@ function buildStatic(){
     bx(wallG,w.w,hh,w.h,T.wall,w.x+w.w/2,0,w.y+w.h/2,.9);bx(wallG,w.w+(horiz?0:2),4,w.h+(horiz?2:0),T.wallTop,w.x+w.w/2,hh,w.y+w.h/2,.8)});
   [[-14,-14,W+28,14,T.outH],[-14,0,14,H,T.outH],[W,0,14,H,T.outH],[-14,H,W+28,14,Math.min(16,T.outH)]].forEach(([x,y,w,h,hh])=>{bx(wallG,w,hh,h,T.wall,x+w/2,0,y+h/2,.9);bx(wallG,w+2,5,h+2,T.wallTop,x+w/2,hh,y+h/2,.8)});
   if(T.windows)for(const x of[120,520,820]){bx(wallG,60,34,2,'#9bd7ff',x,10,-1.5,.2);bx(wallG,66,4,3,'#fff',x,44,-1.5);bx(wallG,66,4,3,'#fff',x,8,-1.5);bx(wallG,4,36,3,'#fff',x,9,-1.5)}
-  sg.add(wallG);
-  spots.forEach(s=>{const g=buildSpot(s);s.obj=g;sg.add(g)});
+  sg.add(wallG);cameraBlockers=[wallG];
+  spots.forEach(s=>{const g=buildSpot(s);s.obj=g;sg.add(g);cameraBlockers.push(g)});
   // scenery
   const tr=rng(11);const out=()=>{let x,z;do{x=-340+tr()*1640;z=-300+tr()*1200}while(x>-60&&x<W+60&&z>-60&&z<H+60);return[x,z]};
   if(T.scenery==='trees'||T.scenery==='pines'){
@@ -1332,25 +1404,15 @@ if(renderer){buildScene();buildStatic()}
 
 /* ---------- camera ---------- */
 
-const ZOOM=[{n:'Close',h:215,z:175},{n:'Normal',h:260,z:215},{n:'Far',h:470,z:360},{n:'Map',h:980,z:230}];
+const ZOOM=[{n:'Close',h:112,z:142},{n:'Normal',h:148,z:196},{n:'Far',h:245,z:315},{n:'Map',h:980,z:230}];
 let zi=1,camX=W/2,camZ=H/2;
 function cycleZoom(){zi=(zi+1)%ZOOM.length;Sfx.click();const b=$('#btnZoom');if(b)b.textContent='🔍'+ZOOM[zi].n;}
-function updateCamera(dt,snap){
-  const z=ZOOM[zi],asp=OW/OH,boost=Math.min(2,Math.max(1,1.3/asp));
-  let tx=W/2,tz=H/2;
-  if(G.phase!=='menu'&&G.player&&zi<3){tx=clamp(G.player.x,200,W-200);tz=clamp(G.player.y,130,H-130)}
-  const k=snap?1:Math.min(1,dt*5);camX+=(tx-camX)*k;camZ+=(tz-camZ)*k;
-  const sh=G.shake>0?G.shake:0;
-  camera.position.set(camX+rand(-sh,sh),z.h*boost,camZ+z.z*boost+rand(-sh,sh));
-  camera.lookAt(camX,0,camZ);
-  if(scene.fog){const f=scene.fog;if(f._bn==null){f._bn=f.near;f._bf=f.far}const d=Math.hypot(z.h,z.z)*boost;f.near=Math.max(f._bn,d*1.2);f.far=Math.max(f._bf,f.near*2.8)}   // keep zoomed-out views crisp
-}
 function menuCamera(t){
   const a=t*.12;camera.position.set(W/2+Math.sin(a)*820,430+Math.sin(t*.3)*40,H/2+Math.cos(a)*620+160);camera.lookAt(W/2,10,H/2);
 }
 function fit(){
   OW=innerWidth;OH=innerHeight;
-  const dpr=Math.min(IS_MOBILE?1.6:2,window.devicePixelRatio||1);
+  const dpr=Math.min(curDprCap(),window.devicePixelRatio||1);
   if(renderer){renderer.setPixelRatio(dpr);renderer.setSize(OW,OH,false);camera.aspect=OW/OH;camera.updateProjectionMatrix()}
   glcv.style.width=OW+'px';glcv.style.height=OH+'px';
   ov.width=Math.floor(OW*dpr);ov.height=Math.floor(OH*dpr);ov.style.width=OW+'px';ov.style.height=OH+'px';
@@ -1362,7 +1424,7 @@ function angLerp(cur,target,k){return cur+angDiff(target,cur)*k}
 function syncActor(a,o,dt,isMenu){
   const u=o.userData,t=G.t;
   o.visible=!a.hidden&&!(G.online&&a.kind==='jerry'&&a.invis>0&&G.role==='tom');
-  let y=0,tilt=0,sq=1,spin=0;
+  let y=0,tilt=0,sq=1,spin=0,flip=0,pcake=1,rz=0;
   const walk=a.moving?1:0;
   const ph=a.walkT*(a.kind==='tom'?13:17);
   y=walk?Math.abs(Math.sin(ph))*(a.kind==='tom'?3.5:2.5):Math.sin(t*3+(a.kind==='tom'?0:2))*.6;
@@ -1372,15 +1434,17 @@ function syncActor(a,o,dt,isMenu){
   u.head.rotation.z=walk?Math.sin(ph*2)*.04:Math.sin(t*1.5)*.05;u.head.rotation.y=Math.sin(t*.8+(a.kind==='tom'?0:3))*.1;
   if(a.searching>0){u.head.rotation.y=Math.sin(t*30)*.4;u.head.rotation.z=.25;tilt=.12}
   sq=1+a.squash*.25;
-  if(a.mood==='win'){y=Math.abs(Math.sin(t*9))*22;spin=t*7;}
-  if(a.mood==='lose'){tilt=Math.sin(t*5)*.35;u.head.rotation.z=.5;sq=.85}
-  if(a.frozen>0){tilt=0;o.rotation.z=1.3;y=6}else o.rotation.z=0;
+  if(a.mood==='win'){const d=danceFx(a,t);y=d.y;spin=d.spin;tilt=d.tilt;flip=d.flip;sq*=d.sq}
+  if(a.mood==='lose'){const d=lossFx(a,t);tilt=d.tilt;u.head.rotation.z=d.head;sq=d.sq;pcake=d.pc;y=d.y;flip=d.flip}
+  if(a.frozen>0&&!a.slipT){if(a.stun){pcake=.4;tilt=0;y=0}else{tilt=0;rz=1.3;y=6}}
+  o.rotation.z=rz+flip;
   const base=o===tomObj?1.1:1.15;
-  o.scale.set(base/sq*.4+base*.6,base*sq,base/sq*.4+base*.6);
+  {const wd=(base/sq*.4+base*.6)*(1+(1-pcake)*.7);o.scale.set(wd,base*sq*pcake,wd)}
   o.position.set(a.x,y,a.y);
   u.body.rotation.z=tilt;
   const target=a.mood==='win'?spin:-a.face;
   if(a.mood==='win')o.rotation.y=spin;else o.rotation.y=angLerp(o.rotation.y,target,Math.min(1,dt*(a.kind==='tom'?12:16)));
+  if(a.slipT>0)o.rotation.y=t*16;
   setGhost(o,(a===G.player&&a.invis>0)?.35:1);
 }
 function updateCone(){
@@ -1447,7 +1511,7 @@ function drawOverlay(){
   // hidden jerry indicator
   if(G.role==='jerry'&&G.jerry.hidden){const s=G.jerry.hidden,p=proj(s.cx,(s.top||40)+16,s.cy);emoji(c,'🐭',p.x,p.y,30*us,.75);emoji(c,'🤫',p.x+16*us,p.y-12*us,18*us)}
   // warning
-  if(G.warnSpot){const s=G.warnSpot,p=proj(s.cx,(s.top||40)+42,s.cy),k=1+Math.sin(G.t*14)*.12;c.save();c.translate(p.x,p.y);c.scale(k,k);text(c,'👂 Footsteps!',0,0,24*us,'#ff5a5f','#fff');c.restore()}
+  if(G.warnSpot){const s=G.warnSpot,p=proj(s.cx,(s.top||40)+42,s.cy),k=1+Math.sin(G.t*14)*.12;c.save();c.translate(p.x,p.y);c.scale(k,k);text(c,'👂',0,0,18*us,'#ff5a5f','#fff');c.restore()}
   // YOU label + status icons
   for(const a of[G.tom,G.jerry]){
     if(a.hidden)continue;const h=a.kind==='tom'?62:42,p=proj(a.x,h,a.y);
@@ -1465,7 +1529,7 @@ function drawOverlay(){
     const p=proj(q.x,q.h||6,q.y);if(!p.ok)continue;
     if(q.type==='dust'){c.globalAlpha=a*.7;circ(c,p.x,p.y,q.size*(1.4-a)*us,'#fff',null);c.globalAlpha=1}
     else if(q.type==='star')emoji(c,'⭐',p.x,p.y,q.size*2.4*us,a);
-    else if(q.type==='txt'){c.globalAlpha=Math.min(1,a*2);text(c,q.s,p.x,p.y,24*us,q.col,OL);c.globalAlpha=1}
+    else if(q.type==='txt'){c.globalAlpha=Math.min(1,a*2);text(c,q.s,p.x,p.y,16*us,q.col,OL);c.globalAlpha=1}
   }
   drawBubble(G.tom,us);drawBubble(G.jerry,us);
 }
@@ -1481,7 +1545,7 @@ function drawMini(){
     if(G.role==='tom')for(const sp of hideSpots){const age=G.t-sp.checkedAt;if(age<14){c.fillStyle='rgba(60,200,80,.9)';c.beginPath();c.arc(sp.cx,sp.cy,9,0,7);c.fill()}}
     for(const u of G.pu){c.fillStyle='#ffd23f';c.strokeStyle='#3b2314';c.lineWidth=3;c.beginPath();c.arc(u.x,u.y,10,0,7);c.fill();c.stroke()}
     for(const q of G.coll){c.fillStyle='#fff3a0';c.strokeStyle='#b8860b';c.lineWidth=2.5;c.beginPath();c.arc(q.x,q.y,6,0,7);c.fill();c.stroke()}
-    // Tom vision cone on map (Jerry mode)
+    // Mallow vision cone on map (Pip mode)
     if(G.role==='jerry'&&G.phase==='playing'){const t=G.tom,D=G.params;c.fillStyle='rgba(255,230,80,.4)';c.beginPath();c.moveTo(t.x,t.y);c.arc(t.x,t.y,D.vis,t.face-D.ang,t.face+D.ang);c.closePath();c.fill()}
     const dot=(a,col,label)=>{c.fillStyle=col;c.strokeStyle='#fff';c.lineWidth=4;c.beginPath();c.arc(a.x,a.y,15,0,7);c.fill();c.stroke();c.fillStyle='#fff';c.font='bold 22px sans-serif';c.textAlign='center';c.textBaseline='middle';c.fillText(label,a.x,a.y+1)};
     const T=G.tom,J=G.jerry;
@@ -1513,17 +1577,17 @@ function updateDom(){
     if(p.hidden)msg=act+' · Come out of '+p.hidden.name;else if(near)msg=act+(G.role==='tom'?' · Search ':' · Hide in ')+near.name;
     if(p.searching>0)msg='';
   }
-  setDom('#prompt',msg,msg?'show':'');
+  uiContext();
   // banner
   let b='',bc='';
-  if(G.phase==='playing'&&G.goT>0){b=G.role==='tom'?'GO! Find Jerry!':'GO! Stay hidden!';bc='show go'}
+  if(false){}
   else if(G.phase==='ending'){b=G.result==='win'?'YOU WIN!':'OH NO!';bc='show '+(G.result==='win'?'win':'lose')}
   setDom('#banner',b,bc);
   // countdown
   let cd='',cc='';
   if(G.phase==='countdown'){const n=Math.max(1,Math.ceil(G.cd));
-    if(G.role==='tom'){cd=`<div class="big">🙈</div><div class="num">Counting... ${n}</div><div class="sm">Jerry is running off to hide!</div>`;cc='show full'}
-    else{cd=`Hide fast! Tom counts... <b>${n}</b>`;cc='show pill'}}
+    if(G.role==='tom'){cd=`<div class="big">🙈</div><div class="num">Counting... ${n}</div><div class="sm">Pip is running off to hide!</div>`;cc='show full'}
+    else{cd=`Hide fast! Mallow counts... <b>${n}</b>`;cc='show pill'}}
   setDom('#cdOver',cd,cc);
 }
 function render(dt){
@@ -1533,13 +1597,13 @@ function render(dt){
     const tm={x:560+Math.cos(menuT*.8)*90,y:470+Math.sin(menuT*.8)*45},a=menuT*.8+Math.PI/2;
     const T={kind:'tom',x:tm.x,y:tm.y,face:Math.atan2(Math.cos(menuT*.8)*45,-Math.sin(menuT*.8)*90),moving:true,walkT:menuT,hidden:null,squash:0,searching:0,mood:null,frozen:0,invis:0};
     const Jm={kind:'jerry',x:tm.x-120,y:tm.y-10,face:T.face,moving:true,walkT:menuT*1.2,hidden:null,squash:0,searching:0,mood:null,frozen:0,invis:0};
-    G.t=menuT;syncActor(T,tomObj,dt);syncActor(Jm,jerryObj,dt);
+    fxMenuHide();G.t=menuT;syncActor(T,tomObj,dt);syncActor(Jm,jerryObj,dt);
     coneMesh.visible=coneRing.visible=hiMesh.visible=radarMesh.visible=arrowMesh.visible=false;syncPU();syncColl();updateWeather(dt);syncColl();updateWeather(dt);
     renderer.render(scene,camera);octx.clearRect(0,0,OW,OH);return;
   }
-  syncActor(G.tom,tomObj,dt);syncActor(G.jerry,jerryObj,dt);
-  updateCone();updateMarkers(dt);syncPU();syncColl();updateWeather(dt);updateCamera(dt,G._snapCam);G._snapCam=false;
-  renderer.render(scene,camera);drawOverlay();drawMini();updateDom();
+  syncActor(G.tom,tomObj,dt);syncActor(G.jerry,jerryObj,dt);polishFrame(dt);funFrame(dt);
+  updateCone();updateMarkers(dt);syncPU();syncColl();updateWeather(dt);blackFrame();updateCamera(dt,G._snapCam);G._snapCam=false;
+  renderer.render(scene,camera);drawOverlay();polishOverlay();drawMini();updateDom();
 }
 
 /* ===================== HUD / UI ===================== */
@@ -1551,7 +1615,7 @@ function syncHUD(force){
   setT('#timer',m+':'+String(s).padStart(2,'0'));
   $('#timer').classList.toggle('low',G.timeLeft<=10&&G.phase==='playing');
   setT('#scoreChip','⭐ '+Math.floor(G.score));
-  setT('#roleChip',G.role==='tom'?'🐱 Tom · Seeker':'🐭 Jerry · Hider');
+  setT('#roleChip',G.role==='tom'?'🐱 Mallow · Seeker':'🐭 Pip · Hider');
   setT('#roundChip','Lv '+G.round+' · '+MAP.icon+' '+MAP.name);setT('#collChip',G.tom?((G.role==='tom'?'🐟 ':'🧀 ')+G.collected+'/'+G.collTotal+(G.combo>1?' · x'+G.combo:'')):'');
   setT('#diffChip',{easy:'😸 Easy',medium:'😼 Medium',hard:'😈 Hard'}[G.diff]);
   let fx='';const p=G.player;
@@ -1561,7 +1625,7 @@ function syncHUD(force){
 }
 function show(id){$('#'+id).classList.add('show')}
 function hide(id){$('#'+id).classList.remove('show')}
-function hideAllScreens(){['menu','help','pause','roundEnd','gameOver','netPanel','netEnd'].forEach(hide)}
+function hideAllScreens(){['menu','help','pause','roundEnd','gameOver','netPanel','netEnd','settings'].forEach(hide)}
 /* ===================== flow controls ===================== */
 function startGame(){
   Sfx.init();
@@ -1579,11 +1643,11 @@ function toMenu(){
 let sel=null;
 function selectChar(c){
   sel=c;Sfx.init();Sfx.click();
-  $('#cardTom').classList.toggle('sel',c==='tom');$('#cardJerry').classList.toggle('sel',c==='jerry');
-  const b=$('#btnStart');b.disabled=false;b.textContent='▶ Start as '+(c==='tom'?'Tom 🐱':'Jerry 🐭');
-  $('#menuHint').textContent=c==='tom'?'You\'re the seeker — Jerry hides, you find him!':'You\'re the hider — sneak around and avoid Tom!';
+  $('#cardMallow').classList.toggle('sel',c==='tom');$('#cardPip').classList.toggle('sel',c==='jerry');
+  const b=$('#btnStart');b.disabled=false;b.textContent='▶ Start as '+(c==='tom'?'Mallow 🐱':'Pip 🐭');
+  $('#menuHint').textContent=c==='tom'?'You\'re the seeker — Pip hides, you find him!':'You\'re the hider — sneak around and avoid Mallow!';
 }
-$('#cardTom').onclick=()=>selectChar('tom');$('#cardJerry').onclick=()=>selectChar('jerry');
+$('#cardMallow').onclick=()=>selectChar('tom');$('#cardPip').onclick=()=>selectChar('jerry');
 document.querySelectorAll('#diffRow .chipbtn').forEach(b=>b.onclick=()=>{Sfx.init();Sfx.click();G.diff=b.dataset.d;document.querySelectorAll('#diffRow .chipbtn').forEach(x=>x.classList.toggle('on',x===b))});
 $('#btnStart').onclick=()=>{if(!sel)return;G.role=sel;Sfx.init();Sfx.click();startGame()};
 $('#btnHow').onclick=()=>{Sfx.init();Sfx.click();show('help')};
@@ -1662,10 +1726,11 @@ const OPP=k=>k==='tom'?'jerry':'tom';
 function updateCtl(p,ix,iy,act,dt){
   if(p.frozen>0){p.moving=false;return}
   if(p.searching>0){p.searching-=dt;p.moving=false;if(p.searching<=0)resolveSearch(p);return}
+  {const s=smoothIn(p,ix,iy,dt);ix=s[0];iy=s[1]}
   const mag=Math.hypot(ix,iy);
   if(p.hidden){p.moving=false;if(act||(p.hideT>.4&&mag>.6))exitSpot(p);return}
   if(mag>.05){
-    const sp=(p.kind==='tom'?185:192)*(p.boost>0?1.45:1),ox=p.x,oy=p.y;
+    const sp=(p.kind==='tom'?185:192)*(p.boost>0?1.45:1)*sprintMul(p,dt,true),ox=p.x,oy=p.y;
     moveActor(p,ix*sp*dt,iy*sp*dt);
     p.vx=(p.x-ox)/dt;p.vy=(p.y-oy)/dt;p.face=Math.atan2(iy,ix);p.moving=dist(ox,oy,p.x,p.y)>.1;
     if(p.moving){p.walkT+=dt*(p.boost>0?1.5:1);footsteps(p,dt,sp,p.boost>0)}
@@ -1676,7 +1741,7 @@ function updateCtl(p,ix,iy,act,dt){
     else{
       if(!s)say(p,'No hiding spot here!',1.2);
       else if(s.occupant)say(p,'Occupied!',1);
-      else if(G.phase==='playing'&&tomSees(G.tom,p)){say(p,'Tom is watching!',1.3);Sfx.alert()}
+      else if(G.phase==='playing'&&tomSees(G.tom,p)){say(p,'Mallow is watching!',1.3);Sfx.alert()}
       else enterSpot(p,s);
     }
   }
@@ -1688,7 +1753,7 @@ function hostStep(dt){
   const T=G.tom,J=G.jerry,me=G.player;
   const actG=NET.aseqH!==NET.aseqSeen;NET.aseqSeen=NET.aseqH;
   if(performance.now()-NET.lastRx>1500){NET.inp.x=NET.inp.y=0}
-  const run=a=>{if(a===me)updatePlayer(dt);else updateCtl(a,NET.inp.x,NET.inp.y,actG,dt)};
+  const run=a=>{if(a===me)updatePlayer(dt);else{a.sprint=!!NET.inp.s;updateCtl(a,NET.inp.x,NET.inp.y,actG,dt)}};
   if(G.phase==='countdown'){
     G.cd-=dt;const ci=Math.ceil(G.cd);if(ci!==G.lastCd){G.lastCd=ci;Sfx.tick()}
     run(J);
@@ -1699,11 +1764,11 @@ function hostStep(dt){
     G.pts[own(J)]+=dt*4;
     onlinePU(dt);onlineColl(dt);
     if(G.phase==='playing'&&dist(T.x,T.y,J.x,J.y)<27&&!J.hidden)caught(true);
-    if(G.phase==='playing'&&G.timeLeft<=0){G.timeLeft=0;onlineEnd('jerry','Time\'s up — Jerry stayed hidden!')}
+    if(G.phase==='playing'&&G.timeLeft<=0){G.timeLeft=0;onlineEnd('jerry','Time\'s up — Pip stayed hidden!')}
   }else if(G.phase==='ending'){
     G.endT-=dt;if(G.endT<=0){G.phase='overlay';netShowEnd()}
   }
-  NET.snapT-=dt;if(NET.snapT<=0){NET.snapT=1/20;netSend(snapshot())}
+  fxStep(dt);NET.snapT-=dt;if(NET.snapT<=0){NET.snapT=1/20;netSend(snapshot())}
   if(performance.now()-NET.lastRx>8000&&NET.open)netClose('Connection lost — your friend stopped responding.');
 }
 function onlinePU(dt){
@@ -1755,12 +1820,12 @@ function onlineEnd(w,reason){
 const warnIdx=()=>{const t=G.tom,j=G.jerry;if(!j.hidden||G.phase!=='playing')return -1;
   const sp=t.state==='search'&&t.searching>0&&t.searchSpot===j.hidden;return sp?spots.indexOf(j.hidden):-1};
 function snapshot(){
-  const ra=a=>[r1(a.x),r1(a.y),r2(a.face),a.moving?1:0,r2(a.walkT),a.hidden?spots.indexOf(a.hidden):-1,r1(a.boost),r1(a.frozen),r1(a.invis),a.searching>0?1:0,a.mood||0,r2(a.squash),a.bubble?a.bubble.text:0,a.bubble?r1(a.bubble.t):0];
+  const ra=a=>[r1(a.x),r1(a.y),r2(a.face),a.moving?1:0,r2(a.walkT),a.hidden?spots.indexOf(a.hidden):-1,r1(a.boost),r1(a.frozen),r1(a.invis),a.searching>0?1:0,a.mood||0,r2(a.squash),a.bubble?a.bubble.text:0,a.bubble?r1(a.bubble.t):0,r1(a.slipT||0),a.stun?1:0];
   const ck=[];hideSpots.forEach(s=>{const age=G.t-s.checkedAt;if(age<14)ck.push([spots.indexOf(s),r1(age)])});
   const w=warnIdx();
   const m={t:'s',p:G.phase,tl:r1(G.timeLeft),cd:r1(G.cd),T:ra(G.tom),J:ra(G.jerry),
     pu:G.pu.map(u=>[u.type,r1(u.x),r1(u.y),r1(u.life)]),co:G.coll.map(c=>[r1(c.x),r1(c.y)]),ct:G.collTotal,
-    pts:[Math.floor(G.pts.h),Math.floor(G.pts.g)],wn:[G.wins.h,G.wins.g],rd:G.radar>0?r1(G.radar):0,w,ck,wk:G.winKind,rs:G.reason||'',ev:NET.ev.splice(0)};
+    pts:[Math.floor(G.pts.h),Math.floor(G.pts.g)],wn:[G.wins.h,G.wins.g],rd:G.radar>0?r1(G.radar):0,w,ck,wk:G.winKind,rs:G.reason||'',ev:NET.ev.splice(0),fx:fxEncode()};
   if(w>=0&&!G.tom.warned){G.tom.warned=true;m.ev.push(['s','alert'])}
   return m;
 }
@@ -1769,7 +1834,7 @@ function snapshot(){
 function setA(a,r,first,isOwn){
   a.tx=r[0];a.ty=r[1];a.face=r[2];a.moving=!!r[3];
   if(!isOwn)a.walkT=r[4];
-  a.hidden=r[5]>=0?spots[r[5]]:null;a.boost=r[6];a.frozen=r[7];a.invis=r[8];a.searching=r[9]?.2:0;a.mood=r[10]||null;a.squash=r[11];
+  a.hidden=r[5]>=0?spots[r[5]]:null;a.boost=r[6];a.frozen=r[7];a.invis=r[8];a.searching=r[9]?.2:0;a.mood=r[10]||null;a.squash=r[11];a.slipT=r[14]||0;a.stun=!!r[15];
   if(r[12]&&(!a.bubble||a.bubble.text!==r[12]))a.bubble={text:r[12],t:r[13],age:0};
   const err=dist(a.x,a.y,a.tx,a.ty);
   if(first||err>70||a.hidden||a.frozen>0||a.searching>0||!isOwn){if(first||err>70||a.hidden||a.frozen>0||a.searching>0){a.x=a.tx;a.y=a.ty}}
@@ -1779,7 +1844,7 @@ function applySnap(m){
   const T=G.tom,J=G.jerry;if(!T||!J)return;
   const first=NET.guestWaitSnap;NET.guestWaitSnap=false;
   spots.forEach(s=>{s.occupant=null});
-  setA(T,m.T,first,T===G.player);setA(J,m.J,first,J===G.player);
+  setA(T,m.T,first,T===G.player);setA(J,m.J,first,J===G.player);if(m.fx)fxDecode(m.fx);
   if(T.hidden)T.hidden.occupant=T;if(J.hidden)J.hidden.occupant=J;
   const ph=m.p;
   if(ph!==G.phase){
@@ -1795,16 +1860,16 @@ function applySnap(m){
   G.pts={h:m.pts[0],g:m.pts[1]};G.wins={h:m.wn[0],g:m.wn[1]};G.radar=m.rd;G.reason=m.rs;
   G.warnSpot=(G.role==='jerry'&&m.w>=0)?spots[m.w]:null;
   spots.forEach(s=>{s.checkedAt=-999});m.ck.forEach(c=>{const s=spots[c[0]];if(s)s.checkedAt=G.t-c[1]});
-  m.ev.forEach(e=>{if(e[0]==='s'){try{Sfx[e[1]]()}catch(_){}}else if(e[0]==='b')burst(e[1],e[2],e[3],e[4]);else if(e[0]==='f')floatText(e[1],e[2],e[3],e[4])});
+  m.ev.forEach(e=>{if(e[0]==='s'){try{Sfx[e[1]]()}catch(_){}}else if(e[0]==='b')burst(e[1],e[2],e[3],e[4]);else if(e[0]==='f')floatText(e[1],e[2],e[3],e[4]);else fxEvent(e)});
 }
 function guestStep(dt){
   const me=G.player;if(!me)return;
   if(G.actionQ){if(G.phase==='playing'||G.phase==='countdown')NET.aseq++;G.actionQ=false}
-  const[ix,iy]=inputVec();
+  const[rx,ry]=inputVec(),sv0=smoothIn(me,rx,ry,dt),ix=sv0[0],iy=sv0[1];me.sprint=!!G.sprint;
   // client-side prediction for own actor
   const canMove=!me.hidden&&me.frozen<=0&&me.searching<=0&&(G.phase==='playing'||(G.phase==='countdown'&&me.kind==='jerry'));
   if(canMove&&Math.hypot(ix,iy)>.05){
-    const sp=(me.kind==='tom'?185:192)*(me.boost>0?1.45:1),ox=me.x,oy=me.y;
+    const sp=(me.kind==='tom'?185:192)*(me.boost>0?1.45:1)*sprintMul(me,dt,true),ox=me.x,oy=me.y;
     moveActor(me,ix*sp*dt,iy*sp*dt);me.face=Math.atan2(iy,ix);me.moving=dist(ox,oy,me.x,me.y)>.1;
     if(me.moving){me.walkT+=dt*(me.boost>0?1.5:1);footsteps(me,dt,sp,me.boost>0)}
   }else if(canMove){me.moving=false}
@@ -1814,7 +1879,7 @@ function guestStep(dt){
   if(o.moving)o.walkT+=dt*(o.boost>0?1.5:1);
   if(me.moving&&!canMove)me.walkT+=dt;
   NET.inT-=dt;
-  if(NET.inT<=0&&NET.open){NET.inT=1/30;netSend({t:'i',x:r2(ix),y:r2(iy),a:NET.aseq})}
+  if(NET.inT<=0&&NET.open){NET.inT=1/30;netSend({t:'i',x:r2(rx),y:r2(ry),a:NET.aseq,s:G.sprint?1:0})}
   if(performance.now()-NET.lastRx>8000&&NET.open)netClose('Connection lost — the host stopped responding.');
 }
 
@@ -1828,7 +1893,7 @@ function netApplyRound(m){
   G.online=true;NET.host=false;G.round=m.round;G.role=m.gk;G.diff=m.diff;
   if(G.mapIdx!==m.mi){G.mapIdx=m.mi;loadWorld(m.mi);if(renderer)buildStatic()}
   G.params=m.params;spots.forEach(s=>{s.occupant=null;s.checkedAt=-999;s.counted=false});
-  G.pu=[];clearPU();G.coll=[];G.parts=[];G._snapCam=true;G.radar=0;G.shake=0;G.result=null;G.warnSpot=null;G.goT=0;G.winKind=null;
+  G.pu=[];clearPU();G.coll=[];G.parts=[];G._snapCam=true;G.radar=0;G.shake=0;G.result=null;G.warnSpot=null;G.goT=0;G.winKind=null;G.fx=[];fxClear();
   const ts=MAP.tomStart;G.tom=mkActor('tom',ts[0],ts[1]);G.jerry=mkActor('jerry',ts[0]+60,ts[1]+60);
   G.player=G.role==='tom'?G.tom:G.jerry;G.ai=G.role==='tom'?G.jerry:G.tom;
   G.collTotal=m.ct;G.timeLeft=m.tl;G.cd=m.cd;G.lastCd=99;G.phase='countdown';G.paused=false;NET.guestWaitSnap=true;NET.aseq=0;
@@ -1841,11 +1906,11 @@ function netStartMatch(){ // host, once the channel is open
 function netShowEnd(){
   const w=G.winKind,mine=G.role===w,nxt=MAPS[G.round%MAPS.length];
   const me=NET.host?'h':'g',fr=NET.host?'g':'h';
-  $('#neTitle').textContent=(w==='tom'?'🐱 Tom caught Jerry!':'🐭 Jerry escaped!')+(mine?' 🎉':'');
+  $('#neTitle').textContent=(w==='tom'?'🐱 Mallow caught Pip!':'🐭 Pip escaped!')+(mine?' 🎉':'');
   $('#neReason').textContent=G.reason||'';
   $('#neStats').innerHTML='<div class="stat"><span>Rounds won</span><span>You '+G.wins[me]+' – '+G.wins[fr]+' Friend</span></div>'+
    '<div class="stat"><span>Points</span><span>⭐ You '+G.pts[me]+' – '+G.pts[fr]+' Friend</span></div>'+
-   '<div class="next">Next: <b>Level '+(G.round+1)+' · '+nxt.icon+' '+nxt.name+'</b><br><small>Roles swap — you\'ll be '+(G.role==='tom'?'Jerry 🐭':'Tom 🐱')+'</small></div>';
+   '<div class="next">Next: <b>Level '+(G.round+1)+' · '+nxt.icon+' '+nxt.name+'</b><br><small>Roles swap — you\'ll be '+(G.role==='tom'?'Pip 🐭':'Mallow 🐱')+'</small></div>';
   $('#btnNetNext').style.display=NET.host?'':'none';$('#neWait').style.display=NET.host?'none':'';
   show('netEnd');
 }
@@ -1857,7 +1922,7 @@ function netSend(o){try{if(NET.dc&&NET.dc.readyState==='open')NET.dc.send(JSON.s
 function netOnMsg(ev){
   let m;try{m=JSON.parse(ev.data)}catch(e){return}
   NET.lastRx=performance.now();
-  if(NET.host){if(m.t==='i'){NET.inp.x=m.x;NET.inp.y=m.y;NET.aseqH=m.a}else if(m.t==='bye')netClose('Your friend left the game.')}
+  if(NET.host){if(m.t==='i'){NET.inp.x=m.x;NET.inp.y=m.y;NET.aseqH=m.a;NET.inp.s=m.s}else if(m.t==='bye')netClose('Your friend left the game.')}
   else{if(m.t==='round')netApplyRound(m);else if(m.t==='s')applySnap(m);else if(m.t==='bye')netClose('The host left the game.')}
 }
 function netClose(msg){
@@ -1997,12 +2062,613 @@ $('#btnCodeShare').onclick=()=>{const c=$('#bigCode').textContent;const t='Join 
 $('#btnManual').onclick=()=>{Sfx.click();$('#netChoose').style.display='none';$('#netManualChoose').style.display=''};
 ['btnCodeBack1','btnCodeBack2','btnMBack'].forEach(id=>$('#'+id).onclick=()=>{Sfx.click();netReset()});
 
+/* ===================== polish: quality, hints, controls, camera, smoothing ===================== */
+var SET={q:'auto',hints:true,seen:0};
+try{Object.assign(SET,JSON.parse(localStorage.getItem('tjhs_set')||'{}'))}catch(e){}
+const saveSet=()=>{try{localStorage.setItem('tjhs_set',JSON.stringify(SET))}catch(e){}};
+var QL={low:{dpr:1,shadow:0,sm:512,part:.3,dust:0,type:'basic'},med:{dpr:1.3,shadow:1,sm:1024,part:.65,dust:.5,type:'pcf'},high:{dpr:2,shadow:1,sm:2048,part:1,dust:1,type:'soft'}};
+var qCur=SET.q==='auto'?(IS_MOBILE?'med':'high'):SET.q;
+function curDprCap(){return QL&&QL[qCur]?QL[qCur].dpr:(IS_MOBILE?1.3:2)}
+function applyQuality(){
+  if(!renderer||!scene)return;
+  const q=QL[qCur];
+  renderer.shadowMap.type=q.type==='soft'?THREE.PCFSoftShadowMap:q.type==='pcf'?THREE.PCFShadowMap:THREE.BasicShadowMap;
+  sun.castShadow=q.shadow>0;
+  if(sun.shadow.mapSize.x!==q.sm){sun.shadow.mapSize.set(q.sm,q.sm);if(sun.shadow.map){sun.shadow.map.dispose();sun.shadow.map=null}}
+  if(weather)weather.pts.geometry.setDrawRange(0,Math.floor(weather.N*q.part));
+  if(dust)dust.geometry.setDrawRange(0,Math.floor(dust.userData.N*q.dust));
+  scene.traverse(o=>{if(o.material){(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>m.needsUpdate=true)}});
+  fit();
+  document.querySelectorAll('#qRow .chipbtn').forEach(b=>b.classList.toggle('on',b.dataset.q===SET.q));
+}
+function setQuality(q){SET.q=q;qCur=q==='auto'?(IS_MOBILE?'med':'high'):q;saveSet();applyQuality()}
+/* adaptive: step down when the frame rate stays low */
+var perf={ema:1/60,t:0,low:0};
+function perfTick(dt){
+  if(SET.q!=='auto'||G.phase==='menu'||G.paused||document.hidden||dt<=0)return;
+  perf.ema+=(dt-perf.ema)*.06;perf.t+=dt;
+  if(perf.t<3)return;perf.t=0;
+  if(perf.ema>1/44){perf.low++;if(perf.low>=2&&qCur!=='low'){qCur=qCur==='high'?'med':'low';perf.low=0;applyQuality()}}else perf.low=0;
+}
+
+/* ---- scene polish ---- */
+var dust=null,blobT=null,blobJ=null,grassTex=null;
+function noiseTex(){
+  if(grassTex)return grassTex;
+  const c=document.createElement('canvas');c.width=c.height=256;const g=c.getContext('2d');g.fillStyle='#fff';g.fillRect(0,0,256,256);
+  for(let i=0;i<1800;i++){const x=Math.random()*256,y=Math.random()*256,l=3+Math.random()*7,s=Math.random()<.5?0:1;g.strokeStyle=s?'rgba(0,0,0,.07)':'rgba(255,255,255,.18)';g.lineWidth=1;g.beginPath();g.moveTo(x,y);g.lineTo(x+(Math.random()-.5)*3,y-l);g.stroke()}
+  const t=new THREE.CanvasTexture(c);t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(70,70);t.encoding=THREE.sRGBEncoding;t.anisotropy=4;return grassTex=t;
+}
+function blobTex(){const c=document.createElement('canvas');c.width=c.height=64;const g=c.getContext('2d'),r=g.createRadialGradient(32,32,2,32,32,30);r.addColorStop(0,'rgba(0,0,0,.55)');r.addColorStop(1,'rgba(0,0,0,0)');g.fillStyle=r;g.fillRect(0,0,64,64);return new THREE.CanvasTexture(c)}
+function setupEnv(){
+  if(!renderer||!scene||scene.environment)return;
+  try{
+    const c=document.createElement('canvas');c.width=4;c.height=256;const g=c.getContext('2d'),gr=g.createLinearGradient(0,0,0,256);
+    gr.addColorStop(0,'#bfe3ff');gr.addColorStop(.5,'#ffffff');gr.addColorStop(1,'#d8c9a8');g.fillStyle=gr;g.fillRect(0,0,4,256);
+    const t=new THREE.CanvasTexture(c);t.encoding=THREE.sRGBEncoding;
+    const es=new THREE.Scene();es.add(new THREE.Mesh(new THREE.SphereGeometry(10,16,12),new THREE.MeshBasicMaterial({map:t,side:THREE.BackSide})));
+    const pm=new THREE.PMREMGenerator(renderer);scene.environment=pm.fromScene(es,.04).texture;pm.dispose();
+  }catch(e){console.warn('env',e)}
+  renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=.92;
+  blobT=new THREE.Mesh(new THREE.PlaneGeometry(1,1),new THREE.MeshBasicMaterial({map:blobTex(),transparent:true,depthWrite:false,toneMapped:false}));
+  blobJ=blobT.clone();[blobT,blobJ].forEach(b=>{b.rotation.x=-Math.PI/2;b.renderOrder=2;scene.add(b)});blobT.scale.set(50,50,1);blobJ.scale.set(30,30,1);
+}
+function polishScene(){
+  if(!renderer||!scene)return;
+  setupEnv();
+  const seen=new Set(),fix=o=>{if(o.material&&o.material.isMeshStandardMaterial&&!seen.has(o.material)){seen.add(o.material);o.material.envMapIntensity=.35}};
+  if(staticGroup)staticGroup.traverse(o=>{
+    fix(o);
+    if(o.isMesh&&o.geometry&&o.geometry.type==='PlaneGeometry'){
+      const m=o.material;
+      if(m.map&&m.map===floorTex){m.roughness=.52;m.envMapIntensity=.5}
+      else if(o.geometry.parameters&&o.geometry.parameters.width===6000&&!m.userData.nz){m.userData.nz=1;const mm=m.clone();mm.map=noiseTex();mm.userData.nz=1;o.material=mm}
+    }
+  });
+  [tomObj,jerryObj].forEach(o=>o&&o.traverse(fix));
+  if(dust){scene.remove(dust);dust.geometry.dispose();dust=null}
+  if(!(MAP.theme&&MAP.theme.weather)&&staticGroup){
+    const N=70,pos=new Float32Array(N*3);for(let i=0;i<N;i++){pos[i*3]=rand(0,960);pos[i*3+1]=rand(5,170);pos[i*3+2]=rand(0,600)}
+    const geo=new THREE.BufferGeometry();geo.setAttribute('position',new THREE.BufferAttribute(pos,3));
+    dust=new THREE.Points(geo,new THREE.PointsMaterial({color:'#fff6dc',size:2.4,transparent:true,opacity:.45,depthWrite:false,sizeAttenuation:true}));
+    dust.frustumCulled=false;dust.userData.N=N;scene.add(dust);
+  }
+  applyQuality();
+}
+{const _bs=buildStatic;buildStatic=function(){_bs.apply(null,arguments);polishScene()};}
+function polishFrame(dt){
+  if(blobT){
+    const T=G.tom,J=G.jerry,on=G.phase!=='menu'&&T&&J;
+    blobT.visible=on&&!T.hidden;blobJ.visible=on&&!J.hidden;
+    if(on){blobT.position.set(T.x,.7,T.y);blobJ.position.set(J.x,.7,J.y)}
+  }
+  if(dust&&dust.visible){const a=dust.geometry.attributes.position.array;for(let i=0;i<dust.userData.N;i++){a[i*3]+=Math.sin(G.t*.4+i)*4*dt;a[i*3+1]+=Math.cos(G.t*.5+i*1.7)*3*dt;a[i*3+2]+=Math.cos(G.t*.3+i)*3*dt;if(a[i*3+1]<3)a[i*3+1]=170;if(a[i*3+1]>175)a[i*3+1]=4}dust.geometry.attributes.position.needsUpdate=true}
+}
+
+/* ---- movement smoothing + sprint ---- */
+function smoothIn(p,ix,iy,dt){
+  const mv=Math.hypot(ix,iy)>.05,k=1-Math.exp(-dt*(mv?13:16));
+  p.sx=(p.sx||0)+(ix-(p.sx||0))*k;p.sy=(p.sy||0)+(iy-(p.sy||0))*k;
+  if(!mv&&Math.hypot(p.sx,p.sy)<.06)p.sx=p.sy=0;
+  return[p.sx,p.sy];
+}
+function sprintMul(p,dt,moving){
+  if(p.stam==null)p.stam=1;
+  if(p.sprint&&moving&&!p.tired&&p.stam>0){p.stam-=dt*.4;p._sw=true;if(p.stam<=0){p.stam=0;p.tired=true}return 1.3}
+  return 1;
+}
+function stamTick(a,dt){
+  if(a._sw){a._sw=false;return}
+  if(a.stam==null)return;
+  a.stam=Math.min(1,a.stam+dt*.22);if(a.tired&&a.stam>.35)a.tired=false;
+}
+G.sprint=0;
+
+/* ---- camera ---- */
+var CAM={h:148,z:196,fov:52,lx:0,lz:0,px:null,pz:null,yaw:0,yt:0,dm:1,hy:148,clip:1,rayT:0};
+const cameraRay=new THREE.Raycaster(),cameraTarget=new THREE.Vector3(),cameraAim=new THREE.Vector3(),cameraOffset=new THREE.Vector3();
+function updateCamera(dt,snap){
+  const zt=ZOOM[zi],asp=OW/OH,boost=Math.min(2,Math.max(1,1.3/asp));
+  const kz=snap?1:1-Math.exp(-dt*6);CAM.h+=(zt.h-CAM.h)*kz;CAM.z+=(zt.z-CAM.z)*kz;
+  let tx=W/2,tz=H/2;
+  const p=G.phase!=='menu'&&G.player,T=G.tom,J=G.jerry,end=G.phase==='ending',playing=G.phase==='playing';
+  const opp=p?(p===T?J:T):null;
+  const od=opp&&!opp.hidden?dist(p.x,p.y,opp.x,opp.y):9999;
+  let yawT=0;
+  if(p&&zi<3){
+    if(CAM.px==null||snap){CAM.px=p.x;CAM.pz=p.y;CAM.lx=CAM.lz=0;CAM.yaw=0;CAM.yt=0}
+    const idt=Math.max(dt,1e-3),ivx=(p.x-CAM.px)/idt,ivz=(p.y-CAM.pz)/idt;CAM.px=p.x;CAM.pz=p.y;
+    const kl=1-Math.exp(-dt*3);CAM.lx+=(clamp(ivx,-260,260)-CAM.lx)*kl;CAM.lz+=(clamp(ivz,-260,260)-CAM.lz)*kl;
+    tx=clamp(p.x+CAM.lx*.28,200,W-200);tz=clamp(p.y+CAM.lz*.28,130,H-130);
+    // look toward the opponent (cat: where the mouse runs; mouse: where the cat comes from)
+    if(playing&&od<460){const k=.2*(1-od/460);tx+=(opp.x-p.x)*k;tz+=(opp.y-p.y)*k}
+    if(end&&opp){tx=(p.x+opp.x)/2;tz=(p.y+opp.y)/2}
+    // Keep the player framed from behind as they turn, while easing the orbit.
+    if(playing&&p.moving&&!p.hidden)CAM.yt=angDiff(p.face+Math.PI/2,0);
+    if(p.hidden)CAM.yt=0;
+    yawT=CAM.yt;
+  if(end)yawT=CAM.yt+(CAM.yt>=0?.35:-.35);
+  }else{CAM.yt=0}
+  CAM.yaw+=angDiff(yawT,CAM.yaw)*(snap?1:1-Math.exp(-dt*(end?2.2:1.5)));
+  const k=snap?1:1-Math.exp(-dt*4.5);camX+=(tx-camX)*k;camZ+=(tz-camZ)*k;
+  const fast=p&&(p.boost>0||(p.sprint&&!p.tired&&p.moving));
+  const near=playing&&p&&od<170;
+  const closeK=G.closeT>0?G.closeT:0;
+  const ft=46+(fast?8:0)+(near?2:0)-(end?9:0)-closeK*6;
+  CAM.fov+=(ft-CAM.fov)*(snap?1:1-Math.exp(-dt*5));
+  if(Math.abs(camera.fov-CAM.fov)>.02){camera.fov=CAM.fov;camera.updateProjectionMatrix()}
+  // dynamic distance: wider when fleeing fast, closer near the opponent / final catch
+  const dmT=(end?.62:(near?.86:1))*(fast?1.1:1)*(1-closeK*.12);
+  CAM.dm+=(dmT-CAM.dm)*(snap?1:1-Math.exp(-dt*2.4));
+  const hh=CAM.h*boost*CAM.dm*(end?.8:1),zz=CAM.z*boost*CAM.dm,sh=G.shake>0?G.shake:0,sy=Math.sin(CAM.yaw),cy=Math.cos(CAM.yaw);
+  let ox=-zz*sy,oz=zz*cy,hy=hh;
+  // keep the camera inside the world and above the walls so it can never clip into them
+  const cx=camX+ox,cz=camZ+oz;
+  if(cx<-120||cx>W+120||cz<-120||cz>H+260){const f=.75;ox*=f;oz*=f}
+  for(const w of walls){const px=camX+ox,pz=camZ+oz;if(px>w.x-14&&px<w.x+w.w+14&&pz>w.y-14&&pz<w.y+w.h+14){hy=Math.max(hy,110);break}}
+  CAM.hy+=((hy)-CAM.hy)*(snap?1:1-Math.exp(-dt*5));
+  cameraTarget.set(camX,36,camZ);
+  cameraAim.set(camX+ox,CAM.hy,camZ+oz);
+  // Pull in smoothly when a wall or piece of furniture blocks the camera.
+  CAM.rayT-=dt;
+  if(staticGroup&&(CAM.rayT<=0||snap)){
+    CAM.rayT=.08;
+    cameraOffset.subVectors(cameraAim,cameraTarget);
+    const rayLength=cameraOffset.length();let clip=1;
+    if(rayLength>1){
+      cameraRay.set(cameraTarget,cameraOffset.normalize());cameraRay.far=rayLength;
+      const hit=cameraRay.intersectObjects(cameraBlockers,true).find(h=>h.distance>12&&h.object.visible!==false);
+      if(hit)clip=clamp((hit.distance-28)/rayLength,.28,1);
+    }
+    CAM.clip+=(clip-CAM.clip)*(snap?1:1-Math.exp(-dt*(clip<CAM.clip?12:3)));
+  }
+  cameraAim.lerpVectors(cameraTarget,cameraAim,CAM.clip);
+  cameraAim.x+=rand(-sh,sh);cameraAim.z+=rand(-sh,sh);
+  camera.position.copy(cameraAim);
+  camera.lookAt(cameraTarget);
+  if(scene.fog){const f=scene.fog;if(f._bn==null){f._bn=f.near;f._bf=f.far}const d=Math.hypot(CAM.hy,CAM.z)*boost*CAM.dm;f.near=Math.max(f._bn,d*1.2);f.far=Math.max(f._bf,f.near*2.8)}
+}
+
+/* ---- contextual action button + corner hints ---- */
+const HC={hide:0,exit:0,search:0};let lastKind='',hintTimer=0,ctlTimer=0;
+const ACT={hide:['🫣','Hide'],exit:['🚪','Out'],search:['🔍','Search']};
+function showHint(txt,ms){
+  const h=$('#hint');h.textContent=txt;h.classList.add('show');clearTimeout(hintTimer);hintTimer=setTimeout(()=>h.classList.remove('show'),ms||3000);
+}
+function uiContext(){
+  const p=G.player;let kind='';
+  if(p&&p.searching<=0&&p.frozen<=0){
+    if(G.phase==='playing'||(G.phase==='countdown'&&p.kind==='jerry')){
+      if(p.hidden)kind='exit';
+      else{const s=nearSpot(p);if(s)kind=p.kind==='tom'?'search':(s.occupant?'':'hide')}
+    }
+  }
+  const ab=$('#actBtn');
+  if(kind!==lastKind){
+    lastKind=kind;
+    if(kind){ab.firstChild.textContent=ACT[kind][0];ab.lastChild.textContent=ACT[kind][1];
+      if(SET.hints&&HC[kind]<2){HC[kind]++;showHint(G.touch?'Tap '+ACT[kind][0]+' to '+ACT[kind][1].toLowerCase():'E / Space · '+ACT[kind][1],2800)}}
+    else $('#hint').classList.remove('show');
+    ab.classList.toggle('on',!!kind);
+  }
+  if(p&&G.touch){const st=Math.max(0,Math.min(1,p.stam==null?1:p.stam));const sb=$('#sprintBtn');sb.style.setProperty('--st',Math.round(st*360)+'deg');sb.classList.toggle('tired',!!p.tired)}
+  if(SET.hints&&!SET.seen&&G.phase==='countdown'&&G.round===1&&!G.online||SET.hints&&!SET.seen&&G.phase==='countdown'&&G.online){
+    SET.seen=1;saveSet();showHint(G.touch?'Drag anywhere to move · hold ⚡ to sprint':'WASD / arrows to move · Shift to sprint',4200);
+  }
+}
+(function(){
+  const ab=$('#actBtn'),sb=$('#sprintBtn');
+  ab.addEventListener('pointerdown',e=>{e.preventDefault();e.stopPropagation();Sfx.init();G.actionQ=true;ab.classList.add('press')});
+  const up=()=>ab.classList.remove('press');ab.addEventListener('pointerup',up);ab.addEventListener('pointercancel',up);ab.addEventListener('pointerleave',up);
+  sb.addEventListener('pointerdown',e=>{e.preventDefault();e.stopPropagation();Sfx.init();G.sprint=1;sb.classList.add('press');try{sb.setPointerCapture(e.pointerId)}catch(_){}});
+  const su=()=>{G.sprint=0;sb.classList.remove('press')};sb.addEventListener('pointerup',su);sb.addEventListener('pointercancel',su);sb.addEventListener('lostpointercapture',su);
+  [ab,sb].forEach(b=>b.addEventListener('contextmenu',e=>e.preventDefault()));
+  addEventListener('keydown',e=>{if(e.code==='ShiftLeft'||e.code==='ShiftRight')G.sprint=1});
+  addEventListener('keyup',e=>{if(e.code==='ShiftLeft'||e.code==='ShiftRight')G.sprint=0});
+  addEventListener('blur',()=>{G.sprint=0});
+})();
+
+/* ---- settings ---- */
+document.querySelectorAll('#qRow .chipbtn').forEach(b=>b.onclick=()=>{Sfx.init();Sfx.click();setQuality(b.dataset.q)});
+function syncHintBtn(){$('#btnHints').textContent=SET.hints?'On':'Off';$('#btnHints').classList.toggle('on',SET.hints)}
+$('#btnHints').onclick=()=>{Sfx.click();SET.hints=!SET.hints;saveSet();syncHintBtn();if(!SET.hints)$('#hint').classList.remove('show')};
+$('#btnSettings').onclick=()=>{Sfx.init();Sfx.click();syncHintBtn();show('settings')};
+$('#btnPauseSet').onclick=()=>{Sfx.click();syncHintBtn();show('settings')};
+$('#btnSetClose').onclick=()=>{Sfx.click();hide('settings')};
+$('#btnPause').onclick=()=>{Sfx.click();if(G.online){syncHintBtn();$('#settings').classList.contains('show')?hide('settings'):show('settings')}else G.paused?resumeGame():pauseGame()};
+syncHintBtn();
+if(renderer&&scene){polishScene()}
+
+/* ===================== fun: expressions, cartoon sounds, events, hazards, footprints, music ===================== */
+const FXS={trail:{tom:[],jerry:[]},evT:10,black:0,bonkCd:0,closeCd:0,objs:[],prints:[],lastPhase:'',slowT:0,wobS:new Map(),musicOn:true};
+G.fx=[];G.closeT=0;
+const FXC={hole:1,pad:2,brk:3,ban:4,gold:5,drop:6,roam:7},FXN=Object.keys(FXC);
+const fxEncode=()=>G.fx.map(e=>[FXC[e.t],r1(e.x),r1(e.y),r1(e.a||0),e.b||0]);
+function fxDecode(arr){G.fx=arr.map(r=>({t:FXN[r[0]-1],x:r[1],y:r[2],a:r[3],b:r[4]}))}
+
+/* ---- cartoon sounds (built on the Sfx synth) ---- */
+const SND={
+  boing(){Sfx.tone(180,.12,'sine',.32,520);Sfx.tone(520,.3,'sine',.26,200,.1);Sfx.tone(360,.2,'sine',.14,150,.25)},
+  bonk(){Sfx.noise(.08,.45,320);Sfx.tone(170,.2,'triangle',.4,55)},
+  crash(){Sfx.noise(.55,.75,900);Sfx.noise(.4,.45,3200,.05);Sfx.tone(95,.45,'sawtooth',.28,38);Sfx.tone(60,.5,'sine',.4,30,.05)},
+  slip(){Sfx.tone(1100,.5,'sine',.18,180);Sfx.tone(700,.3,'triangle',.12,1400,.1)},
+  whoosh(){Sfx.noise(.28,.35,1400);Sfx.tone(300,.25,'sine',.12,900)},
+  squeak(){Sfx.tone(1500,.07,'square',.12,2300);Sfx.tone(2100,.08,'square',.1,1400,.08)},
+  pop(){Sfx.noise(.14,.45,2200);Sfx.tone(420,.12,'triangle',.28,110)},
+  whistle(){Sfx.tone(1600,1.1,'sine',.1,260)},
+  zap(){Sfx.noise(.3,.4,3500);Sfx.tone(90,.25,'sawtooth',.25,300)},
+  heart(){Sfx.tone(62,.1,'sine',.55,38);Sfx.tone(62,.12,'sine',.45,38,.17)},
+  gold(){[880,1175,1568,2093].forEach((f,i)=>Sfx.tone(f,.14,'triangle',.18,0,i*.07))},
+  wah(){Sfx.tone(311,.36,'sawtooth',.16,294);Sfx.tone(294,.36,'sawtooth',.16,277,.4);Sfx.tone(277,.36,'sawtooth',.16,262,.8);Sfx.tone(262,.9,'sawtooth',.18,150,1.2)},
+  fan(v){const a=[[523,659,784,1047],[392,523,659,784,988],[440,554,659,880],[330,415,494,659,831]][v%4];a.forEach((f,i)=>{Sfx.tone(f,.2,'square',.16,0,i*.1);Sfx.tone(f/2,.2,'triangle',.12,0,i*.1)})}
+};
+function fxEvent(e){
+  if(e[0]!=='x')return;
+  const n=e[1],a=e[2];
+  if(n==='black'){FXS.black=2.4;SND.zap()}
+  else if(n==='shake')G.shake=Math.max(G.shake,a||10);
+  else if(SND[n])SND[n](a);
+}
+function fxEmit(n,a){fxEvent(['x',n,a]);if(G.online&&NET.host)NET.ev.push(['x',n,a])}
+{const _w=Sfx.win;Sfx.win=function(){_w.apply(Sfx,arguments);SND.fan(G.round||0)}}
+{const _l=Sfx.lose;Sfx.lose=function(){_l.apply(Sfx,arguments);SND.wah()}}
+{const _f=Sfx.found;Sfx.found=function(){_f.apply(Sfx,arguments);SND.boing();SND.crash()}}
+/* bonk when the player runs into furniture or walls */
+{const _mv=moveActor;moveActor=function(a,dx,dy){
+  const ox=a.x,oy=a.y;_mv(a,dx,dy);
+  if(a===G.player&&G.phase==='playing'&&FXS.bonkCd<=0){const want=Math.hypot(dx,dy);if(want>2.4&&Math.hypot(a.x-ox,a.y-oy)<want*.3){FXS.bonkCd=.8;SND.bonk();a.squash=.6}}
+}}
+/* furniture wiggles + squeaks when used */
+{const _e=enterSpot;enterSpot=function(a,s,silent){_e.apply(this,arguments);if(s){s.wob=1}};
+ const _x=exitSpot;exitSpot=function(a){const s=a.hidden;_x.apply(this,arguments);if(s)s.wob=1}}
+
+/* ---- faces ---- */
+function applyFace(o,ex){
+  const f=o.userData.face;if(!f||f.ex===ex)return;f.ex=ex;
+  for(const e of f.eyes){
+    for(const m of e.parts)m.scale.copy(m.userData.s0);
+    e.brow.scale.copy(e.brow.userData.s0);e.brow.position.copy(e.brow.userData.p0);e.brow.rotation.x=0;
+    const [a,b,c]=e.parts;
+    if(ex==='angry'){e.brow.rotation.x=-e.sz*.5;e.brow.position.y-=.9;a.scale.y*=.8;b.scale.y*=.8}
+    else if(ex==='scared'){a.scale.multiplyScalar(1.3);if(b!==a)b.scale.multiplyScalar(1.3);c.scale.multiplyScalar(.6);e.brow.position.y+=1.3}
+    else if(ex==='happy'){a.scale.y*=.28;if(b!==a)b.scale.y*=.28;c.scale.y*=.3;e.brow.position.y+=.3}
+    else if(ex==='sad'){e.brow.rotation.x=e.sz*.5;a.scale.y*=.65;if(b!==a)b.scale.y*=.65}
+    else if(ex==='dizzy'){a.scale.x*=1.2;a.scale.y*=1.3;c.scale.multiplyScalar(.45)}
+  }
+  const m=f.mouth;m.visible=ex==='scared'||ex==='happy'||ex==='angry'||ex==='dizzy';
+  m.scale.copy(m.userData.s0);
+  if(ex==='scared')m.scale.multiplyScalar(1.5);else if(ex==='happy'){m.scale.y*=1.1;m.scale.x*=1.2}else if(ex==='angry'){m.scale.y*=.5;m.scale.z*=1.2}
+}
+function exprOf(a){
+  const T=G.tom,J=G.jerry,pl=G.phase==='playing';
+  if(a.mood==='win')return'happy';
+  if(a.mood==='lose')return a.kind==='tom'?'dizzy':'sad';
+  if(a.stun||a.slipT>0)return'dizzy';
+  if(pl&&a.kind==='jerry'&&!a.hidden&&dist(T.x,T.y,J.x,J.y)<200)return'scared';
+  if(pl&&a.kind==='tom'&&!J.hidden&&dist(T.x,T.y,J.x,J.y)<230)return'angry';
+  if(a.kind==='jerry'&&a.hidden&&pl&&dist(T.x,T.y,J.x,J.y)<110)return'scared';
+  return'normal';
+}
+/* ---- victory dances / loss reactions (called from syncActor) ---- */
+function danceFx(a,t){
+  const v=((G.round||1)+(a.kind==='tom'?0:1))%4;
+  if(v===0)return{y:Math.abs(Math.sin(t*9))*22,spin:t*7,tilt:0,flip:0,sq:1};
+  if(v===1)return{y:Math.abs(Math.sin(t*6))*9,spin:Math.sin(t*3)*.9-a.face,tilt:Math.sin(t*12)*.5,flip:0,sq:1};
+  if(v===2){const ph=(t*4.2)%(Math.PI*2);return{y:Math.max(0,Math.sin(ph/2))*34,spin:-a.face,tilt:0,flip:ph<Math.PI*2?-ph:0,sq:1}}
+  return{y:Math.abs(Math.sin(t*5))*6,spin:t*15,tilt:0,flip:0,sq:1+Math.sin(t*10)*.12};
+}
+function lossFx(a,t){
+  const v=((G.round||1)+(a.kind==='tom'?1:0))%3;
+  if(v===0)return{tilt:Math.sin(t*5)*.35,head:.5,sq:.85,pc:1,y:0,flip:0};
+  if(v===1)return{tilt:0,head:0,sq:1,pc:.3,y:0,flip:0};
+  return{tilt:0,head:.3,sq:1,pc:1,y:4,flip:1.45};
+}
+
+/* ---- entities: meshes ---- */
+const FXM={};
+function fxMat(c,r){const k=c+'|'+r;return FXM[k]||(FXM[k]=new THREE.MeshStandardMaterial({color:c,roughness:r==null?.7:r}))}
+function fx3(g,geo,c,x,y,z,sx,sy,sz,r){const m=new THREE.Mesh(geo,fxMat(c,r));m.position.set(x,y,z);m.scale.set(sx||1,sy||1,sz||1);m.castShadow=true;g.add(m);return m}
+function emSprite(ch,size,y){const s=new THREE.Sprite(new THREE.SpriteMaterial({map:emojiTex(ch),transparent:true}));s.scale.set(size,size,1);s.position.y=y;return s}
+const BRK_VAR=[['vase','#c8553d'],['crate','#b88a4a'],['pumpkin','#f08a24'],['jar','#5aa7d6']];
+const DROP_EM=['🎹','🪨','🛢️','📦','🧊'];
+function fxBuild(e){
+  const g=new THREE.Group();g.userData.key=e.t+':'+(e.b||0);
+  if(e.t==='hole'){fx3(g,G_SPH,'#7a4b25',0,.5,0,18,.5,13);fx3(g,G_SPH,'#0c0603',0,.9,0,13,.5,9)}
+  else if(e.t==='pad'){g.userData.top=new THREE.Group();g.add(g.userData.top);const t=g.userData.top;fx3(t,G_CYL,'#ff6fa5',0,2.5,0,17,5,17);fx3(t,G_CYL,'#ffd23f',0,5.2,0,12,1.2,12);fx3(g,G_CYL,'#8a3a60',0,.8,0,19,1.6,19)}
+  else if(e.t==='brk'){
+    const v=e.b||0;
+    if(v===0){fx3(g,G_SPH,'#c8553d',0,10,0,8.5,11,8.5);fx3(g,G_CYL,'#c8553d',0,21,0,4,5,4);fx3(g,G_CYL,'#e0b04a',0,23.5,0,5.2,1.4,5.2)}
+    else if(v===1){fx3(g,new THREE.BoxGeometry(1,1,1),'#b88a4a',0,10,0,20,20,20);fx3(g,new THREE.BoxGeometry(1,1,1),'#8f6a30',0,20,0,22,3,22)}
+    else if(v===2){fx3(g,G_SPH,'#f08a24',0,9,0,12,9,12);fx3(g,G_CYL,'#3f7a2a',0,19,0,2,5,2)}
+    else{fx3(g,G_SPH,'#5aa7d6',0,10,0,8.5,11,8.5);fx3(g,G_CYL,'#cfe9f7',0,21,0,4.6,5,4.6)}
+  }
+  else if(e.t==='ban'){const b=fx3(g,G_SPH,'#ffe033',0,2.6,0,9,2.6,3.4);fx3(g,G_SPH,'#6b4a12',5.6,2.6,0,1.5,1.2,1.5);g.rotation.y=(e.x*7+e.y*3)%6.28}
+  else if(e.t==='gold'){const d=new THREE.Mesh(new THREE.CircleGeometry(15,20),new THREE.MeshBasicMaterial({color:'#ffd23f',transparent:true,opacity:.5,depthWrite:false}));d.rotation.x=-Math.PI/2;d.position.y=1.5;g.add(d);g.userData.spr=emSprite('🧀',30,22);g.add(g.userData.spr);fx3(g,G_SPH,'#ffd23f',0,34,0,3,3,3,.2)}
+  else if(e.t==='drop'){
+    const sh=new THREE.Mesh(new THREE.CircleGeometry(1,24),new THREE.MeshBasicMaterial({color:'#000',transparent:true,opacity:.35,depthWrite:false}));sh.rotation.x=-Math.PI/2;sh.position.y=1.2;g.userData.sh=sh;g.add(sh);
+    g.userData.spr=emSprite(DROP_EM[(e.b||0)%DROP_EM.length],56,0);g.add(g.userData.spr);
+  }
+  else if(e.t==='roam'){
+    const v=e.b||0,body=new THREE.Group();g.userData.body=body;g.add(body);
+    if(v===0){fx3(body,G_CYL,'#3b4252',0,6,0,17,8,17);fx3(body,G_CYL,'#8fd3ff',0,10.4,0,11,1.2,11);fx3(body,G_SPH,'#e04b4b',9,8,0,2.2,2.2,2.2)}
+    else if(v===1){fx3(body,G_SPH,'#f08a24',0,13,0,15,13,15);fx3(body,G_CYL,'#3f7a2a',0,26,0,2.4,5,2.4);fx3(body,G_SPH,'#2a1608',5,15,-6,2.6,3,2.6);fx3(body,G_SPH,'#2a1608',5,15,6,2.6,3,2.6)}
+    else if(v===2){fx3(body,new THREE.BoxGeometry(1,1,1),'#c9ced6',0,14,0,26,14,18);fx3(body,new THREE.BoxGeometry(1,1,1),'#e04b4b',-14,22,0,4,16,18);for(const[x,z]of[[-9,-8],[-9,8],[9,-8],[9,8]])fx3(body,G_SPH,'#222',x,4,z,3.6,3.6,3.6)}
+    else{fx3(body,G_SPH,'#ffffff',0,15,0,16,16,16,.9);fx3(body,G_SPH,'#dbeaf7',3,17,5,5,5,5,.9)}
+  }
+  return g;
+}
+function fxSync(dt){
+  if(!scene)return;
+  const list=G.fx||[];
+  for(let i=0;i<list.length;i++){
+    const e=list[i];let o=FXS.objs[i];const key=e.t+':'+(e.b||0);
+    if(!o||o.userData.key!==key){if(o)scene.remove(o);o=FXS.objs[i]=fxBuild(e);scene.add(o)}
+    const u=o.userData,t=G.t;
+    o.position.set(e.x,0,e.y);
+    if(e.t==='drop'){
+      const fall=e.a>0;
+      if(fall){const k=Math.min(1,e.a/1.6);u.spr.position.y=18+Math.pow(k,1.4)*340;u.sh.scale.setScalar(8+(1-k)*20);u.sh.material.opacity=.15+(1-k)*.35;u.spr.material.rotation=Math.sin(t*9)*.15*k}
+      else{u.spr.position.y=20;u.spr.material.rotation=.25;u.sh.scale.setScalar(26);u.sh.material.opacity=.3;u.spr.material.opacity=Math.min(1,-e.a/.8)}
+    }
+    else if(e.t==='gold'){u.spr.position.y=22+Math.sin(t*4)*4;o.rotation.y=t*2;o.visible=e.a>2.5||Math.floor(e.a*6)%2===0}
+    else if(e.t==='pad'){const s=1+(e.a>0?Math.sin(e.a*18)*.35*Math.min(1,e.a/.4):Math.sin(t*3)*.03);u.top.scale.set(1/Math.sqrt(s),s,1/Math.sqrt(s))}
+    else if(e.t==='roam'){u.body.rotation.y=-e.a;const v=e.b||0;if(v===1||v===3){u.body.rotation.z=-(t*6)%6.28}else if(v===0)u.body.position.y=Math.sin(t*14)*.4}
+    else if(e.t==='ban'){o.visible=e.a>2||Math.floor(e.a*6)%2===0}
+    else if(e.t==='brk'){}
+  }
+  while(FXS.objs.length>list.length)scene.remove(FXS.objs.pop());
+}
+function fxClear(){while(FXS.objs.length)scene.remove(FXS.objs.pop());FXS.trail={tom:[],jerry:[]};FXS.black=0;G.closeT=0;FXS.evT=10;FXS.lastPhase=''}
+
+/* ---- entity logic (host / solo) ---- */
+const award=(a,n)=>{if(G.online)G.pts[own(a)]+=n;else if(a===G.player)G.score+=n};
+function fxFreePt(minFrom,fx,fy){return randFreePoint(minFrom||0,fx,fy)}
+function fxInit(){
+  G.fx=[];if(!renderer)return;fxClear();
+  const T=MAP.tomStart,add=(t,x,y,a,b,extra)=>{const e=Object.assign({t,x,y,a:a||0,b:b||0},extra||{});G.fx.push(e);return e};
+  // secret mouse holes: two linked pairs (Pip fits, Mallow doesn't)
+  for(let k=0;k<2;k++){
+    const p1=fxFreePt(0),p2=(()=>{for(let i=0;i<60;i++){const p=fxFreePt(0);if(dist(p.x,p.y,p1.x,p1.y)>360)return p}return fxFreePt(0)})();
+    const h1=add('hole',p1.x,p1.y),h2=add('hole',p2.x,p2.y);h1.to=h2;h2.to=h1;
+  }
+  for(let k=0;k<2;k++){const p=fxFreePt(120,T[0],T[1]);add('pad',p.x,p.y)}
+  const nb=MAP.id==='mart'?6:5;
+  for(let k=0;k<nb;k++){const p=fxFreePt(100,T[0],T[1]);add('brk',p.x,p.y,0,(MAP.id==='snow'?3:Math.floor(Math.random()*3)))}
+  const p=fxFreePt(200,T[0],T[1]);add('roam',p.x,p.y,Math.random()*6.28,{house:0,mansion:1,mart:2,snow:3}[MAP.id]||0,{sp:72,turn:rand(2,5),hit:0});
+}
+function fxKnock(a,fromX,fromY,power){
+  const an=Math.atan2(a.y-fromY,a.x-fromX);a.kx=Math.cos(an)*power;a.ky=Math.sin(an)*power;a.knockT=.28;
+}
+function fxStep(dt){
+  FXS.bonkCd-=dt;
+  if(G.phase!=='playing'&&G.phase!=='countdown')return;
+  const T=G.tom,J=G.jerry,acts=[T,J];
+  for(const a of acts){
+    if(a.tpCd>0)a.tpCd-=dt;if(a.bumpCd>0)a.bumpCd-=dt;if(a.padCd>0)a.padCd-=dt;
+    if(a.slipT>0){a.slipT-=dt;moveActor(a,Math.cos(a.slipA)*230*Math.max(.1,a.slipT)*dt,Math.sin(a.slipA)*230*Math.max(.1,a.slipT)*dt);a.frozen=Math.max(a.frozen,a.slipT+.02);if(a.slipT<=0){a.slipT=0;a.stun=true;a.frozen=.35}}
+    if(a.knockT>0){a.knockT-=dt;moveActor(a,a.kx*dt,a.ky*dt)}
+    if(a.dashT>0){a.dashT-=dt;moveActor(a,Math.cos(a.dashA)*330*dt,Math.sin(a.dashA)*330*dt)}
+    if(a.frozen<=0&&a.stun&&!a.slipT)a.stun=false;
+  }
+  if(G.phase!=='playing')return;
+  // director: random environmental events
+  FXS.evT-=dt;
+  if(FXS.evT<=0){FXS.evT=rand(13,22)*(G.diff==='hard'?.8:G.diff==='easy'?1.25:1);fxDirector()}
+  for(let i=G.fx.length-1;i>=0;i--){
+    const e=G.fx[i];
+    if(e.t==='drop'){
+      if(e.a>0){e.a-=dt;if(e.a<=0){
+        fxEmit('crash');fxEmit('shake',e.b===0?16:11);burst(e.x,e.y-6,'dust',12);
+        for(const a of acts)if(!a.hidden&&dist(a.x,a.y,e.x,e.y)<38){a.frozen=1.5;a.stun=true;a.squash=.8;say(a,pick(['Ouch!!','X_X','Splat!']),1.5);floatText(a.x,a.y,'💥','#fff')}
+        e.a=-4.5}}
+      else{e.a+=dt;if(e.a>=0)G.fx.splice(i,1)}
+    }
+    else if(e.t==='ban'){e.a-=dt;if(e.a<=0){G.fx.splice(i,1);continue}
+      for(const a of acts)if(!a.hidden&&a.frozen<=0&&!a.slipT&&dist(a.x,a.y,e.x,e.y)<19){G.fx.splice(i,1);a.slipT=1.05;a.slipA=a.moving?a.face:(Math.random()*6.28);fxEmit('slip');say(a,pick(['Whoaaa!','Wheee!','Oops!']),1.3);break}}
+    else if(e.t==='gold'){e.a-=dt;if(e.a<=0){G.fx.splice(i,1);continue}
+      for(const a of acts)if(!a.hidden&&dist(a.x,a.y,e.x,e.y)<24){G.fx.splice(i,1);award(a,50);fxEmit('gold');burst(e.x,e.y,'star',8);floatText(e.x,e.y,'+50','#ffd23f');break}}
+    else if(e.t==='brk'){
+      for(const a of acts)if(!a.hidden&&a.moving&&dist(a.x,a.y,e.x,e.y)<22){
+        G.fx.splice(i,1);fxEmit('pop');burst(e.x,e.y,'dust',9);award(a,10);floatText(e.x,e.y,'+10','#fff');
+        const r=Math.random();if(r<.35&&G.pu.length<3){G.pu.push({x:e.x,y:e.y,type:pick(['speed','clock','sleep','magic']),life:12,age:0});floatText(e.x,e.y-14,'🎁','#fff')}
+        else if(r<.55)G.fx.push({t:'gold',x:e.x,y:e.y,a:7,b:0});
+        say(a,pick(['Oops!','Crash!','Whoops!']),1);break}}
+    else if(e.t==='pad'){
+      if(e.a>0)e.a-=dt;
+      for(const a of acts)if(!a.hidden&&(a.padCd||0)<=0&&a.frozen<=0&&dist(a.x,a.y,e.x,e.y)<19){a.padCd=1.2;a.dashT=.4;a.dashA=a.moving?a.face:Math.atan2(a.y-e.y,a.x-e.x);e.a=.5;a.squash=.9;fxEmit('boing');burst(e.x,e.y,'star',5);say(a,'Boing!',.9)}
+    }
+    else if(e.t==='hole'){
+      for(const a of acts){
+        if(a.hidden||dist(a.x,a.y,e.x,e.y)>(a.kind==='jerry'?15:12))continue;
+        if(a.kind==='jerry'){if((a.tpCd||0)<=0&&e.to){a.tpCd=3;a.x=e.to.x;a.y=e.to.y;a.path=[];a.squash=1;fxEmit('whoosh');fxEmit('squeak');burst(e.x,e.y,'dust',6);burst(e.to.x,e.to.y,'dust',6);G._snapCam=false}}
+        else if((a.bumpCd||0)<=0&&a.moving){a.bumpCd=3;fxKnock(a,e.x,e.y,150);fxEmit('bonk');say(a,'Too big!',1.2)}
+      }
+    }
+    else if(e.t==='roam'){
+      e.turn-=dt;if(e.turn<=0){e.turn=rand(2.5,5.5);e.a+=rand(-1,1)}
+      e.hit=Math.max(0,e.hit-dt);
+      const sp=e.sp*(FXS.stampede>0?1.7:1),nx=e.x+Math.cos(e.a)*sp*dt,ny=e.y+Math.sin(e.a)*sp*dt;
+      if(blockedR(nx,ny,17)){e.a+=Math.PI*(.6+Math.random()*.8)}else{e.x=nx;e.y=ny}
+      if(e.hit<=0)for(const a of acts)if(!a.hidden&&a.frozen<=0&&dist(a.x,a.y,e.x,e.y)<28){e.hit=1.2;a.frozen=.8;a.stun=true;fxKnock(a,e.x,e.y,260);e.a+=Math.PI;fxEmit('bonk');fxEmit('shake',7);say(a,pick(['Ow!','Hey!!','Bonk!']),1.1);break}
+    }
+  }
+  if(FXS.stampede>0)FXS.stampede-=dt;
+}
+function fxDirector(){
+  const T=G.tom,J=G.jerry,r=Math.random(),cap=G.fx.filter(e=>e.t==='drop'||e.t==='ban').length;
+  if(r<.32&&cap<3){ // falling object near a random player
+    const a=Math.random()<.5?T:J;let p=null;for(let i=0;i<30;i++){const q=fxFreePt(0);if(dist(q.x,q.y,a.x,a.y)<190&&dist(q.x,q.y,a.x,a.y)>40){p=q;break}}
+    p=p||fxFreePt(0);G.fx.push({t:'drop',x:p.x,y:p.y,a:1.6,b:Math.floor(Math.random()*DROP_EM.length)});fxEmit('whistle');
+  }else if(r<.58&&cap<3){
+    for(let k=0;k<2;k++){const p=fxFreePt(70);G.fx.push({t:'ban',x:p.x,y:p.y,a:14,b:0})}
+  }else if(r<.74){const p=fxFreePt(0);G.fx.push({t:'gold',x:p.x,y:p.y,a:9,b:0})}
+  else if(r<.88){fxEmit('black')}
+  else{FXS.stampede=6;fxEmit('zap');const ro=G.fx.find(e=>e.t==='roam');if(ro)floatText(ro.x,ro.y,'💨','#fff')}
+}
+
+/* ---- footprints, expressions, wobble, close calls, per-frame fun ---- */
+let printTex=null;
+function pawTex(){
+  if(printTex)return printTex;
+  const c=document.createElement('canvas');c.width=c.height=64;const g=c.getContext('2d');g.fillStyle='rgba(40,22,10,.9)';
+  g.beginPath();g.ellipse(32,42,13,11,0,0,7);g.fill();
+  for(const[x,y,r]of[[16,24,6],[27,15,6.5],[39,15,6.5],[50,24,6]]){g.beginPath();g.ellipse(x,y,r,r*1.15,0,0,7);g.fill()}
+  return printTex=new THREE.CanvasTexture(c);
+}
+function printPool(n){
+  while(FXS.prints.length<n){const m=new THREE.Mesh(new THREE.PlaneGeometry(1,1),new THREE.MeshBasicMaterial({map:pawTex(),transparent:true,depthWrite:false,toneMapped:false}));m.rotation.order='XYZ';m.renderOrder=1;m.visible=false;scene.add(m);FXS.prints.push(m)}
+}
+function trailStep(dt){
+  if(G.phase!=='playing')return;
+  for(const a of[G.tom,G.jerry]){
+    const tr=FXS.trail[a.kind];if(a.hidden){a._lp=null;continue}
+    if(!a._lp){a._lp={x:a.x,y:a.y}}
+    const d=dist(a.x,a.y,a._lp.x,a._lp.y);
+    if(d>=22){const ang=Math.atan2(a.y-a._lp.y,a.x-a._lp.x);a._side=-(a._side||1);tr.push({x:a.x-Math.sin(ang)*4*a._side,y:a.y+Math.cos(ang)*4*a._side,ang,t:G.t});a._lp={x:a.x,y:a.y};if(tr.length>26)tr.shift()}
+  }
+}
+function printsFrame(){
+  if(!scene||!G.player||G.phase==='menu'){FXS.prints.forEach(m=>m.visible=false);return}
+  const q=QL[qCur]||QL.med,N=q===QL.low?8:q===QL.med?14:22;printPool(N);
+  const opp=G.player===G.tom?G.jerry:G.tom,tr=FXS.trail[opp.kind],big=opp.kind==='tom';
+  let k=0;
+  for(let i=tr.length-1;i>=0&&k<N;i--){
+    const p=tr[i],age=G.t-p.t;if(age>4.8)break;if(dist(p.x,p.y,G.player.x,G.player.y)>360)continue;
+    const m=FXS.prints[k++];m.visible=true;m.position.set(p.x,1.1,p.y);m.rotation.set(-Math.PI/2,0,-(p.ang+Math.PI/2));
+    const s=big?13:8;m.scale.set(s,s,1);m.material.opacity=Math.max(0,.8*(1-age/4.8));m.material.color.set(big?'#5a3a22':'#7a5a4a')
+  }
+  for(;k<FXS.prints.length;k++)FXS.prints[k].visible=false;
+}
+function funFrame(dt){
+  if(G.phase==='menu')return;
+  // faces
+  applyFace(tomObj,exprOf(G.tom));applyFace(jerryObj,exprOf(G.jerry));charAnim(G.tom,tomObj,dt);charAnim(G.jerry,jerryObj,dt);
+  // furniture wobble
+  for(const s of spots){if(s.wob>0){s.wob-=dt*2.4;if(s.obj){const w=Math.max(0,s.wob);s.obj.rotation.z=Math.sin(G.t*40)*.06*w;s.obj.rotation.x=Math.cos(G.t*33)*.04*w;if(s.wob<=0){s.obj.rotation.z=s.obj.rotation.x=0}}}}
+  if(G.tom.searching>0&&G.tom.searchSpot&&!G.online)G.tom.searchSpot.wob=Math.max(G.tom.searchSpot.wob||0,.7);
+  // close call: Mallow passes a hidden Pip without finding him
+  FXS.closeCd-=dt;
+  if(G.phase==='playing'&&FXS.closeCd<=0&&G.jerry.hidden&&dist(G.tom.x,G.tom.y,G.jerry.x,G.jerry.y)<88&&!(G.tom.searching>0&&G.tom.searchSpot===G.jerry.hidden)){FXS.closeCd=6;G.closeT=1;SND.heart()}
+  G.closeT=Math.max(0,G.closeT-dt*1.3);
+  if(FXS.black>0)FXS.black-=dt;
+  if(!FXS.shafts||FXS.shaftKey!==MAP.id||FXS.shafts.parent!==scene)shaftsEnsure();else if(FXS.shaftMats)FXS.shaftMats.forEach((m,i)=>{m.opacity=(i%2?.3:.42)*(.85+Math.sin(G.t*.6+i)*.15)});
+  trailStep(dt);printsFrame();fxSync(dt);musicTick(dt);
+}
+function blackFrame(){
+  if(FXS.black>0){const f=FXS.black>1.8?(Math.floor(FXS.black*14)%2?.25:.9):FXS.black>.5?.22:.22+(.78*(1-FXS.black/.5));hemi.intensity=(hemi.userData.base||.6)*f;sun.intensity=.95*f;FXS.blackOn=true}
+  else if(FXS.blackOn){FXS.blackOn=false;sun.intensity=.95;hemi.intensity=hemi.userData.base||.6}
+}
+function fxMenuHide(){
+  FXS.prints.forEach(m=>m.visible=false);if(FXS.objs.length){while(FXS.objs.length)scene.remove(FXS.objs.pop())}G.fx=[];FXS.black=0;blackFrame();
+  if(tomObj){applyFace(tomObj,'normal');applyFace(jerryObj,'normal')}
+}
+/* emoji reactions drawn over the characters */
+function polishOverlay(){
+  if(G.phase==='menu'||!G.tom)return;speedLines();
+  const c=octx,us=clamp(Math.min(OW,OH)/620,.85,1.5);
+  for(const a of[G.tom,G.jerry]){
+    if(a.hidden)continue;const p=proj(a.x,a.kind==='tom'?70:48,a.y);if(!p.ok)continue;
+    const bob=Math.sin(G.t*7)*2;let ch='';
+    if(a.mood==='lose'){const v=((G.round||1)+(a.kind==='tom'?1:0))%3;ch=v===1?'🥞':v===2?'🏳️':'💫'}
+    else if(a.stun&&a.frozen>0)ch='💫';
+    else if(a.slipT>0)ch='🍌';
+    else if(G.phase==='playing'&&a.kind==='jerry'&&exprOf(a)==='scared')ch='😱';
+    else if(G.phase==='playing'&&a.kind==='tom'&&exprOf(a)==='angry'&&dist(G.tom.x,G.tom.y,G.jerry.x,G.jerry.y)<130)ch='💢';
+    if(ch)emoji(c,ch,p.x-18*us,p.y-26*us+bob,20*us);
+  }
+}
+/* slow motion on the final catch */
+function slowScale(dt){
+  if(G.phase==='ending'&&FXS.lastPhase!=='ending')FXS.slowT=1.6;
+  FXS.lastPhase=G.phase;
+  if(FXS.slowT>0){FXS.slowT-=dt;const k=FXS.slowT/1.6;return k>.5?.22:.22+.78*(1-k/.5)}
+  return 1;
+}
+
+/* ---- dynamic music: tempo climbs as Mallow closes in ---- */
+const MUS={next:0,step:0,bpm:104,seed:7};
+const SCALES={maj:[0,2,4,7,9],min:[0,3,5,7,10]},ROOTS={house:130.81,mansion:146.83,mart:174.61,snow:164.81};
+function musicTick(dt){
+  const ac=Sfx.getAc&&Sfx.getAc();
+  if(!ac||Sfx.isMuted()||document.hidden||G.paused)return;
+  const on=G.phase==='playing'||G.phase==='countdown';
+  if(!on){MUS.next=0;return}
+  let near=0;
+  if(G.phase==='playing'){const d=dist(G.tom.x,G.tom.y,G.jerry.x,G.jerry.y);near=clamp(1-(d-70)/380,0,1)}
+  const target=G.phase==='countdown'?96:104+near*84;
+  MUS.bpm+=(target-MUS.bpm)*Math.min(1,dt*1.2);
+  if(!MUS.next||MUS.next<ac.currentTime-.3)MUS.next=ac.currentTime+.06;
+  const sc=(MAP.id==='mansion'?SCALES.min:SCALES.maj),root=ROOTS[MAP.id]||130.81,spb=60/MUS.bpm/2,vol=G.phase==='countdown'?.55:1;
+  let guard=0;
+  while(MUS.next<ac.currentTime+.22&&guard++<6){
+    const s=MUS.step,delay=MUS.next-ac.currentTime,bar=Math.floor(s/16)%4,deg=[0,0,3,4][bar];
+    if(s%4===0)Sfx.tone(root*Math.pow(2,sc[deg%5]/12)/2,spb*1.9,'triangle',.07*vol,0,delay);        // bass
+    if(s%2===0&&near>.25)Sfx.noise(.03,.05*near*vol,7000,delay);                                    // hat
+    if(s%8===0&&near>.55)Sfx.tone(120,.09,'sine',.09*vol,55,delay);                                 // kick
+    MUS.seed=(MUS.seed*16807)%2147483647;
+    if(MUS.seed%3!==0){const n=sc[MUS.seed%5]+(MUS.seed%7===0?12:0);Sfx.tone(root*2*Math.pow(2,n/12),spb*.8,near>.5?'square':'triangle',(.035+near*.02)*vol,0,delay)}
+    MUS.step++;MUS.next+=spb;
+  }
+}
+/* character life: ears, tail, glances, lean, jump arcs */
+function charAnim(a,o,dt){
+  const u=o.userData,ex=u.face&&u.face.ex,t=G.t,sz=a.kind==='tom'?1:1.2;
+  if(u.ears){for(const e of u.ears){const s=e.userData.sz;let z=0,x=s*(a.kind==='tom'?.2:.3);
+    const flick=Math.max(0,Math.sin(t*2.3+s*1.7+(a.kind==='tom'?0:2)))>.96?.4:0;
+    if(ex==='angry'){z=.6;x=s*.5}else if(ex==='scared'){z=-.18;x=s*.55}else if(ex==='sad'){x=s*1.0;z=.2}else if(ex==='happy'){z=-.12;x=s*.1}else if(ex==='dizzy'){z=Math.sin(t*9+s)*.3}
+    if(a.moving)z+=.18+(a.boost>0||a.sprint?.3:0);
+    e.rotation.z+=((z+flick)-e.rotation.z)*Math.min(1,dt*12);e.rotation.x+=(x-e.rotation.x)*Math.min(1,dt*10)}}
+  // fast running: lean + stretch
+  const run=a.moving&&((a.sprint&&!a.tired)||a.boost>0);
+  if(run){u.body.rotation.z-=.14;u.tail.rotation.z=-.35}
+  // mouse glances back at the cat while fleeing
+  if(a.kind==='jerry'&&a.moving&&G.phase==='playing'&&!a.stun&&a.frozen<=0&&dist(G.tom.x,G.tom.y,a.x,a.y)<300){
+    const g=Math.max(0,Math.sin(t*1.7)-.55)*2.2;u.head.rotation.y=Math.sin(t*.8)*.1+g*(Math.sin(t*1.7+1)>0?1:-1)*1.0}
+  // cat sniffs / paws when searching, shrugs when it misses
+  if(a.kind==='tom'&&a.searching>0){u.body.rotation.z=.18+Math.sin(t*12)*.05}
+  // hop arc on bounce pads
+  if(a.dashT>0){const k=1-a.dashT/.4;o.position.y+=Math.sin(Math.PI*clamp(k,0,1))*(a.kind==='tom'?30:22);u.legs.forEach((l,i)=>l.rotation.z=(i<2?-1:1)*.9)}
+}
+/* sun shafts through the windows + wall decor */
+let _shaftTex=null;
+function shaftTex(){if(_shaftTex)return _shaftTex;const c=document.createElement('canvas');c.width=32;c.height=128;const g=c.getContext('2d'),gr=g.createLinearGradient(0,0,0,128);gr.addColorStop(0,'rgba(255,244,200,.85)');gr.addColorStop(.6,'rgba(255,240,190,.3)');gr.addColorStop(1,'rgba(255,240,190,0)');g.fillStyle=gr;g.fillRect(0,0,32,128);const gx=g.createLinearGradient(0,0,32,0);gx.addColorStop(0,'rgba(0,0,0,1)');gx.addColorStop(.2,'rgba(0,0,0,0)');gx.addColorStop(.8,'rgba(0,0,0,0)');gx.addColorStop(1,'rgba(0,0,0,1)');g.globalCompositeOperation='destination-out';g.fillStyle=gx;g.fillRect(0,0,32,128);return _shaftTex=new THREE.CanvasTexture(c)}
+function shaftsEnsure(){
+  const key=MAP.id;if(FXS.shaftKey===key&&FXS.shafts&&FXS.shafts.parent===scene)return;
+  if(FXS.shafts&&FXS.shafts.parent)FXS.shafts.parent.remove(FXS.shafts);
+  const grp=new THREE.Group();FXS.shafts=grp;FXS.shaftKey=key;FXS.shaftMats=[];
+  if(MAP.theme&&MAP.theme.windows){
+    for(const x of[120,520,820]){
+      for(const[dx,w] of[[0,1],[-34,.7]]){
+        const g=new THREE.BufferGeometry(),h=42,L=190,sx=-85,
+          v=[x+dx-30,h,3,x+dx+30,h,3,x+dx+30+sx*.9,1.6,L,x+dx-30+sx*.9,1.6,L];
+        g.setAttribute('position',new THREE.Float32BufferAttribute(v,3));g.setAttribute('uv',new THREE.Float32BufferAttribute([0,1,1,1,1,0,0,0],2));g.setIndex([0,1,2,0,2,3]);
+        const m=new THREE.MeshBasicMaterial({map:shaftTex(),transparent:true,blending:THREE.AdditiveBlending,depthWrite:false,opacity:.42*w,side:THREE.DoubleSide,toneMapped:false,color:'#fff0c0'});
+        const ms=new THREE.Mesh(g,m);ms.renderOrder=2;grp.add(ms);FXS.shaftMats.push(m)}
+    }
+    // wall decor: picture frames + clock on the back wall
+    for(const[x,c1] of[[250,'#e8896b'],[330,'#6ba7e8'],[650,'#8bc26b']]){fx3(grp,new THREE.BoxGeometry(1,1,1),'#5a3a22',x,30,2.2,26,20,2.2,.6);fx3(grp,new THREE.BoxGeometry(1,1,1),c1,x,30,3.4,21,15,.8,.8);fx3(grp,G_SPH,'#ffe9a8',x-3,31,3.9,3,3,.5,.8)}
+    const cl=fx3(grp,G_CYL,'#f6f2ea',430,34,2.6,9,1.4,9,.5);cl.rotation.x=Math.PI/2;fx3(grp,new THREE.BoxGeometry(1,1,1),'#333',430,35.5,3.5,.7,4,.4,.6)
+  }
+  scene.add(grp);
+}
+/* speed lines while sprinting */
+function speedLines(){
+  const p=G.player;if(!p||G.phase!=='playing'||!p.moving||!((p.sprint&&!p.tired)||p.boost>0))return;
+  const c=octx,cx=OW/2,cy=OH*.55,n=(QL[qCur]||QL.med)===QL.low?8:14;c.save();c.strokeStyle='rgba(255,255,255,.55)';c.lineCap='round';
+  for(let i=0;i<n;i++){const a=(i/n)*6.283+((G.t*3)%1)*.45,r0=Math.min(OW,OH)*(.4+((i*37)%10)/60),r1_=r0+Math.min(OW,OH)*.18;
+    c.lineWidth=1.5+(i%3);c.beginPath();c.moveTo(cx+Math.cos(a)*r0*1.5,cy+Math.sin(a)*r0);c.lineTo(cx+Math.cos(a)*r1_*1.5,cy+Math.sin(a)*r1_);c.stroke()}
+  c.restore();
+}
+window.__FX={FXS,SND,fxStep,fxDirector,fxInit,exprOf,MUS};
+
 /* loop */
 let last=performance.now();
 function frame(now){
   const dt=Math.min(.05,(now-last)/1000);last=now;
-  if(!G.paused)update(dt);
-  render(G.paused?0:dt);
+  perfTick(dt);
+  const sdt=G.paused?dt:dt*slowScale(dt);
+  if(!G.paused)update(sdt);
+  render(G.paused?0:sdt);
   requestAnimationFrame(frame);
 }
 if(!renderer){$('#menuHint').textContent='⚠️ WebGL is not available on this device/browser.'}

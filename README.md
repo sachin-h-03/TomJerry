@@ -1,4 +1,4 @@
-# Tom & Jerry: Hide & Seek 3D — packaging
+# Mallow & Pip: Home Dash 3D — packaging
 
 One game file (`www/index.html`, Three.js inlined, works offline) packaged three ways.
 
@@ -10,7 +10,7 @@ Android "Add to Home screen", iOS Safari "Add to Home Screen") and runs fullscre
 ## 2) Android APK (no Android Studio needed)
 1. Create a GitHub repo and upload everything in this folder (keep the `.github` folder).
 2. Open the repo's **Actions** tab -> "Build Android APK" -> run it (it also runs on every push).
-3. When it finishes, download the artifact **TomJerry-HideSeek-debug-apk** -> `app-debug.apk`.
+3. When it finishes, download the artifact **Mallow-Pip-Home-Dash-debug-apk** -> `app-debug.apk`.
 4. Copy to your phone, allow "install unknown apps", open it. Landscape + immersive fullscreen are preconfigured.
 
 Or build locally (Android Studio / JDK 17 + Android SDK):
@@ -40,3 +40,14 @@ The claude.ai preview blocks WebRTC. Either open `web-pwa/index.html` directly i
 
 ## v6
 Online play now uses a 4-character room code (free public PeerJS matchmaking; game data then flows directly between players). Manual codes remain as a fallback. New realistic cat and mouse models.
+
+## v8 – Polish
+Graphics Auto/Low/Medium/High (Settings), minimal HUD, corner hints (toggle in Settings), compact touch controls with sprint + contextual action button, smoother movement/camera.
+
+
+## v9 – Cartoon chaos
+Funny face expressions, cartoon sounds, slow-mo final catch, screen shake, victory dances and loss reactions, close-call zoom, opponent footprints, music that speeds up as Mallow closes in. Random events (falling objects, banana peels, blackouts, golden cheese), moving obstacles, breakable objects, bounce pads and secret mouse-hole shortcuts.
+
+
+## v10 – Characters & camera
+New original cartoon grey cat and brown mouse (fur texture, big eyes, ears/tail animation), chase camera that swings behind your heading, looks toward the opponent, widens when sprinting and zooms in for the final catch, plus sun shafts, wall decor and speed lines.
