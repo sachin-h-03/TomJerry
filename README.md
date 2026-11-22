@@ -37,3 +37,6 @@ Menu → 👥 Play Online. One player hosts and sends a code; the friend pastes 
 
 ## Online play needs a real web page
 The claude.ai preview blocks WebRTC. Either open `web-pwa/index.html` directly in Chrome on a laptop, or push this folder to GitHub, enable Settings > Pages > Source: GitHub Actions, and run the "Deploy web version" workflow. You get an https link both players can open on phones.
+
+## v6
+Online play now uses a 4-character room code (free public PeerJS matchmaking; game data then flows directly between players). Manual codes remain as a fallback. New realistic cat and mouse models.
